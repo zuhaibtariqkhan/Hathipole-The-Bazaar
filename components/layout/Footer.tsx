@@ -28,97 +28,97 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#1E1A18] text-[#FCFAF7] border-t-2 border-[#CDA45A]/40 pt-20 pb-12">
-      {/* Value Proposition & Trust Badges Strip - Grand & Spacious */}
-      <div className="max-w-7xl mx-auto px-6 md:px-10 pb-16 border-b border-[#CDA45A]/25">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 text-center md:text-left">
-          <div className="flex flex-col items-center md:items-start gap-4">
-            <div className="w-14 h-14 rounded-2xl bg-[#CDA45A]/15 border border-[#CDA45A]/50 flex items-center justify-center text-[#CDA45A] shadow-lg">
-              <ShieldCheck className="w-7 h-7" />
+    <footer className="bg-[#1E1A18] text-[#FCFAF7] border-t-2 border-[#CDA45A]/40 pt-10 pb-8">
+      {/* Value Proposition & Trust Badges Strip */}
+      <div className="max-w-7xl mx-auto px-6 md:px-10 pb-8 border-b border-[#CDA45A]/25">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center md:text-left">
+          <div className="flex flex-col items-center md:items-start gap-3">
+            <div className="w-12 h-12 rounded-2xl bg-[#CDA45A]/15 border border-[#CDA45A]/50 flex items-center justify-center text-[#CDA45A] shadow-lg">
+              <ShieldCheck className="w-6 h-6" />
             </div>
-            <h4 className="font-serif-luxury text-xl font-bold text-[#E6D2A8]">
+            <h4 className="font-serif-luxury text-lg font-bold text-[#E6D2A8]">
               100% Authentic Artisans
             </h4>
-            <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-light">
+            <p className="text-xs text-gray-300 leading-relaxed font-light">
               Every creation is ethically hand-crafted by master craftsmen across traditional artisan guilds.
             </p>
           </div>
 
-          <div className="flex flex-col items-center md:items-start gap-4">
-            <div className="w-14 h-14 rounded-2xl bg-[#CDA45A]/15 border border-[#CDA45A]/50 flex items-center justify-center text-[#CDA45A] shadow-lg">
-              <Truck className="w-7 h-7" />
+          <div className="flex flex-col items-center md:items-start gap-3">
+            <div className="w-12 h-12 rounded-2xl bg-[#CDA45A]/15 border border-[#CDA45A]/50 flex items-center justify-center text-[#CDA45A] shadow-lg">
+              <Truck className="w-6 h-6" />
             </div>
-            <h4 className="font-serif-luxury text-xl font-bold text-[#E6D2A8]">
+            <h4 className="font-serif-luxury text-lg font-bold text-[#E6D2A8]">
               Worldwide Express Shipping
             </h4>
-            <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-light">
+            <p className="text-xs text-gray-300 leading-relaxed font-light">
               Insured door-to-door air courier via FedEx & DHL Express to over 120 target countries worldwide.
             </p>
           </div>
 
-          <div className="flex flex-col items-center md:items-start gap-4">
-            <div className="w-14 h-14 rounded-2xl bg-[#CDA45A]/15 border border-[#CDA45A]/50 flex items-center justify-center text-[#CDA45A] shadow-lg">
-              <Sparkles className="w-7 h-7" />
+          <div className="flex flex-col items-center md:items-start gap-3">
+            <div className="w-12 h-12 rounded-2xl bg-[#CDA45A]/15 border border-[#CDA45A]/50 flex items-center justify-center text-[#CDA45A] shadow-lg">
+              <Sparkles className="w-6 h-6" />
             </div>
-            <h4 className="font-serif-luxury text-xl font-bold text-[#E6D2A8]">
+            <h4 className="font-serif-luxury text-lg font-bold text-[#E6D2A8]">
               Bespoke Crafting
             </h4>
-            <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-light">
+            <p className="text-xs text-gray-300 leading-relaxed font-light">
               Custom size, color, and monogram requests for interior designers, architects, and luxury buyers.
             </p>
           </div>
 
-          <div className="flex flex-col items-center md:items-start gap-4">
-            <div className="w-14 h-14 rounded-2xl bg-[#CDA45A]/15 border border-[#CDA45A]/50 flex items-center justify-center text-[#CDA45A] shadow-lg">
-              <Heart className="w-7 h-7" />
+          <div className="flex flex-col items-center md:items-start gap-3">
+            <div className="w-12 h-12 rounded-2xl bg-[#CDA45A]/15 border border-[#CDA45A]/50 flex items-center justify-center text-[#CDA45A] shadow-lg">
+              <Heart className="w-6 h-6" />
             </div>
-            <h4 className="font-serif-luxury text-xl font-bold text-[#E6D2A8]">
+            <h4 className="font-serif-luxury text-lg font-bold text-[#E6D2A8]">
               Fair Artisan Support
             </h4>
-            <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-light">
+            <p className="text-xs text-gray-300 leading-relaxed font-light">
               Direct fair-trade wages supporting artisan families and preserving endangered heritage art forms.
             </p>
           </div>
         </div>
       </div>
 
-      {/* Newsletter Signup Banner - Expansive Layout */}
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-16 border-b border-[#CDA45A]/25">
-        <div className="bg-[#2A2421] border border-[#CDA45A]/40 rounded-3xl p-10 md:p-14 flex flex-col lg:flex-row items-center justify-between gap-10 shadow-2xl">
-          <div className="max-w-2xl text-center lg:text-left space-y-3">
-            <span className="font-cinzel text-xs sm:text-sm tracking-[0.25em] text-[#CDA45A] uppercase block font-semibold">
+      {/* Newsletter Signup Banner */}
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-8 border-b border-[#CDA45A]/25">
+        <div className="bg-[#2A2421] border border-[#CDA45A]/40 rounded-3xl p-6 md:p-8 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl">
+          <div className="max-w-2xl text-center lg:text-left space-y-2">
+            <span className="font-cinzel text-xs tracking-[0.25em] text-[#CDA45A] uppercase block font-semibold">
               Join the Royal Crafts Society
             </span>
-            <h3 className="font-serif-luxury text-3xl sm:text-4xl font-bold text-[#FCFAF7] leading-tight">
+            <h3 className="font-serif-luxury text-2xl sm:text-3xl font-bold text-[#FCFAF7] leading-tight">
               Receive 10% Off Your First Handcrafted Order
             </h3>
-            <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-light">
+            <p className="text-xs text-gray-300 leading-relaxed font-light">
               Subscribe for private collection previews, master artisan stories, and exclusive heritage invitations.
             </p>
           </div>
 
           <div className="w-full lg:w-auto">
             {subscribed ? (
-              <div className="flex items-center gap-3 bg-[#CDA45A]/20 border border-[#CDA45A] text-[#E6D2A8] px-8 py-5 rounded-2xl text-sm font-semibold shadow-lg">
-                <CheckCircle2 className="w-6 h-6 text-[#CDA45A]" />
-                Thank you! Use promo code <strong className="text-white text-base ml-1">ROYAL10</strong> at checkout.
+              <div className="flex items-center gap-3 bg-[#CDA45A]/20 border border-[#CDA45A] text-[#E6D2A8] px-6 py-4 rounded-2xl text-xs font-semibold shadow-lg">
+                <CheckCircle2 className="w-5 h-5 text-[#CDA45A]" />
+                Thank you! Use promo code <strong className="text-white text-sm ml-1">ROYAL10</strong> at checkout.
               </div>
             ) : (
               <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 w-full max-w-lg">
                 <div className="relative flex-1">
-                  <Mail className="w-5 h-5 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" />
+                  <Mail className="w-4 h-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" />
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email address..."
                     required
-                    className="w-full bg-[#1E1A18] border border-[#CDA45A]/40 focus:border-[#CDA45A] text-sm text-[#FCFAF7] placeholder-gray-500 pl-12 pr-4 py-4 rounded-2xl focus:outline-none shadow-inner"
+                    className="w-full bg-[#1E1A18] border border-[#CDA45A]/40 focus:border-[#CDA45A] text-xs text-[#FCFAF7] placeholder-gray-500 pl-11 pr-4 py-3 rounded-2xl focus:outline-none shadow-inner"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="btn-gold px-8 py-4 text-xs sm:text-sm font-bold uppercase tracking-widest flex items-center justify-center gap-2 whitespace-nowrap shadow-xl"
+                  className="btn-gold px-6 py-3 text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 whitespace-nowrap shadow-xl"
                 >
                   Join Society <ArrowRight className="w-4 h-4" />
                 </button>
@@ -129,14 +129,14 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Content - Grand Logo, Connect With Us & Contact Info */}
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 text-sm">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 text-sm">
         {/* Grand Brand Logo & Connect With Us Column */}
-        <div className="lg:col-span-2 space-y-6">
-          <Link href="/" className="inline-block">
+        <div className="lg:col-span-2 space-y-5">
+          <Link href="/" className="inline-block shrink-0 overflow-visible group">
             <img
               src="/logo-transp.png"
-              alt="Hathipole The Bazaar Logo"
-              className="h-36 sm:h-44 md:h-52 lg:h-64 max-h-72 w-auto object-contain hover:opacity-95 transition-opacity duration-300 filter drop-shadow-md"
+              alt="Hathipole The Bazaar Royal Brand Signature Logo"
+              className="h-32 sm:h-40 md:h-48 lg:h-56 w-auto object-contain hover:scale-105 transition-all duration-300 filter drop-shadow-xl"
             />
           </Link>
           <p className="text-gray-300 leading-relaxed max-w-md text-xs sm:text-sm font-light">
