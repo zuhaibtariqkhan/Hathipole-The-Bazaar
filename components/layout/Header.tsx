@@ -172,12 +172,12 @@ export default function Header() {
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
 
-          {/* Sleek & Compact Logo */}
-          <Link href="/" className="flex items-center shrink-0 py-0.5 group">
+          {/* Enlarged Royal Logo */}
+          <Link href="/" className="flex items-center shrink-0 py-1 group">
             <img
               src="/logo-transp.png"
               alt="Hathipole The Bazaar Royal Logo"
-              className="h-10 sm:h-12 md:h-14 lg:h-16 max-h-18 w-auto object-contain hover:scale-105 transition-transform duration-300"
+              className="h-14 sm:h-16 md:h-18 lg:h-22 max-h-24 w-auto object-contain hover:scale-105 transition-transform duration-300 filter drop-shadow-md"
             />
           </Link>
 
