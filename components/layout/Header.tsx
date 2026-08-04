@@ -177,7 +177,11 @@ export default function Header() {
             <img
               src="/logo-transp.png"
               alt="Hathipole The Bazaar Royal Logo"
-              className="h-14 sm:h-16 md:h-18 lg:h-22 max-h-24 w-auto object-contain hover:scale-105 transition-transform duration-300 filter drop-shadow-md"
+              className={`w-auto object-contain hover:scale-105 transition-all duration-300 filter drop-shadow-md ${
+                isScrolled
+                  ? 'h-16 sm:h-18 md:h-20 lg:h-24 max-h-24'
+                  : 'h-20 sm:h-24 md:h-28 lg:h-32 max-h-36'
+              }`}
             />
           </Link>
 

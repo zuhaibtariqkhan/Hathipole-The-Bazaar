@@ -136,7 +136,7 @@ export default function Footer() {
             <img
               src="/logo-transp.png"
               alt="Hathipole The Bazaar Logo"
-              className="h-28 sm:h-32 lg:h-40 max-h-44 w-auto object-contain hover:opacity-95 transition-opacity duration-300 filter drop-shadow-md"
+              className="h-36 sm:h-44 md:h-52 lg:h-64 max-h-72 w-auto object-contain hover:opacity-95 transition-opacity duration-300 filter drop-shadow-md"
             />
           </Link>
           <p className="text-gray-300 leading-relaxed max-w-md text-xs sm:text-sm font-light">

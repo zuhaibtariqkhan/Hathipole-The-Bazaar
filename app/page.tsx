@@ -289,7 +289,7 @@ export default function HomePage() {
           </h2>
 
           <p className="text-sm text-gray-600 font-light leading-relaxed max-w-2xl mx-auto">
-            Hathipole The Bazaar connects discerning global collectors directly with India’s most revered master craftsmen. Every creation is an authentic piece of living heritage—crafted by hand using natural minerals, real gold foil, pure silks, and ancient techniques passed down through generations.
+            Hathipole The Bazaar connects discerning global collectors directly with India’s most revered master craftsmen. Every creation is an authentic piece of living heritage, crafted by hand using natural minerals, real gold foil, pure silks, and ancient techniques passed down through generations.
           </p>
 
           <div className="pt-4">
