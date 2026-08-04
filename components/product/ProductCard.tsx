@@ -28,7 +28,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <div
-      className="group relative bg-[#FCFAF7] border border-[#CDA45A]/20 rounded-[20px] overflow-hidden shadow-luxury hover:border-[#CDA45A] hover:shadow-2xl transition-all duration-500 flex flex-col"
+      className="group relative luxury-card-interactive flex flex-col h-full"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -38,38 +38,38 @@ export default function ProductCard({ product }: ProductCardProps) {
           <img
             src={hovered && product.images[1] ? product.images[1] : product.images[0]}
             alt={product.title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
           />
         </Link>
 
-        {/* Badges Overlay */}
-        <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
+        {/* Gold Foil Badges Overlay */}
+        <div className="absolute top-3.5 left-3.5 flex flex-col gap-1.5 z-10">
           {product.isBestSeller && (
-            <span className="bg-[#1E1A18] text-[#E6D2A8] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow">
+            <span className="bg-[#1E1A18] text-[#E6D2A8] text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-[#CDA45A]/40 shadow-md">
               Best Seller
             </span>
           )}
           {product.isNewArrival && (
-            <span className="bg-[#CDA45A] text-[#1E1A18] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow">
+            <span className="bg-[#CDA45A] text-[#1E1A18] text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-md">
               New Arrival
             </span>
           )}
           {product.isLimitedEdition && (
-            <span className="bg-[#B56A45] text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow">
+            <span className="bg-[#B56A45] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-md">
               Limited Edition
             </span>
           )}
         </div>
 
-        {/* Floating Quick Action Buttons */}
-        <div className="absolute top-3 right-3 flex flex-col gap-2 z-10 opacity-90 group-hover:opacity-100 transition-opacity">
+        {/* Floating Quick Action Gold Buttons */}
+        <div className="absolute top-3.5 right-3.5 flex flex-col gap-2 z-10 opacity-90 group-hover:opacity-100 transition-opacity">
           {/* Wishlist */}
           <button
             onClick={() => toggleWishlist(product.id)}
-            className={`w-9 h-9 rounded-full flex items-center justify-center backdrop-blur-md shadow-md transition-all ${
+            className={`w-9 h-9 rounded-full flex items-center justify-center backdrop-blur-md shadow-md transition-all duration-300 ${
               isWishlisted
-                ? 'bg-red-50 text-red-500 border border-red-200'
-                : 'bg-white/80 text-gray-700 hover:bg-[#CDA45A] hover:text-white'
+                ? 'bg-red-50 text-red-500 border border-red-200 scale-110'
+                : 'bg-white/85 text-[#1E1A18] hover:bg-[#CDA45A] hover:text-white'
             }`}
             title="Add to Wishlist"
           >
@@ -79,7 +79,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           {/* Quick View */}
           <button
             onClick={() => setQuickViewProduct(product)}
-            className="w-9 h-9 rounded-full bg-white/80 text-gray-700 hover:bg-[#CDA45A] hover:text-white flex items-center justify-center backdrop-blur-md shadow-md transition-all"
+            className="w-9 h-9 rounded-full bg-white/85 text-[#1E1A18] hover:bg-[#CDA45A] hover:text-white flex items-center justify-center backdrop-blur-md shadow-md transition-all duration-300"
             title="Quick View"
           >
             <Eye className="w-4 h-4" />
@@ -88,10 +88,10 @@ export default function ProductCard({ product }: ProductCardProps) {
           {/* Compare */}
           <button
             onClick={() => toggleCompare(product.id)}
-            className={`w-9 h-9 rounded-full flex items-center justify-center backdrop-blur-md shadow-md transition-all ${
+            className={`w-9 h-9 rounded-full flex items-center justify-center backdrop-blur-md shadow-md transition-all duration-300 ${
               isCompared
-                ? 'bg-[#CDA45A] text-white'
-                : 'bg-white/80 text-gray-700 hover:bg-[#CDA45A] hover:text-white'
+                ? 'bg-[#CDA45A] text-white scale-110'
+                : 'bg-white/85 text-[#1E1A18] hover:bg-[#CDA45A] hover:text-white'
             }`}
             title="Compare Specs"
           >
@@ -103,9 +103,9 @@ export default function ProductCard({ product }: ProductCardProps) {
         <div className="absolute bottom-0 inset-x-0 p-3 bg-gradient-to-t from-[#1E1A18]/90 via-[#1E1A18]/60 to-transparent transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 flex justify-center">
           <button
             onClick={() => addToCart(product, 1)}
-            className="btn-gold w-full py-2.5 text-xs uppercase tracking-wider font-semibold flex items-center justify-center gap-2 shadow"
+            className="btn-gold w-full py-2.5 text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2 shadow-lg"
           >
-            <ShoppingBag className="w-3.5 h-3.5" /> Express Add to Bag
+            <ShoppingBag className="w-4 h-4" /> Express Add to Bag
           </button>
         </div>
       </div>
@@ -113,19 +113,19 @@ export default function ProductCard({ product }: ProductCardProps) {
       {/* Card Content Details */}
       <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
         <div>
-          <div className="flex items-center justify-between text-[11px] mb-1">
-            <span className="text-[#B56A45] font-semibold tracking-wide uppercase">
+          <div className="flex items-center justify-between text-[11px] mb-1.5">
+            <span className="text-[#B56A45] font-bold tracking-wider uppercase font-cinzel text-[10px]">
               {product.craftRegion}
             </span>
-            <div className="flex items-center gap-1 text-amber-500 font-semibold">
+            <div className="flex items-center gap-1 text-amber-500 font-semibold bg-[#CDA45A]/10 border border-[#CDA45A]/30 px-2 py-0.5 rounded-full">
               <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
-              <span>{product.rating}</span>
-              <span className="text-gray-400">({product.reviewCount})</span>
+              <span className="text-xs text-[#1E1A18]">{product.rating}</span>
+              <span className="text-[10px] text-gray-500">({product.reviewCount})</span>
             </div>
           </div>
 
           <Link href={`/product/${product.id}`}>
-            <h4 className="font-serif-luxury text-base font-bold text-[#1E1A18] group-hover:text-[#CDA45A] transition-colors line-clamp-1">
+            <h4 className="font-serif-luxury text-lg font-bold text-[#1E1A18] group-hover:text-[#CDA45A] transition-colors line-clamp-1">
               {product.title}
             </h4>
           </Link>
@@ -135,9 +135,9 @@ export default function ProductCard({ product }: ProductCardProps) {
           </p>
         </div>
 
-        <div className="pt-2 border-t border-[#CDA45A]/15 flex items-center justify-between">
+        <div className="pt-3 border-t border-[#CDA45A]/20 flex items-center justify-between">
           <div className="flex items-baseline gap-2">
-            <span className="font-serif-luxury text-lg font-bold text-[#1E1A18]">
+            <span className="font-serif-luxury text-xl font-bold text-[#1E1A18]">
               {formatPrice(product.priceUSD, currency)}
             </span>
             {product.originalPriceUSD && (
@@ -148,7 +148,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           </div>
 
           {product.authenticityCertificate && (
-            <span className="text-[10px] text-[#3E5C4B] font-medium flex items-center gap-0.5" title="Authenticity Guaranteed">
+            <span className="text-[10px] text-[#3E5C4B] font-semibold flex items-center gap-1 bg-[#3E5C4B]/10 border border-[#3E5C4B]/30 px-2 py-0.5 rounded-full" title="Authenticity Guaranteed">
               <ShieldCheck className="w-3.5 h-3.5 text-[#3E5C4B]" /> Certified
             </span>
           )}
