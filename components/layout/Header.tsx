@@ -158,8 +158,8 @@ export default function Header() {
       <div
         className={`transition-all duration-300 border-b ${
           isScrolled
-            ? 'bg-[#F7F0E7]/95 backdrop-blur-md border-[#CDA45A]/30 py-1.5 shadow-md'
-            : 'bg-[#F7F0E7] border-[#CDA45A]/20 py-2.5'
+            ? 'bg-[#F7F0E7]/95 backdrop-blur-md border-[#CDA45A]/30 py-1 shadow-md'
+            : 'bg-[#F7F0E7] border-[#CDA45A]/20 py-1.5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
@@ -172,15 +172,15 @@ export default function Header() {
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
 
-          {/* Enlarged Royal Logo */}
-          <Link href="/" className="flex items-center shrink-0 py-1 group">
+          {/* Royal Logo */}
+          <Link href="/" className="flex items-center shrink-0 py-0.5 group">
             <img
               src="/logo-transp.png"
               alt="Hathipole The Bazaar Royal Logo"
               className={`w-auto object-contain hover:scale-105 transition-all duration-300 filter drop-shadow-md ${
                 isScrolled
-                  ? 'h-16 sm:h-18 md:h-20 lg:h-24 max-h-24'
-                  : 'h-20 sm:h-24 md:h-28 lg:h-32 max-h-36'
+                  ? 'h-12 sm:h-14 md:h-16 lg:h-18 max-h-20'
+                  : 'h-14 sm:h-16 md:h-20 lg:h-24 max-h-26'
               }`}
             />
           </Link>
