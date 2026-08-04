@@ -8,6 +8,7 @@ import { mockProducts } from '@/lib/data/mockProducts';
 import { mockArtisans } from '@/lib/data/mockArtisans';
 import { mockBlogs } from '@/lib/data/mockBlogs';
 import RoyalCrestDivider from '@/components/ui/RoyalCrestDivider';
+import GlobalReviewsCarousel from '@/components/home/GlobalReviewsCarousel';
 import {
   ArrowRight,
   Sparkles,
@@ -483,23 +484,8 @@ export default function HomePage() {
         )}
       </AnimatePresence>
 
-      {/* 8. Global Connoisseur Testimonial */}
-      <section className="max-w-4xl mx-auto px-6 text-center space-y-6 py-8">
-        <span className="font-cinzel text-xs tracking-[0.3em] text-[#CDA45A] uppercase block font-semibold">
-          Global Client Voice
-        </span>
-
-        <Quote className="w-10 h-10 text-[#CDA45A]/40 mx-auto" />
-
-        <p className="font-serif-luxury text-2xl sm:text-3xl text-[#1E1A18] leading-relaxed italic font-normal">
-          &ldquo;The 24K Gold Pichwai artwork arrived in New York encased in museum-grade acrylic. The detail of Shrinathji and the mineral gold shimmer is breathtaking in person.&rdquo;
-        </p>
-
-        <div className="space-y-0.5">
-          <h5 className="font-serif-luxury text-lg font-bold text-[#1E1A18]">Lady Eleanor Vance</h5>
-          <span className="text-xs text-gray-500 font-light">Interior Architect • New York, USA</span>
-        </div>
-      </section>
+      {/* 8. Auto-Sliding Global Reviews Carousel */}
+      <GlobalReviewsCarousel />
 
       {/* 9. Minimalist Heritage Journal Preview */}
       <section className="max-w-7xl mx-auto px-6 md:px-8 space-y-12">
