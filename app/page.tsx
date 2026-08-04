@@ -416,23 +416,31 @@ export default function HomePage() {
             <Quote className="w-12 h-12 text-[#CDA45A]/50" />
 
             <h3 className="font-serif-luxury text-3xl sm:text-4xl font-normal text-[#E6D2A8] leading-tight">
-              &ldquo;We use 24K real gold foil and natural minerals like lapis lazuli on cotton canvas, preserving techniques patronized by royalty since the 16th century.&rdquo;
+              &ldquo;With over 70 years of heritage experience and 350+ master artisan families across Kashmir, Rajasthan, Gujarat, Bengal, and Ladakh, every creation is history woven by human hands.&rdquo;
             </h3>
 
             <p className="text-xs sm:text-sm text-gray-300 font-light leading-relaxed">
-              {mockArtisans[0].story}
+              Explore the four master stories of Pashmina handlooms, 24K Gold Pichwai miniatures, regional weaves, and hand-carved handicrafts.
             </p>
 
             <div className="pt-4 border-t border-[#CDA45A]/20 flex flex-wrap items-center justify-between gap-4">
               <span className="text-xs text-[#CDA45A] font-bold">
-                38 Years of Royal Painting Lineage
+                70+ Years Heritage • 350+ Artisan Families
               </span>
-              <button
-                onClick={() => setIsVideoModalOpen(true)}
-                className="btn-gold px-6 py-2.5 text-xs font-bold uppercase tracking-wider flex items-center gap-2"
-              >
-                <Play className="w-3.5 h-3.5 fill-current" /> Watch Master Documentary
-              </button>
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={() => setIsVideoModalOpen(true)}
+                  className="btn-gold px-5 py-2.5 text-xs font-bold uppercase tracking-wider flex items-center gap-2"
+                >
+                  <Play className="w-3.5 h-3.5 fill-current" /> Watch Documentary
+                </button>
+                <Link
+                  href="/artisans"
+                  className="px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#FCFAF7] border border-[#CDA45A]/50 hover:bg-[#CDA45A] hover:text-[#1E1A18] rounded-xl transition-all"
+                >
+                  Read 4 Stories →
+                </Link>
+              </div>
             </div>
           </div>
         </div>

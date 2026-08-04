@@ -1,98 +1,196 @@
 'use client';
 
-import { mockArtisans } from '@/lib/data/mockArtisans';
-import { Sparkles, MapPin, Award, Heart, ShieldCheck, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { mockArtisanStories } from '@/lib/data/mockArtisans';
+import { Award, Users, MapPin, ArrowRight, ShieldCheck, Sparkles, Quote } from 'lucide-react';
 
 export default function ArtisansPage() {
   return (
-    <div className="max-w-7xl mx-auto px-6 md:px-8 py-14 space-y-16">
-      {/* Editorial Header */}
-      <div className="text-center max-w-3xl mx-auto space-y-4">
-        <span className="font-cinzel text-xs tracking-[0.3em] text-[#CDA45A] uppercase block font-semibold">
-          Empowering Indian Lineage Craftsmen
-        </span>
-        <h1 className="font-serif-luxury text-4xl sm:text-6xl font-bold text-[#1E1A18] tracking-tight">
-          The Artisans of Hathipole The Bazaar
-        </h1>
-        <div className="w-16 h-0.5 bg-[#CDA45A] mx-auto" />
-        <p className="text-sm md:text-base text-gray-600 leading-relaxed font-light">
-          Meet the master painters, carpet weavers, wood sculptors, and distillers who keep India’s 400-year-old royal art lineages alive through direct fair-trade partnership.
-        </p>
-      </div>
+    <div className="bg-[#F7F0E7] text-[#1E1A18] min-h-screen">
+      {/* 1. Grand Editorial Page Header */}
+      <section className="max-w-7xl mx-auto px-6 md:px-8 pt-16 pb-12 text-center space-y-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="space-y-3 max-w-3xl mx-auto"
+        >
+          <span className="font-cinzel text-xs tracking-[0.3em] text-[#CDA45A] uppercase block font-semibold">
+            Preserving India’s Heritage Artistry
+          </span>
 
-      {/* Artisans Interactive Luxury Cards */}
-      <div className="space-y-12">
-        {mockArtisans.map((artisan, idx) => (
-          <div
-            key={artisan.id}
-            className={`luxury-card-interactive grid grid-cols-1 lg:grid-cols-12 gap-8 items-center group p-2 md:p-4 ${
-              idx % 2 === 1 ? 'lg:flex-row-reverse' : ''
-            }`}
+          <h1 className="font-serif-luxury text-4xl sm:text-5xl md:text-6xl font-bold text-[#1E1A18] tracking-tight leading-tight">
+            The Artisan Stories of Hathipole The Bazaar
+          </h1>
+
+          <div className="w-20 h-0.5 bg-[#CDA45A] mx-auto" />
+
+          <p className="text-sm sm:text-base text-gray-700 font-light leading-relaxed">
+            Honouring centuries of traditional craft, master lineages, and rural artisan communities across India through authentic storytelling and direct fair-trade collaboration.
+          </p>
+        </motion.div>
+
+        {/* 2. Integrated Brand Trust Bar (70+ Years & 350+ Artisans) */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6"
+        >
+          <div className="bg-[#FCFAF7] border border-[#CDA45A]/30 rounded-2xl p-6 shadow-md flex items-center gap-4 text-left group hover:border-[#CDA45A] transition-all">
+            <div className="w-12 h-12 rounded-xl bg-[#CDA45A]/15 border border-[#CDA45A]/40 flex items-center justify-center text-[#CDA45A] shrink-0 group-hover:bg-[#CDA45A] group-hover:text-white transition-colors">
+              <Award className="w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="font-serif-luxury text-xl font-bold text-[#1E1A18]">70+ Years Legacy</h4>
+              <p className="text-xs text-gray-600 font-light">Seven decades preserving authentic Indian handicrafts.</p>
+            </div>
+          </div>
+
+          <div className="bg-[#FCFAF7] border border-[#CDA45A]/30 rounded-2xl p-6 shadow-md flex items-center gap-4 text-left group hover:border-[#CDA45A] transition-all">
+            <div className="w-12 h-12 rounded-xl bg-[#CDA45A]/15 border border-[#CDA45A]/40 flex items-center justify-center text-[#CDA45A] shrink-0 group-hover:bg-[#CDA45A] group-hover:text-white transition-colors">
+              <Users className="w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="font-serif-luxury text-xl font-bold text-[#1E1A18]">350+ Artisan Families</h4>
+              <p className="text-xs text-gray-600 font-light">Direct fair-trade partnerships across India.</p>
+            </div>
+          </div>
+
+          <div className="bg-[#FCFAF7] border border-[#CDA45A]/30 rounded-2xl p-6 shadow-md flex items-center gap-4 text-left group hover:border-[#CDA45A] transition-all">
+            <div className="w-12 h-12 rounded-xl bg-[#CDA45A]/15 border border-[#CDA45A]/40 flex items-center justify-center text-[#CDA45A] shrink-0 group-hover:bg-[#CDA45A] group-hover:text-white transition-colors">
+              <MapPin className="w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="font-serif-luxury text-xl font-bold text-[#1E1A18]">6 Artisan Regions</h4>
+              <p className="text-xs text-gray-600 font-light">Kashmir, Rajasthan, Gujarat, Bengal, Ladakh & South India.</p>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* 3. The 4 Master Artisan Stories (Generous Spacing & Editorial Layout) */}
+      <div className="max-w-7xl mx-auto px-6 md:px-8 py-10 space-y-24">
+        {mockArtisanStories.map((story, idx) => (
+          <motion.article
+            key={story.id}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="bg-[#FCFAF7] border border-[#CDA45A]/30 rounded-3xl p-8 sm:p-12 lg:p-16 shadow-xl space-y-10 relative overflow-hidden"
           >
-            <div className="lg:col-span-5 aspect-[4/5] relative rounded-2xl overflow-hidden shadow-lg">
-              <img
-                src={artisan.coverImage}
-                alt={artisan.name}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1E1A18]/90 via-[#1E1A18]/20 to-transparent flex items-end p-6">
-                <div className="flex items-center gap-4">
-                  <img
-                    src={artisan.avatar}
-                    alt={artisan.name}
-                    className="w-14 h-14 rounded-full border-2 border-[#CDA45A] object-cover shadow-lg"
-                  />
-                  <div>
-                    <h3 className="font-serif-luxury text-2xl font-bold text-[#FCFAF7] group-hover:text-[#E6D2A8] transition-colors">
-                      {artisan.name}
-                    </h3>
-                    <span className="text-xs text-[#CDA45A] font-semibold">{artisan.title}</span>
+            {/* Story Header */}
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#CDA45A]/20 pb-8">
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <span className="font-cinzel text-xs font-bold text-[#CDA45A] tracking-[0.25em] uppercase bg-[#1E1A18] text-[#E6D2A8] px-3.5 py-1 rounded-full border border-[#CDA45A]/40">
+                    Story {story.number}
+                  </span>
+                  <span className="text-xs text-gray-500 font-semibold uppercase tracking-wider flex items-center gap-1">
+                    <MapPin className="w-3.5 h-3.5 text-[#CDA45A]" /> {story.region}
+                  </span>
+                </div>
+
+                <h2 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-bold text-[#1E1A18] tracking-tight">
+                  {story.title}
+                </h2>
+
+                <p className="text-xs sm:text-sm text-[#B56A45] font-semibold tracking-wide uppercase">
+                  {story.subtitle}
+                </p>
+              </div>
+
+              <Link
+                href={story.categoryLink}
+                className="btn-gold px-6 py-3 text-xs font-bold uppercase tracking-widest flex items-center gap-2 whitespace-nowrap self-start md:self-auto shadow-md"
+              >
+                Explore Collection <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            {/* Story Content Grid: Image + Paragraphs */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              {/* Handcrafted Image */}
+              <div
+                className={`lg:col-span-5 aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative border border-[#CDA45A]/40 group ${
+                  idx % 2 === 1 ? 'lg:order-2' : 'lg:order-1'
+                }`}
+              >
+                <img
+                  src={story.coverImage}
+                  alt={story.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1E1A18]/80 via-transparent to-transparent flex items-end p-6">
+                  <div className="flex items-center gap-2 text-[#E6D2A8] text-xs font-semibold">
+                    <ShieldCheck className="w-4 h-4 text-[#CDA45A]" />
+                    <span>Certified Authentic Heritage Creation</span>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className="lg:col-span-7 p-6 md:p-8 space-y-6">
-              {/* Gold Foil Badge Header */}
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="badge-gold-foil px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#1E1A18] flex items-center gap-1.5">
-                  <Award className="w-4 h-4 text-[#CDA45A]" /> {artisan.experienceYears} Years Master Experience
-                </span>
-                <span className="bg-[#1E1A18] text-[#E6D2A8] px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 border border-[#CDA45A]/40">
-                  <MapPin className="w-3.5 h-3.5 text-[#CDA45A]" /> {artisan.region}
-                </span>
-              </div>
+              {/* Rich Editorial Paragraphs */}
+              <div
+                className={`lg:col-span-7 space-y-6 text-gray-800 leading-relaxed font-light text-base sm:text-lg ${
+                  idx % 2 === 1 ? 'lg:order-1' : 'lg:order-2'
+                }`}
+              >
+                {story.paragraphs.map((para, pIdx) => {
+                  if (pIdx === 0) {
+                    // First paragraph with elegant drop cap
+                    const firstChar = para.charAt(0);
+                    const restPara = para.slice(1);
+                    return (
+                      <p key={pIdx} className="text-gray-800 leading-relaxed">
+                        <span className="float-left text-5xl font-serif-luxury font-bold text-[#CDA45A] pr-3 pt-1 leading-none">
+                          {firstChar}
+                        </span>
+                        {restPara}
+                      </p>
+                    );
+                  }
+                  return (
+                    <p key={pIdx} className="text-gray-800 leading-relaxed">
+                      {para}
+                    </p>
+                  );
+                })}
 
-              <h3 className="font-serif-luxury text-3xl md:text-4xl font-bold text-[#1E1A18] leading-tight">
-                Specialty: {artisan.specialty}
-              </h3>
-
-              <p className="text-sm text-gray-600 leading-relaxed font-light">
-                {artisan.story}
-              </p>
-
-              <div className="pt-4 border-t border-[#CDA45A]/20 flex flex-wrap items-center justify-between gap-4 text-xs text-gray-600">
-                <div className="flex items-center gap-4">
-                  <span className="flex items-center gap-1.5 text-[#3E5C4B] font-bold">
-                    <ShieldCheck className="w-4 h-4 text-[#3E5C4B]" /> Certified Master Craftsman
-                  </span>
-                  <span className="flex items-center gap-1.5 text-[#B56A45] font-bold">
-                    <Heart className="w-4 h-4 text-[#B56A45]" /> Direct Fair-Trade Beneficiary
-                  </span>
+                {/* Story Closing Highlight Quote */}
+                <div className="bg-[#F7F0E7] border-l-4 border-[#CDA45A] p-6 rounded-r-2xl shadow-sm space-y-2 mt-6">
+                  <Quote className="w-6 h-6 text-[#CDA45A]" />
+                  <p className="font-serif-luxury text-xl sm:text-2xl text-[#1E1A18] italic font-medium leading-snug">
+                    &ldquo;{story.closingQuote}&rdquo;
+                  </p>
                 </div>
-
-                <Link
-                  href={`/shop?search=${encodeURIComponent(artisan.name.split(' ')[0])}`}
-                  className="btn-gold px-6 py-2.5 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-md"
-                >
-                  View Creations <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
               </div>
             </div>
-          </div>
+          </motion.article>
         ))}
       </div>
+
+      {/* 4. Footer Trust Statement Callout */}
+      <section className="max-w-5xl mx-auto px-6 pb-20 pt-8 text-center space-y-6">
+        <div className="bg-[#1E1A18] border border-[#CDA45A]/40 rounded-3xl p-10 md:p-14 text-[#FCFAF7] space-y-4 shadow-2xl relative overflow-hidden">
+          <Sparkles className="w-10 h-10 text-[#CDA45A] mx-auto animate-pulse" />
+          <h3 className="font-serif-luxury text-3xl sm:text-4xl font-bold text-[#E6D2A8]">
+            Sustaining India’s Heritage Artistry Together
+          </h3>
+          <p className="text-xs sm:text-sm text-gray-300 font-light max-w-2xl mx-auto leading-relaxed">
+            Every creation selected from Hathipole The Bazaar directly funds artisan livelihoods, supports rural education in craft villages, and ensures India’s 70-year heritage of handmade mastery lives on.
+          </p>
+          <div className="pt-4">
+            <Link
+              href="/shop"
+              className="btn-gold px-8 py-3.5 text-xs font-bold uppercase tracking-widest inline-flex items-center gap-2 shadow-xl"
+            >
+              Discover Handcrafted Creations <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
