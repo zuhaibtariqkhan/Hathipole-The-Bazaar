@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProductCard from '@/components/product/ProductCard';
 import { mockProducts } from '@/lib/data/mockProducts';
-import { mockArtisans } from '@/lib/data/mockArtisans';
+import { mockArtisans, mockArtisanStories } from '@/lib/data/mockArtisans';
 import { mockBlogs } from '@/lib/data/mockBlogs';
 import RoyalCrestDivider from '@/components/ui/RoyalCrestDivider';
 import GlobalReviewsCarousel from '@/components/home/GlobalReviewsCarousel';
@@ -17,10 +17,7 @@ import {
   Heart,
   Quote,
   Star,
-  Compass,
-  Play,
-  X,
-  Volume2
+  Compass
 } from 'lucide-react';
 
 const heroSlides = [
@@ -89,6 +86,7 @@ const featuredCollections = [
 export default function HomePage() {
   const [heroIndex, setHeroIndex] = useState(0);
   const [activeTab, setActiveTab] = useState<'bestsellers' | 'new' | 'limited'>('bestsellers');
+  const [activeStoryIndex, setActiveStoryIndex] = useState(0);
 
   const displayedProducts = mockProducts.filter((p) => {
     if (activeTab === 'bestsellers') return p.isBestSeller;
@@ -393,33 +391,83 @@ export default function HomePage() {
 
       {/* 7. Master Artisan Spotlight Showcase */}
       <section className="bg-[#1E1A18] text-[#FCFAF7] py-24 border-y-2 border-[#CDA45A]/40 relative overflow-hidden shadow-2xl">
+        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-25">
+          <div className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full bg-[#CDA45A]/10 blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-[#E6D2A8]/10 blur-3xl" />
+        </div>
+
         <div className="max-w-6xl mx-auto px-6 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-          <div className="lg:col-span-5 aspect-[4/5] rounded-3xl overflow-hidden border-2 border-[#CDA45A]/50 shadow-2xl relative group">
-            <img
-              src={mockArtisans[0].coverImage}
-              alt={mockArtisans[0].name}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#1E1A18]/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
-            <div className="absolute bottom-6 left-6 right-6">
-              <span className="text-[10px] font-bold text-[#E6D2A8] uppercase tracking-widest bg-[#1E1A18]/80 px-3.5 py-1 rounded-full border border-[#CDA45A]/40 inline-block mb-1">
-                Heritage Craftsmanship
-              </span>
-              <h4 className="font-serif-luxury text-lg font-bold text-white">
-                {mockArtisans[0].name}
-              </h4>
+          {/* Left Column: Gallery & Thumbnails */}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="aspect-[4/5] rounded-3xl overflow-hidden border-2 border-[#CDA45A]/50 shadow-2xl relative group bg-black/40">
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={activeStoryIndex}
+                  src={mockArtisanStories[activeStoryIndex].coverImage}
+                  alt={mockArtisanStories[activeStoryIndex].title}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.5 }}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+              </AnimatePresence>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1E1A18]/90 via-[#1E1A18]/30 to-transparent opacity-90 group-hover:opacity-75 transition-opacity" />
+              <div className="absolute bottom-6 left-6 right-6 space-y-1">
+                <span className="text-[10px] font-bold text-[#E6D2A8] uppercase tracking-widest bg-[#1E1A18]/80 px-3.5 py-1 rounded-full border border-[#CDA45A]/40 inline-block">
+                  Story {mockArtisanStories[activeStoryIndex].number} • {mockArtisanStories[activeStoryIndex].region}
+                </span>
+                <h4 className="font-serif-luxury text-xl font-bold text-white">
+                  {mockArtisanStories[activeStoryIndex].title}
+                </h4>
+              </div>
+            </div>
+
+            {/* Interactive Image Thumbnails */}
+            <div className="grid grid-cols-4 gap-3">
+              {mockArtisanStories.map((story, idx) => (
+                <button
+                  key={story.id}
+                  onClick={() => setActiveStoryIndex(idx)}
+                  className={`relative aspect-[4/5] rounded-xl overflow-hidden border-2 transition-all duration-300 ${
+                    activeStoryIndex === idx
+                      ? 'border-[#CDA45A] scale-105 shadow-lg'
+                      : 'border-transparent opacity-50 hover:opacity-100 hover:scale-102'
+                  }`}
+                  aria-label={`View story ${story.number}`}
+                >
+                  <img src={story.coverImage} alt={story.title} className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-black/35 hover:bg-transparent transition-colors" />
+                  <div className="absolute bottom-1 right-2 text-[10px] font-bold text-white drop-shadow-md">
+                    {story.number}
+                  </div>
+                </button>
+              ))}
             </div>
           </div>
 
+          {/* Right Column: Editorial Text details */}
           <div className="lg:col-span-7 space-y-6">
             <Quote className="w-12 h-12 text-[#CDA45A]/50" />
 
-            <h3 className="font-serif-luxury text-3xl sm:text-4xl font-normal text-[#E6D2A8] leading-tight">
-              &ldquo;With over 70 years of heritage experience and 350+ master artisan families across Kashmir, Rajasthan, Gujarat, Bengal, and Ladakh, every creation is history woven by human hands.&rdquo;
-            </h3>
+            <div className="space-y-3">
+              <span className="font-cinzel text-xs font-bold text-[#CDA45A] tracking-[0.25em] uppercase">
+                {mockArtisanStories[activeStoryIndex].region}
+              </span>
+              <h3 className="font-serif-luxury text-3xl sm:text-4xl font-normal text-[#E6D2A8] leading-tight">
+                {mockArtisanStories[activeStoryIndex].title}
+              </h3>
+              <p className="text-xs sm:text-sm text-[#B56A45] font-semibold tracking-wide uppercase">
+                {mockArtisanStories[activeStoryIndex].subtitle}
+              </p>
+            </div>
 
-            <p className="text-xs sm:text-sm text-gray-300 font-light leading-relaxed">
-              Explore the four master stories of Pashmina handlooms, 24K Gold Pichwai miniatures, regional weaves, and hand-carved handicrafts.
+            <p className="text-sm sm:text-base text-gray-300 font-light leading-relaxed italic border-l-2 border-[#CDA45A] pl-4">
+              &ldquo;{mockArtisanStories[activeStoryIndex].closingQuote}&rdquo;
+            </p>
+
+            <p className="text-xs sm:text-sm text-gray-400 font-light leading-relaxed line-clamp-3">
+              {mockArtisanStories[activeStoryIndex].paragraphs[0]}
             </p>
 
             <div className="pt-4 border-t border-[#CDA45A]/20 flex flex-wrap items-center justify-between gap-4">
@@ -428,10 +476,16 @@ export default function HomePage() {
               </span>
               <div className="flex items-center gap-3">
                 <Link
-                  href="/artisans"
-                  className="btn-gold px-6 py-3 text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-xl"
+                  href={mockArtisanStories[activeStoryIndex].categoryLink}
+                  className="btn-gold px-5 py-2.5 text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-md hover:scale-105 transition-transform"
                 >
-                  Explore Artisan Stories <ArrowRight className="w-4 h-4" />
+                  Explore Collection <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="/artisans"
+                  className="px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#FCFAF7] border border-[#CDA45A]/50 hover:bg-[#CDA45A] hover:text-[#1E1A18] rounded-xl transition-all shadow-sm"
+                >
+                  All Stories
                 </Link>
               </div>
             </div>
