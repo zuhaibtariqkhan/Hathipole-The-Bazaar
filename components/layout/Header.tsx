@@ -154,56 +154,56 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 transition-all duration-300">
-      {/* Main Luxury Header Bar - Grand & Spacious */}
+      {/* Sleek, Compact Header Bar */}
       <div
         className={`transition-all duration-300 border-b ${
           isScrolled
-            ? 'bg-[#F7F0E7]/95 backdrop-blur-md border-[#CDA45A]/30 py-3 shadow-lg'
-            : 'bg-[#F7F0E7] border-[#CDA45A]/20 py-5 md:py-6'
+            ? 'bg-[#F7F0E7]/95 backdrop-blur-md border-[#CDA45A]/30 py-1.5 shadow-md'
+            : 'bg-[#F7F0E7] border-[#CDA45A]/20 py-2.5'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
           {/* Mobile Menu Trigger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2.5 text-[#1E1A18] hover:text-[#CDA45A] transition-colors"
+            className="lg:hidden p-2 text-[#1E1A18] hover:text-[#CDA45A] transition-colors"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
 
-          {/* Grand & Clearly Visible Header Logo */}
-          <Link href="/" className="flex items-center shrink-0 py-1 group">
+          {/* Sleek & Compact Logo */}
+          <Link href="/" className="flex items-center shrink-0 py-0.5 group">
             <img
               src="/logo-transp.png"
               alt="Hathipole The Bazaar Royal Logo"
-              className="h-20 sm:h-24 md:h-28 lg:h-32 max-h-36 w-auto object-contain hover:scale-105 transition-transform duration-300 filter drop-shadow-md"
+              className="h-10 sm:h-12 md:h-14 lg:h-16 max-h-18 w-auto object-contain hover:scale-105 transition-transform duration-300"
             />
           </Link>
 
-          {/* Grand AI Search Bar Trigger */}
+          {/* Compact AI Search Bar */}
           <div
             onClick={() => setSearchModalOpen(true)}
-            className="hidden md:flex items-center gap-3.5 bg-[#FCFAF7] border border-[#CDA45A]/40 hover:border-[#CDA45A] px-5 py-3 rounded-full cursor-pointer w-72 lg:w-[28rem] transition-all shadow-md group"
+            className="hidden md:flex items-center gap-2.5 bg-[#FCFAF7] border border-[#CDA45A]/30 hover:border-[#CDA45A] px-3.5 py-1.5 rounded-full cursor-pointer w-60 lg:w-80 transition-all shadow-sm group"
           >
-            <Search className="w-5 h-5 text-[#CDA45A]" />
-            <span className="text-xs sm:text-sm text-gray-500 flex-1 truncate font-light">
-              Search silk rugs, 24K Pichwai art, pure attar...
+            <Search className="w-3.5 h-3.5 text-[#CDA45A]" />
+            <span className="text-xs text-gray-500 flex-1 truncate font-light">
+              Search silk rugs, 24K Pichwai art...
             </span>
-            <span className="flex items-center gap-1 bg-[#F7F0E7] text-xs text-[#CDA45A] font-semibold px-2.5 py-1 rounded-full border border-[#CDA45A]/30 group-hover:bg-[#CDA45A] group-hover:text-white transition-colors">
-              <Sparkles className="w-3.5 h-3.5 inline" /> AI
+            <span className="flex items-center gap-1 bg-[#F7F0E7] text-[10px] text-[#CDA45A] font-semibold px-2 py-0.5 rounded-full border border-[#CDA45A]/20 group-hover:bg-[#CDA45A] group-hover:text-white transition-colors">
+              <Sparkles className="w-3 h-3 inline" /> AI
             </span>
           </div>
 
-          {/* User Action Icons & Currency Switcher */}
-          <div className="flex items-center gap-4 sm:gap-6 text-[#1E1A18]">
+          {/* Action Controls & Currency Selector */}
+          <div className="flex items-center gap-3 text-[#1E1A18]">
             {/* Currency Selector Badge */}
-            <div className="hidden sm:flex items-center gap-2 bg-[#1E1A18] text-[#FCFAF7] px-4 py-2 rounded-full border border-[#CDA45A]/50 shadow-md">
-              <Globe className="w-4 h-4 text-[#CDA45A]" />
+            <div className="hidden sm:flex items-center gap-1.5 bg-[#1E1A18] text-[#FCFAF7] px-3 py-1 rounded-full border border-[#CDA45A]/40 shadow-sm">
+              <Globe className="w-3.5 h-3.5 text-[#CDA45A]" />
               <select
                 value={currency}
                 onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
-                className="bg-transparent text-[#FCFAF7] font-semibold cursor-pointer focus:outline-none text-xs sm:text-sm"
+                className="bg-transparent text-[#FCFAF7] font-semibold cursor-pointer focus:outline-none text-xs"
               >
                 {currencyList.map((c) => (
                   <option key={c.code} value={c.code} className="bg-[#1E1A18] text-[#FCFAF7]">
@@ -215,30 +215,30 @@ export default function Header() {
 
             <button
               onClick={() => setSearchModalOpen(true)}
-              className="md:hidden p-2 hover:text-[#CDA45A] transition-colors"
+              className="md:hidden p-1.5 hover:text-[#CDA45A] transition-colors"
               aria-label="Search"
             >
-              <Search className="w-6 h-6" />
+              <Search className="w-5 h-5" />
             </button>
 
             {compareIds.length > 0 && (
               <button
                 onClick={() => setCompareModalOpen(true)}
-                className="hidden xl:flex items-center gap-2 text-xs font-semibold text-[#CDA45A] border border-[#CDA45A]/50 px-3.5 py-2 rounded-full hover:bg-[#CDA45A] hover:text-white transition-all shadow-sm"
+                className="hidden xl:flex items-center gap-1.5 text-xs font-semibold text-[#CDA45A] border border-[#CDA45A]/40 px-2.5 py-1 rounded-full hover:bg-[#CDA45A] hover:text-white transition-all shadow-sm"
               >
-                <SlidersHorizontal className="w-4 h-4" />
+                <SlidersHorizontal className="w-3.5 h-3.5" />
                 Compare ({compareIds.length})
               </button>
             )}
 
             <Link
               href="/account?tab=wishlist"
-              className="relative p-2 hover:text-[#CDA45A] transition-colors"
+              className="relative p-1.5 hover:text-[#CDA45A] transition-colors"
               title="Wishlist"
             >
-              <Heart className="w-6 h-6 sm:w-7 sm:h-7" />
+              <Heart className="w-5 h-5" />
               {wishlistIds.length > 0 && (
-                <span className="absolute top-0 right-0 w-5 h-5 bg-[#CDA45A] text-white text-xs font-bold rounded-full flex items-center justify-center shadow-md">
+                <span className="absolute top-0 right-0 w-4 h-4 bg-[#CDA45A] text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-md">
                   {wishlistIds.length}
                 </span>
               )}
@@ -246,79 +246,79 @@ export default function Header() {
 
             <Link
               href="/account"
-              className="p-2 hover:text-[#CDA45A] transition-colors hidden sm:block"
+              className="p-1.5 hover:text-[#CDA45A] transition-colors hidden sm:block"
               title="My Account"
             >
-              <User className="w-6 h-6 sm:w-7 sm:h-7" />
+              <User className="w-5 h-5" />
             </Link>
 
             <button
               onClick={() => setCartDrawerOpen(true)}
-              className="relative flex items-center gap-2.5 bg-[#1E1A18] text-[#FCFAF7] hover:bg-[#CDA45A] px-5 py-2.5 rounded-full transition-all shadow-lg group"
+              className="relative flex items-center gap-2 bg-[#1E1A18] text-[#FCFAF7] hover:bg-[#CDA45A] px-3.5 py-1.5 rounded-full transition-all shadow-md group"
             >
-              <ShoppingBag className="w-5 h-5 text-[#CDA45A] group-hover:text-white transition-colors" />
-              <span className="text-xs sm:text-sm font-bold">{totalCartItems}</span>
+              <ShoppingBag className="w-4 h-4 text-[#CDA45A] group-hover:text-white transition-colors" />
+              <span className="text-xs font-bold">{totalCartItems}</span>
             </button>
           </div>
         </div>
 
-        {/* Grand Category Navigation Bar */}
-        <nav className="hidden lg:block border-t border-[#CDA45A]/20 mt-4 pt-3">
-          <div className="max-w-7xl mx-auto px-10 flex items-center justify-between gap-8 overflow-x-auto no-scrollbar">
+        {/* Compact Category Navigation Bar */}
+        <nav className="hidden lg:block border-t border-[#CDA45A]/15 mt-1.5 pt-1.5">
+          <div className="max-w-7xl mx-auto px-8 flex items-center justify-between gap-6 overflow-x-auto no-scrollbar">
             <Link
               href="/shop"
-              className="text-xs sm:text-sm font-bold tracking-widest text-[#1E1A18] hover:text-[#CDA45A] uppercase py-2 transition-colors whitespace-nowrap flex items-center gap-1.5"
+              className="text-xs font-bold tracking-wider text-[#1E1A18] hover:text-[#CDA45A] uppercase py-1 transition-colors whitespace-nowrap flex items-center gap-1"
             >
-              <Compass className="w-4 h-4 text-[#CDA45A]" /> All Collections
+              <Compass className="w-3.5 h-3.5 text-[#CDA45A]" /> All Collections
             </Link>
 
             {megaMenuCategories.slice(0, 9).map((cat) => (
               <div
                 key={cat.slug}
-                className="relative group py-2"
+                className="relative group py-1"
                 onMouseEnter={() => setActiveCategory(cat.slug)}
                 onMouseLeave={() => setActiveCategory(null)}
               >
                 <Link
                   href={`/shop?category=${cat.slug}`}
-                  className="text-xs sm:text-sm font-medium tracking-wide text-[#3D3A36] hover:text-[#CDA45A] transition-colors whitespace-nowrap flex items-center gap-1"
+                  className="text-xs font-medium tracking-wide text-[#3D3A36] hover:text-[#CDA45A] transition-colors whitespace-nowrap flex items-center gap-1"
                 >
                   {cat.name}
-                  <ChevronDown className="w-3.5 h-3.5 text-[#CDA45A]/70 group-hover:rotate-180 transition-transform" />
+                  <ChevronDown className="w-3 h-3 text-[#CDA45A]/60 group-hover:rotate-180 transition-transform" />
                 </Link>
 
-                <div className="absolute left-0 top-full hidden group-hover:block w-80 bg-[#FCFAF7] border border-[#CDA45A]/40 rounded-2xl shadow-2xl p-5 z-50 animate-fadeIn">
-                  <div className="flex items-center justify-between mb-3.5 border-b border-[#CDA45A]/20 pb-2.5">
-                    <span className="font-serif-luxury text-lg font-bold text-[#1E1A18]">
+                <div className="absolute left-0 top-full hidden group-hover:block w-72 bg-[#FCFAF7] border border-[#CDA45A]/30 rounded-xl shadow-2xl p-4 z-50 animate-fadeIn">
+                  <div className="flex items-center justify-between mb-3 border-b border-[#CDA45A]/20 pb-2">
+                    <span className="font-serif-luxury text-base font-semibold text-[#1E1A18]">
                       {cat.name}
                     </span>
-                    <span className="text-xs text-[#B56A45] font-semibold uppercase tracking-wider">
+                    <span className="text-[10px] text-[#B56A45] font-medium uppercase">
                       {cat.region}
                     </span>
                   </div>
 
-                  <ul className="space-y-2.5 mb-4">
+                  <ul className="space-y-2 mb-4">
                     {cat.subcategories.map((sub) => (
                       <li key={sub}>
                         <Link
                           href={`/shop?category=${cat.slug}&subcategory=${encodeURIComponent(sub)}`}
-                          className="text-xs sm:text-sm text-gray-700 hover:text-[#CDA45A] transition-colors flex items-center justify-between"
+                          className="text-xs text-gray-700 hover:text-[#CDA45A] transition-colors flex items-center justify-between"
                         >
                           <span>{sub}</span>
-                          <span className="text-xs text-gray-400">→</span>
+                          <span className="text-[10px] text-gray-400">→</span>
                         </Link>
                       </li>
                     ))}
                   </ul>
 
-                  <div className="relative h-28 rounded-xl overflow-hidden group/img">
+                  <div className="relative h-24 rounded-lg overflow-hidden group/img">
                     <img
                       src={cat.image}
                       alt={cat.name}
                       className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1E1A18]/85 to-transparent flex items-end p-3">
-                      <span className="text-xs font-bold text-[#E6D2A8] uppercase tracking-wider">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1E1A18]/80 to-transparent flex items-end p-2">
+                      <span className="text-[10px] font-semibold text-[#E6D2A8] uppercase tracking-wider">
                         Explore Authentic {cat.name}
                       </span>
                     </div>
@@ -329,13 +329,13 @@ export default function Header() {
 
             <Link
               href="/artisans"
-              className="text-xs sm:text-sm font-bold tracking-widest text-[#B56A45] hover:text-[#CDA45A] uppercase py-2 transition-colors whitespace-nowrap"
+              className="text-xs font-bold tracking-wider text-[#B56A45] hover:text-[#CDA45A] uppercase py-1 transition-colors whitespace-nowrap"
             >
               Artisan Stories
             </Link>
             <Link
               href="/bespoke"
-              className="text-xs sm:text-sm font-bold tracking-widest text-[#CDA45A] hover:text-[#1E1A18] uppercase py-2 transition-colors whitespace-nowrap"
+              className="text-xs font-bold tracking-wider text-[#CDA45A] hover:text-[#1E1A18] uppercase py-1 transition-colors whitespace-nowrap"
             >
               Bespoke Consult
             </Link>
@@ -343,10 +343,10 @@ export default function Header() {
         </nav>
 
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#FCFAF7] border-b border-[#CDA45A]/30 px-6 py-6 space-y-6 animate-fadeIn">
+          <div className="lg:hidden bg-[#FCFAF7] border-b border-[#CDA45A]/30 px-6 py-4 space-y-4 animate-fadeIn">
             {/* Mobile Currency Switcher */}
-            <div className="flex items-center justify-between bg-[#1E1A18] text-[#E6D2A8] px-5 py-3 rounded-2xl shadow-md">
-              <span className="text-xs font-semibold flex items-center gap-2">
+            <div className="flex items-center justify-between bg-[#1E1A18] text-[#E6D2A8] px-4 py-2 rounded-xl">
+              <span className="text-xs font-semibold flex items-center gap-1.5">
                 <Globe className="w-4 h-4 text-[#CDA45A]" /> Global Currency:
               </span>
               <select
@@ -365,24 +365,22 @@ export default function Header() {
             <Link
               href="/shop"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-base font-bold text-[#1E1A18] hover:text-[#CDA45A]"
+              className="block text-sm font-semibold text-[#1E1A18] hover:text-[#CDA45A]"
             >
               Explore All Collections
             </Link>
-
             <div className="grid grid-cols-2 gap-3 pt-2">
               {megaMenuCategories.map((cat) => (
                 <Link
                   key={cat.slug}
                   href={`/shop?category=${cat.slug}`}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-xs font-medium text-gray-700 hover:text-[#CDA45A] p-2.5 bg-[#F7F0E7] rounded-xl border border-[#CDA45A]/20"
+                  className="text-xs text-gray-700 hover:text-[#CDA45A] p-2 bg-[#F7F0E7] rounded-lg"
                 >
                   {cat.name}
                 </Link>
               ))}
             </div>
-
             <div className="border-t border-[#CDA45A]/20 pt-4 flex justify-between text-xs font-bold uppercase tracking-wider">
               <Link href="/artisans" onClick={() => setMobileMenuOpen(false)} className="text-[#B56A45]">
                 Artisan Stories

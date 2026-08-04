@@ -31,6 +31,19 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
   const [activeAccordion, setActiveAccordion] = useState<'story' | 'specs' | 'care' | 'shipping'>('story');
   const [quantity, setQuantity] = useState(1);
 
+  // High-Res Image Lens Magnifier State
+  const [showMagnifier, setShowMagnifier] = useState(false);
+  const [magnifierPos, setMagnifierPos] = useState({ x: 0, y: 0, bgX: 0, bgY: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - left;
+    const y = e.clientY - top;
+    const bgX = (x / width) * 100;
+    const bgY = (y / height) * 100;
+    setMagnifierPos({ x, y, bgX, bgY });
+  };
+
   const { currency, addToCart, toggleWishlist, wishlistIds, showToast } = useStore();
   const isWishlisted = wishlistIds.includes(product.id);
 
@@ -58,16 +71,37 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
 
       {/* Main PDP Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        {/* Gallery Column (7 cols) */}
+        {/* Gallery Column with High-Res Image Lens Magnifier */}
         <div className="lg:col-span-7 space-y-4 sticky top-28">
-          <div className="aspect-[4/5] rounded-3xl overflow-hidden bg-gray-100 border border-[#CDA45A]/30 shadow-2xl relative group">
+          <div
+            className="aspect-[4/5] rounded-3xl overflow-hidden bg-gray-100 border border-[#CDA45A]/30 shadow-2xl relative cursor-crosshair group"
+            onMouseEnter={() => setShowMagnifier(true)}
+            onMouseLeave={() => setShowMagnifier(false)}
+            onMouseMove={handleMouseMove}
+          >
             <img
               src={product.images[selectedImage] || product.images[0]}
               alt={product.title}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              className="w-full h-full object-cover"
             />
+
+            {/* High-Res Lens Magnifier Overlay */}
+            {showMagnifier && (
+              <div
+                className="pointer-events-none absolute w-44 h-44 rounded-full border-2 border-[#CDA45A] shadow-2xl hidden md:block z-30"
+                style={{
+                  top: `${magnifierPos.y - 88}px`,
+                  left: `${magnifierPos.x - 88}px`,
+                  backgroundImage: `url(${product.images[selectedImage] || product.images[0]})`,
+                  backgroundPosition: `${magnifierPos.bgX}% ${magnifierPos.bgY}%`,
+                  backgroundSize: '300%',
+                  boxShadow: '0 0 25px rgba(205, 164, 90, 0.4), inset 0 0 15px rgba(0, 0, 0, 0.2)'
+                }}
+              />
+            )}
+
             {product.isLimitedEdition && (
-              <span className="absolute top-4 left-4 bg-[#B56A45] text-white text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow">
+              <span className="absolute top-4 left-4 badge-gold-foil text-[#1E1A18] text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full z-20">
                 Collector Limited Edition
               </span>
             )}

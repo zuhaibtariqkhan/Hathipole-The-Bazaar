@@ -7,6 +7,7 @@ import ProductCard from '@/components/product/ProductCard';
 import { mockProducts } from '@/lib/data/mockProducts';
 import { mockArtisans } from '@/lib/data/mockArtisans';
 import { mockBlogs } from '@/lib/data/mockBlogs';
+import RoyalCrestDivider from '@/components/ui/RoyalCrestDivider';
 import {
   ArrowRight,
   Sparkles,
@@ -270,8 +271,13 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Royal Crest Divider */}
+      <div className="max-w-5xl mx-auto px-6">
+        <RoyalCrestDivider label="Royal Heritage" />
+      </div>
+
       {/* 4. Brand Story Editorial */}
-      <section className="max-w-5xl mx-auto px-6 py-8">
+      <section className="max-w-5xl mx-auto px-6 py-4">
         <div className="text-center space-y-8">
           <span className="font-cinzel text-xs tracking-[0.3em] text-[#CDA45A] uppercase block font-semibold">
             The Philosophy of Hathipole
