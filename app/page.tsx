@@ -137,32 +137,67 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. Value Proposition Strip */}
-      <section className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 py-8 border-y border-[#CDA45A]/20 text-center">
-          <div className="space-y-1">
-            <h4 className="font-serif-luxury text-base font-semibold text-[#1E1A18]">
-              100% Master Artisans
-            </h4>
-            <p className="text-xs text-gray-500 font-light">Certified master craft lineages</p>
+      {/* 2. Value Proposition Luxury Feature Cards */}
+      <section className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="bg-[#FCFAF7] border border-[#CDA45A]/30 hover:border-[#CDA45A] rounded-3xl p-8 space-y-4 shadow-luxury hover:-translate-y-1.5 transition-all duration-300 group text-center sm:text-left flex flex-col items-center sm:items-start">
+            <div className="w-14 h-14 rounded-2xl bg-[#CDA45A]/10 border border-[#CDA45A]/40 flex items-center justify-center text-[#CDA45A] group-hover:scale-110 group-hover:bg-[#CDA45A] group-hover:text-white transition-all duration-300 shadow-md">
+              <ShieldCheck className="w-7 h-7" />
+            </div>
+            <div>
+              <h4 className="font-serif-luxury text-xl font-bold text-[#1E1A18] group-hover:text-[#CDA45A] transition-colors">
+                100% Master Artisans
+              </h4>
+              <div className="w-10 h-0.5 bg-[#CDA45A]/40 group-hover:w-16 transition-all my-2 mx-auto sm:mx-0" />
+              <p className="text-xs sm:text-sm text-gray-600 font-light leading-relaxed">
+                Certified master craft lineages preserving 400-year royal heritage techniques.
+              </p>
+            </div>
           </div>
-          <div className="space-y-1">
-            <h4 className="font-serif-luxury text-base font-semibold text-[#1E1A18]">
-              Worldwide Air Courier
-            </h4>
-            <p className="text-xs text-gray-500 font-light">FedEx & DHL express door-to-door</p>
+
+          <div className="bg-[#FCFAF7] border border-[#CDA45A]/30 hover:border-[#CDA45A] rounded-3xl p-8 space-y-4 shadow-luxury hover:-translate-y-1.5 transition-all duration-300 group text-center sm:text-left flex flex-col items-center sm:items-start">
+            <div className="w-14 h-14 rounded-2xl bg-[#CDA45A]/10 border border-[#CDA45A]/40 flex items-center justify-center text-[#CDA45A] group-hover:scale-110 group-hover:bg-[#CDA45A] group-hover:text-white transition-all duration-300 shadow-md">
+              <Truck className="w-7 h-7" />
+            </div>
+            <div>
+              <h4 className="font-serif-luxury text-xl font-bold text-[#1E1A18] group-hover:text-[#CDA45A] transition-colors">
+                Worldwide Air Courier
+              </h4>
+              <div className="w-10 h-0.5 bg-[#CDA45A]/40 group-hover:w-16 transition-all my-2 mx-auto sm:mx-0" />
+              <p className="text-xs sm:text-sm text-gray-600 font-light leading-relaxed">
+                Insured door-to-door express delivery via FedEx & DHL to 120+ countries.
+              </p>
+            </div>
           </div>
-          <div className="space-y-1">
-            <h4 className="font-serif-luxury text-base font-semibold text-[#1E1A18]">
-              Bespoke Crafting
-            </h4>
-            <p className="text-xs text-gray-500 font-light">Tailored size, color & motif commissions</p>
+
+          <div className="bg-[#FCFAF7] border border-[#CDA45A]/30 hover:border-[#CDA45A] rounded-3xl p-8 space-y-4 shadow-luxury hover:-translate-y-1.5 transition-all duration-300 group text-center sm:text-left flex flex-col items-center sm:items-start">
+            <div className="w-14 h-14 rounded-2xl bg-[#CDA45A]/10 border border-[#CDA45A]/40 flex items-center justify-center text-[#CDA45A] group-hover:scale-110 group-hover:bg-[#CDA45A] group-hover:text-white transition-all duration-300 shadow-md">
+              <Sparkles className="w-7 h-7" />
+            </div>
+            <div>
+              <h4 className="font-serif-luxury text-xl font-bold text-[#1E1A18] group-hover:text-[#CDA45A] transition-colors">
+                Bespoke Crafting
+              </h4>
+              <div className="w-10 h-0.5 bg-[#CDA45A]/40 group-hover:w-16 transition-all my-2 mx-auto sm:mx-0" />
+              <p className="text-xs sm:text-sm text-gray-600 font-light leading-relaxed">
+                Tailored size, color & motif commissions for interior architects & luxury homes.
+              </p>
+            </div>
           </div>
-          <div className="space-y-1">
-            <h4 className="font-serif-luxury text-base font-semibold text-[#1E1A18]">
-              Ethical Fair Trade
-            </h4>
-            <p className="text-xs text-gray-500 font-light">Direct support for artisan families</p>
+
+          <div className="bg-[#FCFAF7] border border-[#CDA45A]/30 hover:border-[#CDA45A] rounded-3xl p-8 space-y-4 shadow-luxury hover:-translate-y-1.5 transition-all duration-300 group text-center sm:text-left flex flex-col items-center sm:items-start">
+            <div className="w-14 h-14 rounded-2xl bg-[#CDA45A]/10 border border-[#CDA45A]/40 flex items-center justify-center text-[#CDA45A] group-hover:scale-110 group-hover:bg-[#CDA45A] group-hover:text-white transition-all duration-300 shadow-md">
+              <Heart className="w-7 h-7" />
+            </div>
+            <div>
+              <h4 className="font-serif-luxury text-xl font-bold text-[#1E1A18] group-hover:text-[#CDA45A] transition-colors">
+                Ethical Fair Trade
+              </h4>
+              <div className="w-10 h-0.5 bg-[#CDA45A]/40 group-hover:w-16 transition-all my-2 mx-auto sm:mx-0" />
+              <p className="text-xs sm:text-sm text-gray-600 font-light leading-relaxed">
+                Direct fair-trade wages supporting artisan families & endangered art forms.
+              </p>
+            </div>
           </div>
         </div>
       </section>
