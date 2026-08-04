@@ -172,15 +172,15 @@ export default function Header() {
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
 
-          {/* Royal Logo */}
-          <Link href="/" className="flex items-center shrink-0 py-0.5 group">
+          {/* Prominent Royal Logo */}
+          <Link href="/" className="flex items-center shrink-0 py-1 group">
             <img
               src="/logo-transp.png"
               alt="Hathipole The Bazaar Royal Logo"
               className={`w-auto object-contain hover:scale-105 transition-all duration-300 filter drop-shadow-md ${
                 isScrolled
-                  ? 'h-12 sm:h-14 md:h-16 lg:h-18 max-h-20'
-                  : 'h-14 sm:h-16 md:h-20 lg:h-24 max-h-26'
+                  ? 'h-16 sm:h-20 md:h-24 lg:h-28 max-h-28'
+                  : 'h-24 sm:h-28 md:h-32 lg:h-36 max-h-40'
               }`}
             />
           </Link>
