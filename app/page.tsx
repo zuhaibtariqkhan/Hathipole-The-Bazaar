@@ -89,7 +89,6 @@ const featuredCollections = [
 export default function HomePage() {
   const [heroIndex, setHeroIndex] = useState(0);
   const [activeTab, setActiveTab] = useState<'bestsellers' | 'new' | 'limited'>('bestsellers');
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   const displayedProducts = mockProducts.filter((p) => {
     if (activeTab === 'bestsellers') return p.isBestSeller;
@@ -392,23 +391,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. Master Artisan Spotlight with Interactive Video Story Player */}
+      {/* 7. Master Artisan Spotlight Showcase */}
       <section className="bg-[#1E1A18] text-[#FCFAF7] py-24 border-y-2 border-[#CDA45A]/40 relative overflow-hidden shadow-2xl">
         <div className="max-w-6xl mx-auto px-6 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-          <div className="lg:col-span-5 aspect-[4/5] rounded-3xl overflow-hidden border-2 border-[#CDA45A]/50 shadow-2xl relative group cursor-pointer" onClick={() => setIsVideoModalOpen(true)}>
+          <div className="lg:col-span-5 aspect-[4/5] rounded-3xl overflow-hidden border-2 border-[#CDA45A]/50 shadow-2xl relative group">
             <img
               src={mockArtisans[0].coverImage}
               alt={mockArtisans[0].name}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            {/* Play Button Pulse Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#1E1A18]/90 via-[#1E1A18]/40 to-transparent flex flex-col items-center justify-center gap-3">
-              <div className="w-16 h-16 rounded-full bg-[#CDA45A] text-[#1E1A18] flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform animate-pulse">
-                <Play className="w-7 h-7 fill-current ml-1" />
-              </div>
-              <span className="text-xs font-bold text-[#E6D2A8] uppercase tracking-widest bg-[#1E1A18]/80 px-4 py-1.5 rounded-full border border-[#CDA45A]/40">
-                Play Artisan Studio Story
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1E1A18]/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+            <div className="absolute bottom-6 left-6 right-6">
+              <span className="text-[10px] font-bold text-[#E6D2A8] uppercase tracking-widest bg-[#1E1A18]/80 px-3.5 py-1 rounded-full border border-[#CDA45A]/40 inline-block mb-1">
+                Heritage Craftsmanship
               </span>
+              <h4 className="font-serif-luxury text-lg font-bold text-white">
+                {mockArtisans[0].name}
+              </h4>
             </div>
           </div>
 
@@ -428,69 +427,17 @@ export default function HomePage() {
                 70+ Years Heritage • 350+ Artisan Families
               </span>
               <div className="flex items-center gap-3">
-                <button
-                  onClick={() => setIsVideoModalOpen(true)}
-                  className="btn-gold px-5 py-2.5 text-xs font-bold uppercase tracking-wider flex items-center gap-2"
-                >
-                  <Play className="w-3.5 h-3.5 fill-current" /> Watch Documentary
-                </button>
                 <Link
                   href="/artisans"
-                  className="px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#FCFAF7] border border-[#CDA45A]/50 hover:bg-[#CDA45A] hover:text-[#1E1A18] rounded-xl transition-all"
+                  className="btn-gold px-6 py-3 text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-xl"
                 >
-                  Read 4 Stories →
+                  Explore Artisan Stories <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Video Player Modal */}
-      <AnimatePresence>
-        {isVideoModalOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4"
-            onClick={() => setIsVideoModalOpen(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-[#1E1A18] border-2 border-[#CDA45A] rounded-3xl overflow-hidden max-w-4xl w-full shadow-2xl relative"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="p-4 border-b border-[#CDA45A]/30 flex items-center justify-between text-[#FCFAF7]">
-                <div className="flex items-center gap-2">
-                  <Volume2 className="w-5 h-5 text-[#CDA45A]" />
-                  <span className="font-serif-luxury text-lg font-bold text-[#E6D2A8]">
-                    Master Artisan Rameshwar Sharma • 24K Gold Pichwai Art Studio
-                  </span>
-                </div>
-                <button
-                  onClick={() => setIsVideoModalOpen(false)}
-                  className="p-1 hover:text-[#CDA45A] transition-colors"
-                >
-                  <X className="w-6 h-6" />
-                </button>
-              </div>
-
-              <div className="aspect-video relative bg-black">
-                <iframe
-                  src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=1"
-                  title="Master Artisan Documentary"
-                  className="w-full h-full border-none"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* 8. Auto-Sliding Global Reviews Carousel */}
       <GlobalReviewsCarousel />
