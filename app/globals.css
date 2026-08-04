@@ -143,6 +143,52 @@
   box-shadow: 0 6px 20px rgba(205, 164, 90, 0.25);
 }
 
+/* Floating Gold Orbs Animation */
+@keyframes floatDust {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-25px) rotate(180deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0px) rotate(360deg);
+    opacity: 0.2;
+  }
+}
+
+.animate-float-dust-1 {
+  animation: floatDust 6s ease-in-out infinite;
+}
+.animate-float-dust-2 {
+  animation: floatDust 9s ease-in-out infinite 2s;
+}
+.animate-float-dust-3 {
+  animation: floatDust 7s ease-in-out infinite 4s;
+}
+
+/* Continuous Marquee Ticker Animation */
+@keyframes marqueeContinuous {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marqueeContinuous 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
