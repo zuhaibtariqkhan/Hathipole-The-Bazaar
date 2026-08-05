@@ -17,22 +17,31 @@ import {
 
 const heroSlides = [
   {
-    title: 'The World of Indian Crafts',
-    subtitle: 'Authentic 24K Gold Pichwai Art, Hand-Knotted Silk Rugs & Pure Cashmere',
-    image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=2000&q=80',
-    tag: 'Royal Heritage'
-  },
-  {
-    title: 'Pure Cashmere & Jamawar',
-    subtitle: 'Hand-woven by master weavers with centuries of royal patronage',
+    tag: 'Himalayan Heritage',
+    title: 'Authentic Kashmiri Pashmina',
+    subtitle: 'The Finest Wool in the World',
+    description: 'Handwoven from the rare Himalayan Pashmina, each shawl embodies exceptional softness, warmth, and timeless elegance. Crafted by master artisans using generations-old weaving techniques, every piece is a symbol of refined luxury.',
     image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=2000&q=80',
-    tag: 'Master Weaving'
+    ctaText: 'Explore Pashmina →',
+    link: '/shop?category=pashminas'
   },
   {
-    title: 'Makrana Marble & Pietra Dura Inlay',
-    subtitle: 'Imperial marble bowls and bespoke bone inlay furniture crafted for global sanctuaries',
-    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2000&q=80',
-    tag: 'Bespoke Craft'
+    tag: 'Handwoven Legacy',
+    title: 'Hand-Knotted Heritage Rugs',
+    subtitle: 'Masterpieces Woven Knot by Knot',
+    description: "Inspired by India's rich artistic heritage, our handcrafted rugs are created using premium wool and silk by skilled master weavers. Designed to become heirloom pieces, they bring enduring beauty to the world's finest interiors.",
+    image: 'https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=2000&q=80',
+    ctaText: 'Explore Rugs →',
+    link: '/shop?category=rugs'
+  },
+  {
+    tag: 'Royal Artistry',
+    title: 'Royal Pichwai & Miniature Paintings',
+    subtitle: 'Timeless Art for Modern Collectors',
+    description: "Hand-painted by renowned artists using natural pigments, gold detailing, and centuries-old techniques, each painting celebrates India's royal artistic traditions and transforms any space into a gallery of heritage.",
+    image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=2000&q=80',
+    ctaText: 'Explore Paintings →',
+    link: '/shop?category=paintings'
   }
 ];
 
@@ -122,7 +131,7 @@ export default function HomePage() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-20 max-w-4xl mx-auto px-6 text-center text-[#FCFAF7] space-y-8 pt-20">
+        <div className="relative z-20 max-w-4xl mx-auto px-6 text-center text-[#FCFAF7] space-y-6 sm:space-y-8 pt-20">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -146,10 +155,20 @@ export default function HomePage() {
             key={`sub-${heroIndex}`}
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-sm sm:text-base text-gray-300 max-w-xl mx-auto font-light leading-relaxed"
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-base sm:text-xl text-[#E6D2A8] font-cinzel tracking-wide"
           >
             {heroSlides[heroIndex].subtitle}
+          </motion.p>
+
+          <motion.p
+            key={`desc-${heroIndex}`}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-xs sm:text-sm md:text-base text-gray-300 max-w-2xl mx-auto font-light leading-relaxed"
+          >
+            {heroSlides[heroIndex].description}
           </motion.p>
 
           <motion.div
@@ -159,10 +178,10 @@ export default function HomePage() {
             className="flex flex-col sm:flex-row items-center justify-center gap-5 pt-4"
           >
             <Link
-              href="/shop"
+              href={heroSlides[heroIndex].link}
               className="btn-gold px-9 py-4 text-xs font-bold uppercase tracking-[0.2em] flex items-center gap-2 shadow-2xl"
             >
-              Discover Collections <ArrowRight className="w-4 h-4" />
+              {heroSlides[heroIndex].ctaText}
             </Link>
             <Link
               href="/bespoke"
