@@ -130,16 +130,16 @@ export default function Footer() {
 
       {/* Main Simplified Footer Content - Brand Story Left & Contact Info Right */}
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-10 grid grid-cols-1 lg:grid-cols-12 gap-10 text-sm">
-        {/* Left Section: Large Logo & Updated Brand Statement */}
-        <div className="lg:col-span-7 space-y-5 text-center lg:text-left flex flex-col items-center lg:items-start">
-          <Link href="/" className="inline-block shrink-0 overflow-visible group">
+        {/* Left Section: Cohesive Brand Logo & Statement */}
+        <div className="lg:col-span-7 space-y-2 text-center lg:text-left flex flex-col items-center lg:items-start">
+          <Link href="/" className="inline-block shrink-0 overflow-visible group -ml-1">
             <img
               src="/logo-transp.png"
               alt="Hathipole The Bazaar Royal Brand Logo"
-              className="h-32 sm:h-40 md:h-48 lg:h-56 w-auto object-contain hover:scale-105 transition-all duration-300 filter drop-shadow-xl"
+              className="h-20 sm:h-24 md:h-28 lg:h-32 w-auto object-contain hover:scale-105 transition-all duration-300 filter drop-shadow-xl"
             />
           </Link>
-          <p className="text-gray-300 leading-relaxed max-w-xl text-xs sm:text-sm font-light">
+          <p className="text-gray-300 leading-relaxed max-w-xl text-xs sm:text-sm font-light pt-1">
             Hathipole The Bazaar brings together India&apos;s finest handmade crafts through generations of skilled artisans. For over 70 years, we have celebrated authenticity, heritage, and exceptional craftsmanship, connecting master artisans with homes around the world.
           </p>
         </div>

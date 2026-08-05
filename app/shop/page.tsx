@@ -61,14 +61,14 @@ function ShopContent() {
     <div className="max-w-7xl mx-auto px-6 md:px-8 py-10 space-y-8">
       {/* Page Title */}
       <div className="border-b border-[#CDA45A]/20 pb-6 space-y-2">
-        <span className="font-cinzel text-xs tracking-[0.25em] text-[#CDA45A] uppercase block">
-          Headless Global Luxury Catalog
+        <span className="font-cinzel text-xs tracking-[0.25em] text-[#CDA45A] uppercase block font-semibold">
+          Curated Excellence
         </span>
         <h1 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-bold text-[#1E1A18]">
-          The Royal Crafts Boutique
+          Discover India&apos;s Finest Handmade Collections
         </h1>
-        <p className="text-xs text-gray-600 max-w-2xl">
-          Browse authentic 24K Pichwai paintings, hand-knotted silk carpets, pure Pashmina cashmere, Makrana marble inlay, and royal attars.
+        <p className="text-xs sm:text-sm text-gray-600 max-w-3xl font-light leading-relaxed">
+          Browse our complete collection of authentic handcrafted masterpieces, from luxurious rugs and Himalayan Pashmina to royal paintings, heritage textiles, handcrafted jewellery, fragrances, and bespoke creations. Every piece is curated for exceptional quality, authenticity, and timeless beauty.
         </p>
       </div>
 

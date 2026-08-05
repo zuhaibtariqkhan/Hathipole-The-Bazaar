@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProductCard from '@/components/product/ProductCard';
 import ProductCardMobile from '@/components/product/ProductCardMobile';
@@ -144,6 +145,9 @@ export default function HomePage() {
         {/* Ambient Dark Gradient Overlays */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#1E1A18] via-[#1E1A18]/40 to-transparent z-10" />
 
+        {/* 40% Cinematic Film Grain Overlay */}
+        <div className="film-grain-overlay" />
+
         {/* Floating Gold Orbs & Dust Animation */}
         <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
           <div className="absolute top-1/4 left-1/5 w-72 h-72 rounded-full bg-[#CDA45A]/15 blur-3xl animate-float-dust-1" />
@@ -152,7 +156,7 @@ export default function HomePage() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-20 max-w-4xl mx-auto px-6 text-center text-[#FCFAF7] space-y-6 sm:space-y-8 pt-20">
+        <div className="relative z-20 max-w-4xl mx-auto px-6 text-center text-[#FCFAF7] space-y-6 sm:space-y-8 pt-6 sm:pt-10">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -296,8 +300,8 @@ export default function HomePage() {
           </Link>
         </div>
 
-        {/* Mobile View: Compact 2-column Product Grid (40-50% smaller size) */}
-        <div className="grid grid-cols-2 gap-3 sm:hidden">
+        {/* Mobile View: Compact 2-column Product Grid (reduced size by ~30%) */}
+        <div className="grid grid-cols-2 gap-2.5 max-w-[92vw] sm:max-w-none mx-auto sm:hidden">
           {mockProducts.slice(0, 6).map((product) => (
             <ProductCardMobile key={`heritage-mobile-${product.id}`} product={product} />
           ))}
@@ -449,7 +453,7 @@ export default function HomePage() {
                     src={story.coverImage}
                     alt={story.title}
                     onError={(e) => {
-                      const target = e.currentTarget;
+                      const target = e.currentTarget as HTMLImageElement;
                       if (target.src.endsWith('.jpg')) {
                         target.src = target.src.replace('.jpg', '.png');
                       } else if (target.src.endsWith('.png')) {

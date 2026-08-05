@@ -103,53 +103,53 @@ export default function ProductCardMobile({
       </div>
 
       {/* Compact Content Details */}
-      <div className="p-3 flex-1 flex flex-col justify-between space-y-2">
-        <div className="space-y-1">
+      <div className="p-2 flex-1 flex flex-col justify-between space-y-1.5">
+        <div className="space-y-0.5">
           {/* Region & Rating Header */}
-          <div className="flex items-center justify-between text-[10px] gap-1">
-            <span className="text-[#B56A45] font-bold tracking-wider uppercase font-cinzel text-[9px] truncate">
+          <div className="flex items-center justify-between text-[9px] gap-1">
+            <span className="text-[#B56A45] font-bold tracking-wider uppercase font-cinzel text-[8px] truncate">
               {product.craftRegion}
             </span>
-            <div className="flex items-center gap-0.5 text-amber-500 font-semibold bg-[#CDA45A]/10 border border-[#CDA45A]/30 px-1.5 py-0.2 rounded-full shrink-0">
-              <Star className="w-2.5 h-2.5 fill-amber-400 text-amber-400" />
-              <span className="text-[10px] text-[#1E1A18] font-bold">{product.rating}</span>
+            <div className="flex items-center gap-0.5 text-amber-500 font-semibold bg-[#CDA45A]/10 border border-[#CDA45A]/30 px-1 py-0.1 rounded-full shrink-0">
+              <Star className="w-2 h-2 fill-amber-400 text-amber-400" />
+              <span className="text-[9px] text-[#1E1A18] font-bold">{product.rating}</span>
             </div>
           </div>
 
           {/* Title */}
           <Link href={`/product/${product.id}`} className="block">
-            <h4 className="font-serif-luxury text-xs sm:text-sm font-bold text-[#1E1A18] group-hover:text-[#CDA45A] transition-colors line-clamp-1 leading-snug">
+            <h4 className="font-serif-luxury text-[11px] font-bold text-[#1E1A18] group-hover:text-[#CDA45A] transition-colors line-clamp-1 leading-tight">
               {product.title}
             </h4>
           </Link>
         </div>
 
         {/* Pricing & Add to Cart Footer */}
-        <div className="pt-2 border-t border-[#CDA45A]/20 space-y-2">
+        <div className="pt-1.5 border-t border-[#CDA45A]/20 space-y-1.5">
           <div className="flex items-baseline justify-between gap-1">
-            <div className="flex items-baseline gap-1.5 flex-wrap">
-              <span className="font-serif-luxury text-sm font-bold text-[#1E1A18]">
+            <div className="flex items-baseline gap-1 flex-wrap">
+              <span className="font-serif-luxury text-xs font-bold text-[#1E1A18]">
                 {formatPrice(product.priceUSD, currency)}
               </span>
               {product.originalPriceUSD && (
-                <span className="text-[10px] text-gray-400 line-through font-light">
+                <span className="text-[9px] text-gray-400 line-through font-light">
                   {formatPrice(product.originalPriceUSD, currency)}
                 </span>
               )}
             </div>
 
             {product.authenticityCertificate && (
-              <span className="text-[8px] text-[#3E5C4B] font-semibold flex items-center gap-0.5 bg-[#3E5C4B]/10 px-1.5 py-0.2 rounded-full shrink-0" title="Certified Authentic">
-                <ShieldCheck className="w-2.5 h-2.5 text-[#3E5C4B]" /> Cert.
+              <span className="text-[7px] text-[#3E5C4B] font-semibold flex items-center gap-0.5 bg-[#3E5C4B]/10 px-1 py-0.1 rounded-full shrink-0" title="Certified Authentic">
+                <ShieldCheck className="w-2 h-2 text-[#3E5C4B]" /> Cert.
               </span>
             )}
           </div>
 
           <button
             onClick={() => addToCart(product, 1)}
-            className="btn-gold w-full py-1.5 px-2 text-[10px] uppercase font-bold tracking-wider flex items-center justify-center gap-1.5 rounded-xl shadow-xs active:scale-98 transition-transform"
+            className="btn-gold w-full py-1 px-1.5 text-[9px] uppercase font-bold tracking-wider flex items-center justify-center gap-1 rounded-lg shadow-xs active:scale-98 transition-transform"
           >
-            <ShoppingBag className="w-3 h-3" /> Add to Bag
+            <ShoppingBag className="w-2.5 h-2.5" /> Add to Bag
           </button>
         </div>
       </div>
