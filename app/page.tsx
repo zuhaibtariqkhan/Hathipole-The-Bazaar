@@ -21,6 +21,7 @@ const heroSlides = [
     title: 'Authentic Kashmiri Pashmina',
     subtitle: 'The Finest Wool in the World',
     description: 'Handwoven from the rare Himalayan Pashmina, each shawl embodies exceptional softness, warmth, and timeless elegance. Crafted by master artisans using generations-old weaving techniques, every piece is a symbol of refined luxury.',
+    video: '/P-SHAWLS.mp4',
     image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=2000&q=80',
     ctaText: 'Explore Pashmina →',
     link: '/shop?category=pashminas'
@@ -102,7 +103,7 @@ export default function HomePage() {
     <div className="space-y-16 sm:space-y-24 md:space-y-32 pb-16 sm:pb-24">
       {/* 1. Full-Bleed Cinematic Hero Banner with Floating Gold Orbs */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#1E1A18]">
-        {/* Animated Background Image */}
+        {/* Animated Background Media (Video or Image) */}
         <AnimatePresence mode="wait">
           <motion.div
             key={heroIndex}
@@ -112,11 +113,29 @@ export default function HomePage() {
             transition={{ duration: 1.2, ease: 'easeOut' }}
             className="absolute inset-0"
           >
-            <img
-              src={heroSlides[heroIndex].image}
-              alt={heroSlides[heroIndex].title}
-              className="w-full h-full object-cover"
-            />
+            {heroSlides[heroIndex].video ? (
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                poster={heroSlides[heroIndex].image}
+                className="w-full h-full object-cover"
+              >
+                <source src={heroSlides[heroIndex].video} type="video/mp4" />
+                <img
+                  src={heroSlides[heroIndex].image}
+                  alt={heroSlides[heroIndex].title}
+                  className="w-full h-full object-cover"
+                />
+              </video>
+            ) : (
+              <img
+                src={heroSlides[heroIndex].image}
+                alt={heroSlides[heroIndex].title}
+                className="w-full h-full object-cover"
+              />
+            )}
           </motion.div>
         </AnimatePresence>
 
