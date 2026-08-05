@@ -204,3 +204,13 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #B88E3E;
 }
+
+/* Hide scrollbar for clean horizontal carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

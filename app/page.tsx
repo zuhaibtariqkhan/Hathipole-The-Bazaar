@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ProductCard from '@/components/product/ProductCard';
 import { mockProducts } from '@/lib/data/mockProducts';
 import { mockArtisans, mockArtisanStories } from '@/lib/data/mockArtisans';
-import { mockBlogs } from '@/lib/data/mockBlogs';
 import RoyalCrestDivider from '@/components/ui/RoyalCrestDivider';
 import GlobalReviewsCarousel from '@/components/home/GlobalReviewsCarousel';
 import {
@@ -95,7 +94,7 @@ export default function HomePage() {
   });
 
   return (
-    <div className="space-y-24 sm:space-y-32 pb-24">
+    <div className="space-y-16 sm:space-y-24 md:space-y-32 pb-16 sm:pb-24">
       {/* 1. Full-Bleed Cinematic Hero Banner with Floating Gold Orbs */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#1E1A18]">
         {/* Animated Background Image */}
@@ -281,13 +280,18 @@ export default function HomePage() {
             The Philosophy of Hathipole
           </span>
 
-          <h2 className="font-serif-luxury text-3xl sm:text-5xl font-normal text-[#1E1A18] leading-tight max-w-3xl mx-auto">
-            Hathipole The Bazaar is a digital luxury boutique representing India’s finest craftsmanship.
+          <h2 className="font-serif-luxury text-2.5xl sm:text-4xl md:text-5xl font-normal text-[#1E1A18] leading-tight max-w-4xl mx-auto">
+            Hathipole The Bazaar is more than a luxury marketplace—it is a global destination for India&apos;s finest handcrafted heritage.
           </h2>
 
-          <p className="text-sm text-gray-600 font-light leading-relaxed max-w-2xl mx-auto">
-            Hathipole The Bazaar connects discerning global collectors directly with India’s most revered master craftsmen. Every creation is an authentic piece of living heritage, crafted by hand using natural minerals, real gold foil, pure silks, and ancient techniques passed down through generations.
-          </p>
+          <div className="space-y-4 max-w-3xl mx-auto text-sm sm:text-base text-gray-600 font-light leading-relaxed">
+            <p>
+              We connect discerning collectors and design enthusiasts with India&apos;s most accomplished master artisans, preserving centuries of craftsmanship through every creation. Each piece is handcrafted using authentic materials such as pure silk, natural pigments, handwoven textiles, precious metals, and traditional techniques passed down through generations.
+            </p>
+            <p>
+              Every purchase celebrates authenticity, sustains artisan communities, and carries forward the living legacy of Indian craftsmanship for the world to experience.
+            </p>
+          </div>
 
           <div className="pt-4">
             <Link
@@ -300,15 +304,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. Curated Heritage Collections */}
+      {/* 5. Discover Authentic Craftsmanship */}
       <section className="max-w-7xl mx-auto px-6 md:px-8 space-y-12">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#CDA45A]/20 pb-6">
           <div>
             <span className="font-cinzel text-xs tracking-[0.25em] text-[#CDA45A] uppercase block font-semibold">
-              Museum Curation
+              Heritage Curation
             </span>
-            <h2 className="font-serif-luxury text-3xl sm:text-4xl font-bold text-[#1E1A18]">
-              Curated Heritage Collections
+            <h2 className="font-serif-luxury text-2.5xl sm:text-4xl font-bold text-[#1E1A18]">
+              Discover Authentic Craftsmanship
             </h2>
           </div>
           <Link
@@ -360,12 +364,12 @@ export default function HomePage() {
           </div>
 
           {/* Gliding Gold Tab Indicator */}
-          <div className="flex items-center gap-2 bg-[#FCFAF7] p-1.5 rounded-full border border-[#CDA45A]/40 shadow-md relative">
+          <div className="flex items-center gap-2 bg-[#FCFAF7] p-1.5 rounded-full border border-[#CDA45A]/40 shadow-md relative overflow-x-auto max-w-full no-scrollbar">
             {(['bestsellers', 'new', 'limited'] as const).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`relative px-5 py-2.5 rounded-full text-xs font-bold transition-all z-10 capitalize ${
+                className={`relative px-4 sm:px-5 py-2.5 rounded-full text-xs font-bold transition-all z-10 capitalize whitespace-nowrap min-h-[44px] flex items-center justify-center ${
                   activeTab === tab ? 'text-[#1E1A18]' : 'text-gray-600 hover:text-[#1E1A18]'
                 }`}
               >
@@ -382,8 +386,23 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {displayedProducts.slice(0, 3).map((product) => (
+        {/* Mobile Horizontal Carousel (7-8 Products) */}
+        <div className="flex sm:hidden overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-6 px-6 no-scrollbar touch-pan-x">
+          {(displayedProducts.length >= 7
+            ? displayedProducts
+            : [...displayedProducts, ...mockProducts.filter((p) => !displayedProducts.some((dp) => dp.id === p.id))]
+          )
+            .slice(0, 8)
+            .map((product) => (
+              <div key={product.id} className="w-[72vw] max-w-[250px] shrink-0 snap-start">
+                <ProductCard product={product} />
+              </div>
+            ))}
+        </div>
+
+        {/* Desktop and Tablet Grid Layout */}
+        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {displayedProducts.slice(0, 6).map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
@@ -495,53 +514,6 @@ export default function HomePage() {
 
       {/* 8. Auto-Sliding Global Reviews Carousel */}
       <GlobalReviewsCarousel />
-
-      {/* 9. Minimalist Heritage Journal Preview */}
-      <section className="max-w-7xl mx-auto px-6 md:px-8 space-y-12">
-        <div className="flex items-center justify-between border-b border-[#CDA45A]/20 pb-6">
-          <div>
-            <span className="font-cinzel text-xs tracking-[0.25em] text-[#CDA45A] uppercase block font-semibold">
-              Editorial Stories
-            </span>
-            <h2 className="font-serif-luxury text-3xl font-bold text-[#1E1A18]">
-              The Heritage Journal
-            </h2>
-          </div>
-          <Link href="/blog" className="text-xs font-bold text-[#CDA45A] hover:underline uppercase tracking-wider">
-            View All Stories →
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {mockBlogs.map((blog) => (
-            <div key={blog.id} className="luxury-card-interactive flex flex-col justify-between group">
-              <div>
-                <div className="aspect-[16/10] overflow-hidden">
-                  <img
-                    src={blog.imageUrl}
-                    alt={blog.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6 space-y-3">
-                  <span className="badge-gold-foil text-[10px] text-[#1E1A18] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
-                    {blog.category} • {blog.readTime}
-                  </span>
-                  <h4 className="font-serif-luxury text-xl font-bold text-[#1E1A18] group-hover:text-[#CDA45A] transition-colors line-clamp-2 mt-2">
-                    {blog.title}
-                  </h4>
-                  <p className="text-xs text-gray-600 line-clamp-2 font-light">{blog.excerpt}</p>
-                </div>
-              </div>
-              <div className="p-6 pt-0">
-                <Link href={`/blog#${blog.slug}`} className="text-xs text-[#CDA45A] font-bold uppercase tracking-wider inline-flex items-center gap-1">
-                  Read Article <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
     </div>
   );
 }

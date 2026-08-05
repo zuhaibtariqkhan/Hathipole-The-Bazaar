@@ -227,86 +227,90 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Accepted Payment Methods Bar */}
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-6 border-t border-[#CDA45A]/20">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span className="font-cinzel text-xs font-bold uppercase tracking-widest text-[#E6D2A8]">
-            Accepted Payment Methods
-          </span>
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-            {/* Visa */}
-            <div className="bg-[#2A2421] border border-[#CDA45A]/30 hover:border-[#CDA45A] px-3 py-2 rounded-lg text-[#CDA45A] hover:text-[#E6D2A8] hover:scale-105 transition-all duration-300 shadow-sm flex items-center justify-center h-9 w-14">
-              <svg viewBox="0 0 24 24" className="w-full h-full fill-current">
-                <path d="M19.412 6.136c-.144-.736-.784-1.288-1.544-1.288h-3.88l-.056.28c2.952.752 4.984 2.248 5.792 4.312l-.312-3.304zm-14.88 9.216l2.424-7.536 1.456 5.568.16.8c.088.424.368.808.76.96.696.256 1.488.384 2.304.384h3.696l.16-.8L12.508 7.04H10.2l-1.6 4.776-.8-4.776H5.212l-1.92 8.312h2.24zM22 6.04h-2.152l-1.344 8.312h2.152L22 6.04zM10.4 6.04H8.248l-1.352 8.312H9.048l1.352-8.312z" />
-              </svg>
-            </div>
-            {/* Mastercard */}
-            <div className="bg-[#2A2421] border border-[#CDA45A]/30 hover:border-[#CDA45A] px-3 py-2 rounded-lg text-[#CDA45A] hover:text-[#E6D2A8] hover:scale-105 transition-all duration-300 shadow-sm flex items-center justify-center h-9 w-14">
-              <svg viewBox="0 0 24 24" className="w-full h-full fill-current">
-                <circle cx="8" cy="12" r="7" opacity="0.65" />
-                <circle cx="16" cy="12" r="7" opacity="0.65" />
-                <path d="M12 7.7a7 7 0 0 0-2.8 4.3 7 7 0 0 0 2.8 4.3 7 7 0 0 0 2.8-4.3 7 7 0 0 0-2.8-4.3z" />
-              </svg>
-            </div>
-            {/* American Express */}
-            <div className="bg-[#2A2421] border border-[#CDA45A]/30 hover:border-[#CDA45A] px-3 py-2 rounded-lg text-[#CDA45A] hover:text-[#E6D2A8] hover:scale-105 transition-all duration-300 shadow-sm flex items-center justify-center h-9 w-14">
-              <svg viewBox="0 0 36 24" className="w-full h-full fill-none stroke-current" strokeWidth="1.5">
-                <rect x="2" y="2" width="32" height="20" rx="3" strokeWidth="2" />
-                <path d="M6 16l2-7 2 7M6.8 13.5h2.4M12 16V9l2.5 4L17 9v7M19 16V9h3M19 12.5h2.5M19 9h3.5M25 9l2.5 3.5L30 9M25 16l2.5-3.5L30 16" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-            {/* RuPay */}
-            <div className="bg-[#2A2421] border border-[#CDA45A]/30 hover:border-[#CDA45A] px-3 py-2 rounded-lg text-[#CDA45A] hover:text-[#E6D2A8] hover:scale-105 transition-all duration-300 shadow-sm flex items-center justify-center h-9 w-14">
-              <svg viewBox="0 0 36 24" className="w-full h-full fill-current">
-                <path d="M5 6h7c1.5 0 2.6.4 3.3 1.1s1 1.7 1 2.8c0 1-.3 1.9-1 2.5a4 4 0 0 1-3.3 1.1H9.5l4.5 5.5H11.2l-4.5-5.5H5v5.5H3V6h2zm2 2v4h5c.7 0 1.2-.2 1.6-.5.4-.3.6-.7.6-1.5 0-.7-.2-1.1-.6-1.4-.4-.4-.9-.6-1.6-.6H7zM3 10.5h11V12H3v-1.5z" />
-                <path d="M19.5 6.5l-4 11h2.5l4-11h-2.5zm4 0l-4 11h2.5l4-11h-2.5zm4 0l-4 11h2.5l4-11h-2.5z" opacity="0.8" />
-              </svg>
-            </div>
-            {/* UPI */}
-            <div className="bg-[#2A2421] border border-[#CDA45A]/30 hover:border-[#CDA45A] px-3 py-2 rounded-lg text-[#CDA45A] hover:text-[#E6D2A8] hover:scale-105 transition-all duration-300 shadow-sm flex items-center justify-center h-9 w-14">
-              <svg viewBox="0 0 36 24" className="w-full h-full fill-current">
-                <path d="M4 17l4.5-10h3l-4.5 10H4z" />
-                <path d="M8.5 17l4.5-10H16l-4.5 10H8.5z" opacity="0.65" />
-                <path d="M13 17l4.5-10h3L16 17H13z" opacity="0.3" />
-                <path d="M21 7v6.5c0 .8.2 1.4.6 1.8s1 .6 1.9.6 1.5-.2 1.9-.6.6-1 .6-1.8V7h1.6v6.5c0 1.3-.4 2.2-1.1 2.8C25.8 17 24.8 17.3 23.5 17.3s-2.3-.3-3-1c-.7-.6-1.1-1.5-1.1-2.8V7H21zm6.5 0h2.5c.8 0 1.4.2 1.8.6s.6 1 .6 1.7-.2 1.3-.6 1.7-1 .6-1.8.6h-1v5.7h-1.6V7zm1.6 1.5v3h1c.3 0 .6-.1.8-.2s.3-.4.3-.8c0-.3-.1-.6-.3-.7s-.5-.2-.8-.2h-1zm4.4-1.5h1.6v10.3h-1.6V7z" />
-              </svg>
-            </div>
-            {/* PayPal */}
-            <div className="bg-[#2A2421] border border-[#CDA45A]/30 hover:border-[#CDA45A] px-3 py-2 rounded-lg text-[#CDA45A] hover:text-[#E6D2A8] hover:scale-105 transition-all duration-300 shadow-sm flex items-center justify-center h-9 w-14">
-              <svg viewBox="0 0 16 16" className="w-full h-full fill-current">
-                <path d="M14.06 3.713c.12-1.071-.093-1.832-.702-2.526C12.628.356 11.312 0 9.626 0H4.734a.7.7 0 0 0-.691.59L2.005 13.509a.42.42 0 0 0 .415.486h2.756l-.202 1.28a.628.628 0 0 0 .62.726H8.14c.429 0 .793-.31.862-.731l.025-.13.48-3.043.03-.164.001-.007a.35.35 0 0 1 .348-.297h.38c1.266 0 2.425-.256 3.345-.91q.57-.403.993-1.005a4.94 4.94 0 0 0 .88-2.195c.242-1.246.13-2.356-.57-3.154a2.7 2.7 0 0 0-.76-.59l-.094-.061ZM6.543 8.82a.7.7 0 0 1 .321-.079H8.3c2.82 0 5.027-1.144 5.672-4.456l.003-.016q.326.186.548.438c.546.623.679 1.535.45 2.71-.272 1.397-.866 2.307-1.663 2.874-.802.57-1.842.815-3.043.815h-.38a.87.87 0 0 0-.863.734l-.03.164-.48 3.043-.024.13-.001.004a.35.35 0 0 1-.348.296H5.595a.106.106 0 0 1-.105-.123l.208-1.32z" />
-              </svg>
-            </div>
-            {/* Apple Pay */}
-            <div className="bg-[#2A2421] border border-[#CDA45A]/30 hover:border-[#CDA45A] px-3 py-2 rounded-lg text-[#CDA45A] hover:text-[#E6D2A8] hover:scale-105 transition-all duration-300 shadow-sm flex items-center justify-center h-9 w-14">
-              <svg viewBox="0 0 36 24" className="w-full h-full fill-current">
-                <path d="M9 7.2c.4-.5.6-1.1.5-1.7-.5 0-1.2.3-1.5.8-.3.4-.6 1-.5 1.6.6.1 1.2-.3 1.5-.7zm-1.5 1.7c-.6 0-1.1.4-1.5.4s-.7-.4-1.3-.4c-.9 0-1.7.7-2.1 1.5-.8 1.5-.8 3.9.2 5.4.5.7 1.1 1.6 2 1.6s1-.5 2-.5c1 0 1.1.5 2 .5s1.5-.8 2-1.6c.7-.9.9-1.9.9-2 0 0-1.7-.7-1.7-2.6 0-1.6 1.3-2.4 1.4-2.5-.7-1.1-1.9-1.3-2.4-1.3z" />
-                <path d="M16 8h2.3c.7 0 1.2.2 1.6.5.3.3.5.7.5 1.3s-.2 1-.5 1.3c-.4.3-.9.5-1.6.5H17.2v4.4H16V8zm1.2 1.2v2h1c.3 0 .5-.1.7-.2s.2-.3.2-.6c0-.3-.1-.5-.2-.6s-.4-.2-.7-.2h-1zm7.4.8c-.5 0-.9.2-1.2.6s-.5.8-.5 1.4c0 .6.2 1.1.5 1.4s.7.5 1.2.5.9-.2 1.2-.5.5-.8.5-1.4c0-.6-.2-1.1-.5-1.4s-.7-.6-1.2-.6zm-1.2-2h1.2v.7c.3-.5.8-.8 1.4-.8.8 0 1.4.3 1.8.9s.6 1.4.6 2.3c0 .9-.2 1.7-.6 2.3s-1 .9-1.8.9c-.6 0-1.1-.3-1.4-.8v2.8h-1.2V10zm8.7 0l-1.9 4.8-1.9-4.8h1.3l1 2.8 1-2.8h1.3z" />
-              </svg>
-            </div>
-            {/* Google Pay */}
-            <div className="bg-[#2A2421] border border-[#CDA45A]/30 hover:border-[#CDA45A] px-3 py-2 rounded-lg text-[#CDA45A] hover:text-[#E6D2A8] hover:scale-105 transition-all duration-300 shadow-sm flex items-center justify-center h-9 w-14">
-              <svg viewBox="0 0 36 24" className="w-full h-full fill-current">
-                <path d="M8.2 11.2c0-.5-.04-1-.1-1.4H4.5v2.7h2.1c-.1.5-.4 1-.8 1.3v1.1h1.3c.7-.6 1.1-1.7 1.1-3.7z" />
-                <path d="M4.5 15c.8 0 1.5-.3 2.1-.8l-1.3-1.1c-.2.2-.5.3-.8.3-.7 0-1.2-.4-1.4-1h-1.3v1c.5 1 1.6 1.6 2.7 1.6z" />
-                <path d="M3.1 12.4c-.1-.3-.1-.6-.1-.9s0-.6.1-.9V9.6H1.8C1.5 10.2 1.3 10.8 1.3 11.5s.2 1.3.5 1.9l1.3-1z" />
-                <path d="M4.5 8c1.1 0 1.7.5 2.1.9l1.5-1.5C7.2 6.5 6 6 4.5 6 3.4 6 2.3 6.6 1.8 7.6l1.3 1c.2-.6.7-1 1.4-1z" />
-                <path d="M14 8h2.3c.7 0 1.2.2 1.6.5.3.3.5.7.5 1.3s-.2 1-.5 1.3c-.4.3-.9.5-1.6.5h-1.1v4.4H14V8zm1.2 1.2v2h1c.3 0 .5-.1.7-.2s.2-.3.2-.6c0-.3-.1-.5-.2-.6s-.4-.2-.7-.2h-1zm7.4.8c-.5 0-.9.2-1.2.6s-.5.8-.5 1.4c0 .6.2 1.1.5 1.4s.7.5 1.2.5.9-.2 1.2-.5.5-.8.5-1.4c0-.6-.2-1.1-.5-1.4s-.7-.6-1.2-.6zm-1.2-2h1.2v.7c.3-.5.8-.8 1.4-.8.8 0 1.4.3 1.8.9s.6 1.4.6 2.3c0 .9-.2 1.7-.6 2.3s-1 .9-1.8.9c-.6 0-1.1-.3-1.4-.8v2.8h-1.2V10zm8.7 0l-1.9 4.8-1.9-4.8h1.3l1 2.8 1-2.8h1.3z" />
-              </svg>
-            </div>
-          </div>
+      {/* Bottom Footer: Legal Links, Copyright & Payment Methods */}
+      <div className="max-w-7xl mx-auto px-6 md:px-10 pt-8 border-t border-[#CDA45A]/20 flex flex-col items-center gap-4 text-center text-xs text-gray-400">
+        {/* Legal Links */}
+        <div className="flex flex-wrap items-center justify-center gap-x-3 sm:gap-x-4 gap-y-1 font-medium text-gray-300">
+          <Link href="/privacy" className="hover:text-[#CDA45A] transition-colors">
+            Privacy Policy
+          </Link>
+          <span className="text-[#CDA45A]/60">•</span>
+          <Link href="/terms" className="hover:text-[#CDA45A] transition-colors">
+            Terms of Heritage Service
+          </Link>
+          <span className="text-[#CDA45A]/60">•</span>
+          <Link href="/authenticity" className="hover:text-[#CDA45A] transition-colors">
+            Authenticity Guarantee
+          </Link>
         </div>
-      </div>
 
-      {/* Copyright Bar */}
-      <div className="max-w-7xl mx-auto px-6 md:px-10 pt-6 border-t border-[#CDA45A]/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
+        {/* Copyright Line */}
         <div>
           © {new Date().getFullYear()} Hathipole The Bazaar. All Rights Reserved. Preserving India’s Artistic Heritage.
         </div>
-        <div className="flex items-center gap-6 font-medium">
-          <span className="hover:text-gray-200 cursor-pointer">Privacy Policy</span>
-          <span className="hover:text-gray-200 cursor-pointer">Terms of Heritage Service</span>
-          <span className="hover:text-gray-200 cursor-pointer">Authenticity Guarantee</span>
+
+        {/* Accepted Payment Methods Bar - After Copyright */}
+        <div className="pt-2 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+          {/* Visa */}
+          <div className="bg-[#2A2421] border border-[#CDA45A]/30 hover:border-[#CDA45A] px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg text-[#CDA45A] hover:text-[#E6D2A8] hover:scale-105 transition-all duration-300 shadow-sm flex items-center justify-center h-8 sm:h-9 w-12 sm:w-14" title="Visa">
+            <svg viewBox="0 0 24 24" className="w-full h-full fill-current">
+              <path d="M19.412 6.136c-.144-.736-.784-1.288-1.544-1.288h-3.88l-.056.28c2.952.752 4.984 2.248 5.792 4.312l-.312-3.304zm-14.88 9.216l2.424-7.536 1.456 5.568.16.8c.088.424.368.808.76.96.696.256 1.488.384 2.304.384h3.696l.16-.8L12.508 7.04H10.2l-1.6 4.776-.8-4.776H5.212l-1.92 8.312h2.24zM22 6.04h-2.152l-1.344 8.312h2.152L22 6.04zM10.4 6.04H8.248l-1.352 8.312H9.048l1.352-8.312z" />
+            </svg>
+          </div>
+          {/* Mastercard */}
+          <div className="bg-[#2A2421] border border-[#CDA45A]/30 hover:border-[#CDA45A] px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg text-[#CDA45A] hover:text-[#E6D2A8] hover:scale-105 transition-all duration-300 shadow-sm flex items-center justify-center h-8 sm:h-9 w-12 sm:w-14" title="Mastercard">
+            <svg viewBox="0 0 24 24" className="w-full h-full fill-current">
+              <circle cx="8" cy="12" r="7" opacity="0.65" />
+              <circle cx="16" cy="12" r="7" opacity="0.65" />
+              <path d="M12 7.7a7 7 0 0 0-2.8 4.3 7 7 0 0 0 2.8 4.3 7 7 0 0 0 2.8-4.3 7 7 0 0 0-2.8-4.3z" />
+            </svg>
+          </div>
+          {/* American Express */}
+          <div className="bg-[#2A2421] border border-[#CDA45A]/30 hover:border-[#CDA45A] px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg text-[#CDA45A] hover:text-[#E6D2A8] hover:scale-105 transition-all duration-300 shadow-sm flex items-center justify-center h-8 sm:h-9 w-12 sm:w-14" title="American Express">
+            <svg viewBox="0 0 36 24" className="w-full h-full fill-none stroke-current" strokeWidth="1.5">
+              <rect x="2" y="2" width="32" height="20" rx="3" strokeWidth="2" />
+              <path d="M6 16l2-7 2 7M6.8 13.5h2.4M12 16V9l2.5 4L17 9v7M19 16V9h3M19 12.5h2.5M19 9h3.5M25 9l2.5 3.5L30 9M25 16l2.5-3.5L30 16" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+          {/* RuPay */}
+          <div className="bg-[#2A2421] border border-[#CDA45A]/30 hover:border-[#CDA45A] px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg text-[#CDA45A] hover:text-[#E6D2A8] hover:scale-105 transition-all duration-300 shadow-sm flex items-center justify-center h-8 sm:h-9 w-12 sm:w-14" title="RuPay">
+            <svg viewBox="0 0 36 24" className="w-full h-full fill-current">
+              <path d="M5 6h7c1.5 0 2.6.4 3.3 1.1s1 1.7 1 2.8c0 1-.3 1.9-1 2.5a4 4 0 0 1-3.3 1.1H9.5l4.5 5.5H11.2l-4.5-5.5H5v5.5H3V6h2zm2 2v4h5c.7 0 1.2-.2 1.6-.5.4-.3.6-.7.6-1.5 0-.7-.2-1.1-.6-1.4-.4-.4-.9-.6-1.6-.6H7zM3 10.5h11V12H3v-1.5z" />
+              <path d="M19.5 6.5l-4 11h2.5l4-11h-2.5zm4 0l-4 11h2.5l4-11h-2.5zm4 0l-4 11h2.5l4-11h-2.5z" opacity="0.8" />
+            </svg>
+          </div>
+          {/* UPI */}
+          <div className="bg-[#2A2421] border border-[#CDA45A]/30 hover:border-[#CDA45A] px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg text-[#CDA45A] hover:text-[#E6D2A8] hover:scale-105 transition-all duration-300 shadow-sm flex items-center justify-center h-8 sm:h-9 w-12 sm:w-14" title="UPI">
+            <svg viewBox="0 0 36 24" className="w-full h-full fill-current">
+              <path d="M4 17l4.5-10h3l-4.5 10H4z" />
+              <path d="M8.5 17l4.5-10H16l-4.5 10H8.5z" opacity="0.65" />
+              <path d="M13 17l4.5-10h3L16 17H13z" opacity="0.3" />
+              <path d="M21 7v6.5c0 .8.2 1.4.6 1.8s1 .6 1.9.6 1.5-.2 1.9-.6.6-1 .6-1.8V7h1.6v6.5c0 1.3-.4 2.2-1.1 2.8C25.8 17 24.8 17.3 23.5 17.3s-2.3-.3-3-1c-.7-.6-1.1-1.5-1.1-2.8V7H21zm6.5 0h2.5c.8 0 1.4.2 1.8.6s.6 1 .6 1.7-.2 1.3-.6 1.7-1 .6-1.8.6h-1v5.7h-1.6V7zm1.6 1.5v3h1c.3 0 .6-.1.8-.2s.3-.4.3-.8c0-.3-.1-.6-.3-.7s-.5-.2-.8-.2h-1zm4.4-1.5h1.6v10.3h-1.6V7z" />
+            </svg>
+          </div>
+          {/* PayPal */}
+          <div className="bg-[#2A2421] border border-[#CDA45A]/30 hover:border-[#CDA45A] px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg text-[#CDA45A] hover:text-[#E6D2A8] hover:scale-105 transition-all duration-300 shadow-sm flex items-center justify-center h-8 sm:h-9 w-12 sm:w-14" title="PayPal">
+            <svg viewBox="0 0 16 16" className="w-full h-full fill-current">
+              <path d="M14.06 3.713c.12-1.071-.093-1.832-.702-2.526C12.628.356 11.312 0 9.626 0H4.734a.7.7 0 0 0-.691.59L2.005 13.509a.42.42 0 0 0 .415.486h2.756l-.202 1.28a.628.628 0 0 0 .62.726H8.14c.429 0 .793-.31.862-.731l.025-.13.48-3.043.03-.164.001-.007a.35.35 0 0 1 .348-.297h.38c1.266 0 2.425-.256 3.345-.91q.57-.403.993-1.005a4.94 4.94 0 0 0 .88-2.195c.242-1.246.13-2.356-.57-3.154a2.7 2.7 0 0 0-.76-.59l-.094-.061ZM6.543 8.82a.7.7 0 0 1 .321-.079H8.3c2.82 0 5.027-1.144 5.672-4.456l.003-.016q.326.186.548.438c.546.623.679 1.535.45 2.71-.272 1.397-.866 2.307-1.663 2.874-.802.57-1.842.815-3.043.815h-.38a.87.87 0 0 0-.863.734l-.03.164-.48 3.043-.024.13-.001.004a.35.35 0 0 1-.348.296H5.595a.106.106 0 0 1-.105-.123l.208-1.32z" />
+            </svg>
+          </div>
+          {/* Apple Pay */}
+          <div className="bg-[#2A2421] border border-[#CDA45A]/30 hover:border-[#CDA45A] px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg text-[#CDA45A] hover:text-[#E6D2A8] hover:scale-105 transition-all duration-300 shadow-sm flex items-center justify-center h-8 sm:h-9 w-12 sm:w-14" title="Apple Pay">
+            <svg viewBox="0 0 36 24" className="w-full h-full fill-current">
+              <path d="M9 7.2c.4-.5.6-1.1.5-1.7-.5 0-1.2.3-1.5.8-.3.4-.6 1-.5 1.6.6.1 1.2-.3 1.5-.7zm-1.5 1.7c-.6 0-1.1.4-1.5.4s-.7-.4-1.3-.4c-.9 0-1.7.7-2.1 1.5-.8 1.5-.8 3.9.2 5.4.5.7 1.1 1.6 2 1.6s1-.5 2-.5c1 0 1.1.5 2 .5s1.5-.8 2-1.6c.7-.9.9-1.9.9-2 0 0-1.7-.7-1.7-2.6 0-1.6 1.3-2.4 1.4-2.5-.7-1.1-1.9-1.3-2.4-1.3z" />
+              <path d="M16 8h2.3c.7 0 1.2.2 1.6.5.3.3.5.7.5 1.3s-.2 1-.5 1.3c-.4.3-.9.5-1.6.5H17.2v4.4H16V8zm1.2 1.2v2h1c.3 0 .5-.1.7-.2s.2-.3.2-.6c0-.3-.1-.5-.2-.6s-.4-.2-.7-.2h-1zm7.4.8c-.5 0-.9.2-1.2.6s-.5.8-.5 1.4c0 .6.2 1.1.5 1.4s.7.5 1.2.5.9-.2 1.2-.5.5-.8.5-1.4c0-.6-.2-1.1-.5-1.4s-.7-.6-1.2-.6zm-1.2-2h1.2v.7c.3-.5.8-.8 1.4-.8.8 0 1.4.3 1.8.9s.6 1.4.6 2.3c0 .9-.2 1.7-.6 2.3s-1 .9-1.8.9c-.6 0-1.1-.3-1.4-.8v2.8h-1.2V10zm8.7 0l-1.9 4.8-1.9-4.8h1.3l1 2.8 1-2.8h1.3z" />
+            </svg>
+          </div>
+          {/* Google Pay */}
+          <div className="bg-[#2A2421] border border-[#CDA45A]/30 hover:border-[#CDA45A] px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg text-[#CDA45A] hover:text-[#E6D2A8] hover:scale-105 transition-all duration-300 shadow-sm flex items-center justify-center h-8 sm:h-9 w-12 sm:w-14" title="Google Pay">
+            <svg viewBox="0 0 36 24" className="w-full h-full fill-current">
+              <path d="M8.2 11.2c0-.5-.04-1-.1-1.4H4.5v2.7h2.1c-.1.5-.4 1-.8 1.3v1.1h1.3c.7-.6 1.1-1.7 1.1-3.7z" />
+              <path d="M4.5 15c.8 0 1.5-.3 2.1-.8l-1.3-1.1c-.2.2-.5.3-.8.3-.7 0-1.2-.4-1.4-1h-1.3v1c.5 1 1.6 1.6 2.7 1.6z" />
+              <path d="M3.1 12.4c-.1-.3-.1-.6-.1-.9s0-.6.1-.9V9.6H1.8C1.5 10.2 1.3 10.8 1.3 11.5s.2 1.3.5 1.9l1.3-1z" />
+              <path d="M4.5 8c1.1 0 1.7.5 2.1.9l1.5-1.5C7.2 6.5 6 6 4.5 6 3.4 6 2.3 6.6 1.8 7.6l1.3 1c.2-.6.7-1 1.4-1z" />
+              <path d="M14 8h2.3c.7 0 1.2.2 1.6.5.3.3.5.7.5 1.3s-.2 1-.5 1.3c-.4.3-.9.5-1.6.5h-1.1v4.4H14V8zm1.2 1.2v2h1c.3 0 .5-.1.7-.2s.2-.3.2-.6c0-.3-.1-.5-.2-.6s-.4-.2-.7-.2h-1zm7.4.8c-.5 0-.9.2-1.2.6s-.5.8-.5 1.4c0 .6.2 1.1.5 1.4s.7.5 1.2.5.9-.2 1.2-.5.5-.8.5-1.4c0-.6-.2-1.1-.5-1.4s-.7-.6-1.2-.6zm-1.2-2h1.2v.7c.3-.5.8-.8 1.4-.8.8 0 1.4.3 1.8.9s.6 1.4.6 2.3c0 .9-.2 1.7-.6 2.3s-1 .9-1.8.9c-.6 0-1.1-.3-1.4-.8v2.8h-1.2V10zm8.7 0l-1.9 4.8-1.9-4.8h1.3l1 2.8 1-2.8h1.3z" />
+            </svg>
+          </div>
         </div>
       </div>
     </footer>
