@@ -162,18 +162,21 @@ export default function Header() {
             : 'bg-[#F7F0E7] border-[#CDA45A]/20 py-1.5'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4 relative">
           {/* Mobile Menu Trigger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-[#1E1A18] hover:text-[#CDA45A] transition-colors"
+            className="lg:hidden p-2 text-[#1E1A18] hover:text-[#CDA45A] transition-colors z-20"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
 
-          {/* Grand Royal Logo - Layered & Prominently Scaled */}
-          <Link href="/" className="flex items-center shrink-0 relative z-10 group py-0.5">
+          {/* Grand Royal Logo - Perfectly Centered on Mobile */}
+          <Link
+            href="/"
+            className="flex items-center shrink-0 absolute left-1/2 -translate-x-1/2 lg:relative lg:left-0 lg:translate-x-0 z-10 group py-0.5"
+          >
             <img
               src="/logo-transp.png"
               alt="Hathipole The Bazaar Royal Logo"
@@ -200,7 +203,7 @@ export default function Header() {
           </div>
 
           {/* Action Controls & Currency Selector */}
-          <div className="flex items-center gap-3 text-[#1E1A18]">
+          <div className="flex items-center gap-3 text-[#1E1A18] z-20">
             {/* Currency Selector Badge */}
             <div className="hidden sm:flex items-center gap-1.5 bg-[#1E1A18] text-[#FCFAF7] px-3 py-1 rounded-full border border-[#CDA45A]/40 shadow-sm">
               <Globe className="w-3.5 h-3.5 text-[#CDA45A]" />

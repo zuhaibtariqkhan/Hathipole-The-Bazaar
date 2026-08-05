@@ -280,11 +280,11 @@ export default function HomePage() {
             The Philosophy of Hathipole
           </span>
 
-          <h2 className="font-serif-luxury text-2.5xl sm:text-4xl md:text-5xl font-normal text-[#1E1A18] leading-tight max-w-4xl mx-auto">
-            Hathipole The Bazaar is more than a luxury marketplace—it is a global destination for India&apos;s finest handcrafted heritage.
+          <h2 className="font-serif-luxury text-2.5xl sm:text-4xl md:text-5xl font-normal text-[#1E1A18] leading-tight max-w-4xl mx-auto text-center">
+            Hathipole The Bazaar is more than a luxury marketplace. It is a global destination for India&apos;s finest handcrafted heritage.
           </h2>
 
-          <div className="space-y-4 max-w-3xl mx-auto text-sm sm:text-base text-gray-600 font-light leading-relaxed">
+          <div className="space-y-4 max-w-3xl mx-auto text-sm sm:text-base text-gray-600 font-light leading-relaxed text-center">
             <p>
               We connect discerning collectors and design enthusiasts with India&apos;s most accomplished master artisans, preserving centuries of craftsmanship through every creation. Each piece is handcrafted using authentic materials such as pure silk, natural pigments, handwoven textiles, precious metals, and traditional techniques passed down through generations.
             </p>
@@ -293,10 +293,10 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="pt-4">
+          <div className="pt-4 text-center">
             <Link
               href="/artisans"
-              className="text-xs font-bold tracking-widest text-[#CDA45A] uppercase border-b-2 border-[#CDA45A] pb-1 hover:text-[#1E1A18] hover:border-[#1E1A18] transition-colors"
+              className="text-xs font-bold tracking-widest text-[#CDA45A] uppercase border-b-2 border-[#CDA45A] pb-1 hover:text-[#1E1A18] hover:border-[#1E1A18] transition-colors inline-block"
             >
               Explore Our Heritage Story →
             </Link>
@@ -306,7 +306,7 @@ export default function HomePage() {
 
       {/* 5. Discover Authentic Craftsmanship */}
       <section className="max-w-7xl mx-auto px-6 md:px-8 space-y-12">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#CDA45A]/20 pb-6">
+        <div className="flex flex-col sm:flex-row items-center sm:items-end justify-between gap-4 border-b border-[#CDA45A]/20 pb-6 text-center sm:text-left">
           <div>
             <span className="font-cinzel text-xs tracking-[0.25em] text-[#CDA45A] uppercase block font-semibold">
               Heritage Curation
@@ -353,7 +353,7 @@ export default function HomePage() {
 
       {/* 6. Featured Masterpieces with Gliding Tab Indicator */}
       <section className="max-w-7xl mx-auto px-6 md:px-8 space-y-12">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-b border-[#CDA45A]/20 pb-6">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 border-b border-[#CDA45A]/20 pb-6 text-center sm:text-left">
           <div>
             <span className="font-cinzel text-xs tracking-[0.25em] text-[#CDA45A] uppercase block font-semibold">
               Handcrafted Treasures
