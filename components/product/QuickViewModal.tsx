@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useStore } from '@/lib/store/useStore';
 import { formatPrice } from '@/lib/data/currencies';
@@ -18,6 +18,17 @@ import {
 export default function QuickViewModal() {
   const { quickViewProduct, setQuickViewProduct, currency, addToCart, toggleWishlist, wishlistIds } = useStore();
   const [selectedImgIndex, setSelectedImgIndex] = useState(0);
+
+  useEffect(() => {
+    if (quickViewProduct) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [quickViewProduct]);
 
   if (!quickViewProduct) return null;
 

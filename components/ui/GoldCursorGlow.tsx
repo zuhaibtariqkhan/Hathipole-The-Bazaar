@@ -1,38 +1,60 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function GoldCursorGlow() {
-  const [position, setPosition] = useState({ x: -100, y: -100 });
-  const [isVisible, setIsVisible] = useState(false);
+  const glowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let animationFrameId: number | null = null;
+    let latestX = -100;
+    let latestY = -100;
+    let isVisible = false;
+
+    const updatePosition = () => {
+      if (glowRef.current) {
+        glowRef.current.style.background = `radial-gradient(450px circle at ${latestX}px ${latestY}px, rgba(205, 164, 90, 0.08), transparent 80%)`;
+        glowRef.current.style.opacity = isVisible ? '1' : '0';
+      }
+      animationFrameId = null;
+    };
+
     const handleMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-      if (!isVisible) setIsVisible(true);
+      latestX = e.clientX;
+      latestY = e.clientY;
+      if (!isVisible) {
+        isVisible = true;
+      }
+      if (!animationFrameId) {
+        animationFrameId = requestAnimationFrame(updatePosition);
+      }
     };
 
     const handleMouseLeave = () => {
-      setIsVisible(false);
+      isVisible = false;
+      if (glowRef.current) {
+        glowRef.current.style.opacity = '0';
+      }
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
     document.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseleave', handleMouseLeave);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
     };
-  }, [isVisible]);
-
-  if (!isVisible) return null;
+  }, []);
 
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300 hidden md:block"
-      style={{
-        background: `radial-gradient(450px circle at ${position.x}px ${position.y}px, rgba(205, 164, 90, 0.08), transparent 80%)`
-      }}
+      ref={glowRef}
+      className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300 hidden md:block opacity-0"
+      style={{ willChange: 'background, opacity' }}
     />
   );
 }
+

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import { useStore } from '@/lib/store/useStore';
 import { mockProducts } from '@/lib/data/mockProducts';
@@ -29,6 +29,17 @@ export default function SearchModal() {
   const { searchModalOpen, setSearchModalOpen, currency, setQuickViewProduct } = useStore();
   const [query, setQuery] = useState('');
   const [isListening, setIsListening] = useState(false);
+
+  useEffect(() => {
+    if (searchModalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [searchModalOpen]);
 
   const filteredProducts = useMemo(() => {
     if (!query.trim()) return [];

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useStore } from '@/lib/store/useStore';
 import { formatPrice } from '@/lib/data/currencies';
@@ -36,6 +36,17 @@ export default function CartDrawer() {
 
   const [couponInput, setCouponInput] = useState('');
   const [couponFeedback, setCouponFeedback] = useState<{ success?: boolean; message?: string }>({});
+
+  useEffect(() => {
+    if (cartDrawerOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [cartDrawerOpen]);
 
   if (!cartDrawerOpen) return null;
 

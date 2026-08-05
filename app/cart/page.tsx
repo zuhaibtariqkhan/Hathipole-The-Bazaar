@@ -1,6 +1,6 @@
 'use client';
 
-import useState from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { useStore } from '@/lib/store/useStore';
 import { formatPrice } from '@/lib/data/currencies';

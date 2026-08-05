@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -95,6 +95,33 @@ export default function HomePage() {
   const [heroIndex, setHeroIndex] = useState(0);
   const [activeTab, setActiveTab] = useState<'bestsellers' | 'new' | 'limited'>('bestsellers');
   const [activeStoryIndex, setActiveStoryIndex] = useState(0);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  // Imperatively control video playback based on active slide
+  useEffect(() => {
+    videoRefs.current.forEach((video, idx) => {
+      if (!video) return;
+      if (idx === heroIndex) {
+        video.currentTime = 0;
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            // Autoplay prevented by browser
+          });
+        }
+      } else {
+        video.pause();
+      }
+    });
+  }, [heroIndex]);
+
+  // Smooth auto-slide transition every 7 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setHeroIndex((prev) => (prev + 1) % heroSlides.length);
+    }, 7000);
+    return () => clearInterval(timer);
+  }, []);
 
   const displayedProducts = mockProducts.filter((p) => {
     if (activeTab === 'bestsellers') return p.isBestSeller;
@@ -108,34 +135,42 @@ export default function HomePage() {
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#1E1A18]">
         {/* Animated Background Media with Zero Poster Flash & Instant Preloaded Buffering */}
         <div className="absolute inset-0 overflow-hidden bg-[#1E1A18]">
-          {heroSlides.map((slide, idx) => (
-            <div
-              key={`hero-bg-${idx}`}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-out ${
-                heroIndex === idx ? 'opacity-55 scale-100 z-10' : 'opacity-0 scale-105 z-0 pointer-events-none'
-              }`}
-              style={{ willChange: 'opacity, transform' }}
-            >
-              {slide.video ? (
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                  className="w-full h-full object-cover transform-gpu"
-                >
-                  <source src={slide.video} type="video/mp4" />
-                </video>
-              ) : (
+          {heroSlides.map((slide, idx) => {
+            const isActive = heroIndex === idx;
+            return (
+              <div
+                key={`hero-bg-${idx}`}
+                className={`absolute inset-0 transition-opacity duration-1000 ease-out ${
+                  isActive ? 'opacity-60 scale-100 z-10' : 'opacity-0 scale-105 z-0 pointer-events-none'
+                }`}
+                style={{ willChange: 'opacity, transform' }}
+              >
+                {/* Instant Background Poster Image (0ms latency, zero black screen) */}
                 <img
                   src={slide.image}
                   alt={slide.title}
-                  className="w-full h-full object-cover transform-gpu"
+                  className="absolute inset-0 w-full h-full object-cover transform-gpu"
                 />
-              )}
-            </div>
-          ))}
+
+                {/* Optimized Video Layer */}
+                {slide.video && (
+                  <video
+                    ref={(el) => {
+                      videoRefs.current[idx] = el;
+                    }}
+                    poster={slide.image}
+                    loop
+                    muted
+                    playsInline
+                    preload={isActive ? 'auto' : 'none'}
+                    className="absolute inset-0 w-full h-full object-cover transform-gpu"
+                  >
+                    <source src={slide.video} type="video/mp4" />
+                  </video>
+                )}
+              </div>
+            );
+          })}
         </div>
 
         {/* Ambient Dark Gradient Overlays */}
@@ -407,16 +442,9 @@ export default function HomePage() {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.5 }}
                   onError={(e) => {
-                    const target = e.currentTarget;
-                    if (target.src.endsWith('.jpg')) {
-                      target.src = target.src.replace('.jpg', '.png');
-                    } else if (target.src.endsWith('.png')) {
-                      target.src = target.src.replace('.png', '.jpeg');
-                    } else if (target.src.endsWith('.jpeg')) {
-                      target.src = target.src.replace('.jpeg', '.webp');
-                    } else {
-                      target.src = 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=80';
-                    }
+                    const target = e.currentTarget as HTMLImageElement;
+                    target.onerror = null;
+                    target.src = 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=80';
                   }}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
@@ -450,15 +478,8 @@ export default function HomePage() {
                     alt={story.title}
                     onError={(e) => {
                       const target = e.currentTarget as HTMLImageElement;
-                      if (target.src.endsWith('.jpg')) {
-                        target.src = target.src.replace('.jpg', '.png');
-                      } else if (target.src.endsWith('.png')) {
-                        target.src = target.src.replace('.png', '.jpeg');
-                      } else if (target.src.endsWith('.jpeg')) {
-                        target.src = target.src.replace('.jpeg', '.webp');
-                      } else {
-                        target.src = 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=80';
-                      }
+                      target.onerror = null;
+                      target.src = 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=80';
                     }}
                     className="w-full h-full object-cover"
                   />

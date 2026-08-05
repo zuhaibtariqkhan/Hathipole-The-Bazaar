@@ -85,15 +85,22 @@ export default function MobileFeaturedCarousel({
     }, 4000);
   };
 
-  // Update active index based on scroll position during manual swipe
+  // Update active index based on scroll position during manual swipe (throttled)
+  const scrollTickRef = useRef(false);
   const handleScroll = () => {
-    if (!containerRef.current) return;
-    const scrollLeft = containerRef.current.scrollLeft;
-    const cardWidth = containerRef.current.firstElementChild?.clientWidth || 210;
-    const newIndex = Math.round(scrollLeft / (cardWidth + 14));
-    if (newIndex >= 0 && newIndex < carouselProducts.length && newIndex !== activeIndex) {
-      setActiveIndex(newIndex);
-    }
+    if (scrollTickRef.current || !containerRef.current) return;
+    scrollTickRef.current = true;
+    requestAnimationFrame(() => {
+      if (containerRef.current) {
+        const scrollLeft = containerRef.current.scrollLeft;
+        const cardWidth = containerRef.current.firstElementChild?.clientWidth || 210;
+        const newIndex = Math.round(scrollLeft / (cardWidth + 14));
+        if (newIndex >= 0 && newIndex < carouselProducts.length) {
+          setActiveIndex((prev) => (prev !== newIndex ? newIndex : prev));
+        }
+      }
+      scrollTickRef.current = false;
+    });
   };
 
   return (

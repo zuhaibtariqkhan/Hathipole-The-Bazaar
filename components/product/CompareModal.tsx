@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useStore } from '@/lib/store/useStore';
 import { mockProducts } from '@/lib/data/mockProducts';
 import { formatPrice } from '@/lib/data/currencies';
@@ -15,6 +16,17 @@ export default function CompareModal() {
     currency,
     addToCart
   } = useStore();
+
+  useEffect(() => {
+    if (compareModalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [compareModalOpen]);
 
   if (!compareModalOpen) return null;
 

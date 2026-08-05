@@ -126,15 +126,8 @@ export default function ArtisansPage() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 45vw, 400px"
                   onError={(e) => {
                     const target = e.currentTarget as HTMLImageElement;
-                    if (target.src.endsWith('.jpg')) {
-                      target.src = target.src.replace('.jpg', '.png');
-                    } else if (target.src.endsWith('.png')) {
-                      target.src = target.src.replace('.png', '.jpeg');
-                    } else if (target.src.endsWith('.jpeg')) {
-                      target.src = target.src.replace('.jpeg', '.webp');
-                    } else {
-                      target.src = 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=80';
-                    }
+                    target.onerror = null;
+                    target.src = 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=80';
                   }}
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
