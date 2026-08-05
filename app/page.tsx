@@ -4,19 +4,15 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProductCard from '@/components/product/ProductCard';
+import ProductCardMobile from '@/components/product/ProductCardMobile';
+import MobileFeaturedCarousel from '@/components/product/MobileFeaturedCarousel';
 import { mockProducts } from '@/lib/data/mockProducts';
 import { mockArtisans, mockArtisanStories } from '@/lib/data/mockArtisans';
 import RoyalCrestDivider from '@/components/ui/RoyalCrestDivider';
 import GlobalReviewsCarousel from '@/components/home/GlobalReviewsCarousel';
 import {
   ArrowRight,
-  Sparkles,
-  ShieldCheck,
-  Truck,
-  Heart,
-  Quote,
-  Star,
-  Compass
+  Quote
 } from 'lucide-react';
 
 const heroSlides = [
@@ -203,70 +199,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. Value Proposition Luxury Feature Cards */}
-      <section className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          <div className="luxury-card-interactive p-8 space-y-4 shadow-luxury hover:-translate-y-1.5 transition-all duration-300 group text-center sm:text-left flex flex-col items-center sm:items-start">
-            <div className="w-14 h-14 rounded-2xl bg-[#CDA45A]/10 border border-[#CDA45A]/40 flex items-center justify-center text-[#CDA45A] group-hover:scale-110 group-hover:bg-[#CDA45A] group-hover:text-white transition-all duration-300 shadow-md">
-              <ShieldCheck className="w-7 h-7" />
-            </div>
-            <div>
-              <h4 className="font-serif-luxury text-xl font-bold text-[#1E1A18] group-hover:text-[#CDA45A] transition-colors">
-                100% Master Artisans
-              </h4>
-              <div className="w-10 h-0.5 bg-[#CDA45A]/40 group-hover:w-16 transition-all my-2 mx-auto sm:mx-0" />
-              <p className="text-xs sm:text-sm text-gray-600 font-light leading-relaxed">
-                Certified master craft lineages preserving 400-year royal heritage techniques.
-              </p>
-            </div>
-          </div>
 
-          <div className="luxury-card-interactive p-8 space-y-4 shadow-luxury hover:-translate-y-1.5 transition-all duration-300 group text-center sm:text-left flex flex-col items-center sm:items-start">
-            <div className="w-14 h-14 rounded-2xl bg-[#CDA45A]/10 border border-[#CDA45A]/40 flex items-center justify-center text-[#CDA45A] group-hover:scale-110 group-hover:bg-[#CDA45A] group-hover:text-white transition-all duration-300 shadow-md">
-              <Truck className="w-7 h-7" />
-            </div>
-            <div>
-              <h4 className="font-serif-luxury text-xl font-bold text-[#1E1A18] group-hover:text-[#CDA45A] transition-colors">
-                Worldwide Air Courier
-              </h4>
-              <div className="w-10 h-0.5 bg-[#CDA45A]/40 group-hover:w-16 transition-all my-2 mx-auto sm:mx-0" />
-              <p className="text-xs sm:text-sm text-gray-600 font-light leading-relaxed">
-                Insured door-to-door express delivery via FedEx & DHL to 120+ countries.
-              </p>
-            </div>
-          </div>
-
-          <div className="luxury-card-interactive p-8 space-y-4 shadow-luxury hover:-translate-y-1.5 transition-all duration-300 group text-center sm:text-left flex flex-col items-center sm:items-start">
-            <div className="w-14 h-14 rounded-2xl bg-[#CDA45A]/10 border border-[#CDA45A]/40 flex items-center justify-center text-[#CDA45A] group-hover:scale-110 group-hover:bg-[#CDA45A] group-hover:text-white transition-all duration-300 shadow-md">
-              <Sparkles className="w-7 h-7" />
-            </div>
-            <div>
-              <h4 className="font-serif-luxury text-xl font-bold text-[#1E1A18] group-hover:text-[#CDA45A] transition-colors">
-                Bespoke Crafting
-              </h4>
-              <div className="w-10 h-0.5 bg-[#CDA45A]/40 group-hover:w-16 transition-all my-2 mx-auto sm:mx-0" />
-              <p className="text-xs sm:text-sm text-gray-600 font-light leading-relaxed">
-                Tailored size, color & motif commissions for interior architects & luxury homes.
-              </p>
-            </div>
-          </div>
-
-          <div className="luxury-card-interactive p-8 space-y-4 shadow-luxury hover:-translate-y-1.5 transition-all duration-300 group text-center sm:text-left flex flex-col items-center sm:items-start">
-            <div className="w-14 h-14 rounded-2xl bg-[#CDA45A]/10 border border-[#CDA45A]/40 flex items-center justify-center text-[#CDA45A] group-hover:scale-110 group-hover:bg-[#CDA45A] group-hover:text-white transition-all duration-300 shadow-md">
-              <Heart className="w-7 h-7" />
-            </div>
-            <div>
-              <h4 className="font-serif-luxury text-xl font-bold text-[#1E1A18] group-hover:text-[#CDA45A] transition-colors">
-                Ethical Fair Trade
-              </h4>
-              <div className="w-10 h-0.5 bg-[#CDA45A]/40 group-hover:w-16 transition-all my-2 mx-auto sm:mx-0" />
-              <p className="text-xs sm:text-sm text-gray-600 font-light leading-relaxed">
-                Direct fair-trade wages supporting artisan families & endangered art forms.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Royal Crest Divider */}
       <div className="max-w-5xl mx-auto px-6">
@@ -323,7 +256,15 @@ export default function HomePage() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Mobile View: Compact 2-column Product Grid (40-50% smaller size) */}
+        <div className="grid grid-cols-2 gap-3 sm:hidden">
+          {mockProducts.slice(0, 6).map((product) => (
+            <ProductCardMobile key={`heritage-mobile-${product.id}`} product={product} />
+          ))}
+        </div>
+
+        {/* Desktop and Tablet View */}
+        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {featuredCollections.map((col) => (
             <Link
               key={col.title}
@@ -386,21 +327,18 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Mobile Horizontal Carousel (7-8 Products) */}
-        <div className="flex sm:hidden overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-6 px-6 no-scrollbar touch-pan-x">
-          {(displayedProducts.length >= 7
-            ? displayedProducts
-            : [...displayedProducts, ...mockProducts.filter((p) => !displayedProducts.some((dp) => dp.id === p.id))]
-          )
-            .slice(0, 8)
-            .map((product) => (
-              <div key={product.id} className="w-[72vw] max-w-[250px] shrink-0 snap-start">
-                <ProductCard product={product} />
-              </div>
-            ))}
+        {/* Mobile View: Touch-Enabled Auto-Sliding Carousel (8-12 Products) */}
+        <div className="block sm:hidden">
+          <MobileFeaturedCarousel
+            products={
+              displayedProducts.length >= 8
+                ? displayedProducts
+                : [...displayedProducts, ...mockProducts.filter((p) => !displayedProducts.some((dp) => dp.id === p.id))]
+            }
+          />
         </div>
 
-        {/* Desktop and Tablet Grid Layout */}
+        {/* Desktop and Tablet Grid Layout (Unchanged) */}
         <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayedProducts.slice(0, 6).map((product) => (
             <ProductCard key={product.id} product={product} />
