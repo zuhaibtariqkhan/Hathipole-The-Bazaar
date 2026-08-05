@@ -106,41 +106,37 @@ export default function HomePage() {
     <div className="space-y-16 sm:space-y-24 md:space-y-32 pb-16 sm:pb-24">
       {/* 1. Full-Bleed Cinematic Hero Banner with Floating Gold Orbs */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#1E1A18]">
-        {/* Animated Background Media (Video or Image) */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={heroIndex}
-            initial={{ opacity: 0, scale: 1.08 }}
-            animate={{ opacity: 0.55, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.05 }}
-            transition={{ duration: 1.2, ease: 'easeOut' }}
-            className="absolute inset-0"
-          >
-            {heroSlides[heroIndex].video ? (
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                poster={heroSlides[heroIndex].image}
-                className="w-full h-full object-cover"
-              >
-                <source src={heroSlides[heroIndex].video} type="video/mp4" />
+        {/* Animated Background Media with Zero Poster Flash & Instant Preloaded Buffering */}
+        <div className="absolute inset-0 overflow-hidden bg-[#1E1A18]">
+          {heroSlides.map((slide, idx) => (
+            <div
+              key={`hero-bg-${idx}`}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-out ${
+                heroIndex === idx ? 'opacity-55 scale-100 z-10' : 'opacity-0 scale-105 z-0 pointer-events-none'
+              }`}
+              style={{ willChange: 'opacity, transform' }}
+            >
+              {slide.video ? (
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  className="w-full h-full object-cover transform-gpu"
+                >
+                  <source src={slide.video} type="video/mp4" />
+                </video>
+              ) : (
                 <img
-                  src={heroSlides[heroIndex].image}
-                  alt={heroSlides[heroIndex].title}
-                  className="w-full h-full object-cover"
+                  src={slide.image}
+                  alt={slide.title}
+                  className="w-full h-full object-cover transform-gpu"
                 />
-              </video>
-            ) : (
-              <img
-                src={heroSlides[heroIndex].image}
-                alt={heroSlides[heroIndex].title}
-                className="w-full h-full object-cover"
-              />
-            )}
-          </motion.div>
-        </AnimatePresence>
+              )}
+            </div>
+          ))}
+        </div>
 
         {/* Ambient Dark Gradient Overlays */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#1E1A18] via-[#1E1A18]/40 to-transparent z-10" />

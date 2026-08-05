@@ -36,11 +36,11 @@ export const metadata: Metadata = {
   description: 'A global digital luxury boutique representing India\'s finest authentic handicrafts, hand-knotted silk rugs, pure cashmere pashminas, miniature paintings, and royal attar fragrances.',
   icons: {
     icon: [
-      { url: '/the-logo.png', sizes: '32x32', type: 'image/png' },
-      { url: '/the-logo.png', sizes: '192x192', type: 'image/png' }
+      { url: '/favi.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favi.png', sizes: '192x192', type: 'image/png' }
     ],
-    shortcut: '/the-logo.png',
-    apple: '/the-logo.png'
+    shortcut: '/favi.png',
+    apple: '/favi.png'
   },
   keywords: [
     'Indian Handicrafts',

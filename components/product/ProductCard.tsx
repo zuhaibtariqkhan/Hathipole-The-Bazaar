@@ -68,8 +68,8 @@ export default function ProductCard({ product }: ProductCardProps) {
             onClick={() => toggleWishlist(product.id)}
             className={`w-9 h-9 rounded-full flex items-center justify-center backdrop-blur-md shadow-md transition-all duration-300 ${
               isWishlisted
-                ? 'bg-red-50 text-red-500 border border-red-200 scale-110'
-                : 'bg-white/85 text-[#1E1A18] hover:bg-[#CDA45A] hover:text-white'
+                ? 'bg-red-50 text-red-500 border border-red-200 scale-110 shadow-[0_0_15px_rgba(239,68,68,0.3)]'
+                : 'bg-white/90 text-[#1E1A18] hover:bg-[#CDA45A] hover:text-white hover:shadow-[0_0_20px_rgba(205,164,90,0.5)]'
             }`}
             title="Add to Wishlist"
           >
@@ -79,7 +79,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           {/* Quick View */}
           <button
             onClick={() => setQuickViewProduct(product)}
-            className="w-9 h-9 rounded-full bg-white/85 text-[#1E1A18] hover:bg-[#CDA45A] hover:text-white flex items-center justify-center backdrop-blur-md shadow-md transition-all duration-300"
+            className="w-9 h-9 rounded-full bg-white/90 text-[#1E1A18] hover:bg-[#CDA45A] hover:text-white flex items-center justify-center backdrop-blur-md shadow-md transition-all duration-300 hover:shadow-[0_0_20px_rgba(205,164,90,0.5)]"
             title="Quick View"
           >
             <Eye className="w-4 h-4" />
@@ -90,8 +90,8 @@ export default function ProductCard({ product }: ProductCardProps) {
             onClick={() => toggleCompare(product.id)}
             className={`w-9 h-9 rounded-full flex items-center justify-center backdrop-blur-md shadow-md transition-all duration-300 ${
               isCompared
-                ? 'bg-[#CDA45A] text-white scale-110'
-                : 'bg-white/85 text-[#1E1A18] hover:bg-[#CDA45A] hover:text-white'
+                ? 'bg-[#CDA45A] text-white scale-110 shadow-[0_0_15px_rgba(205,164,90,0.4)]'
+                : 'bg-white/90 text-[#1E1A18] hover:bg-[#CDA45A] hover:text-white hover:shadow-[0_0_20px_rgba(205,164,90,0.5)]'
             }`}
             title="Compare Specs"
           >
