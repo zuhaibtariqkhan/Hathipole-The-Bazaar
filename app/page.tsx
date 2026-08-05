@@ -31,6 +31,7 @@ const heroSlides = [
     title: 'Hand-Knotted Heritage Rugs',
     subtitle: 'Masterpieces Woven Knot by Knot',
     description: "Inspired by India's rich artistic heritage, our handcrafted rugs are created using premium wool and silk by skilled master weavers. Designed to become heirloom pieces, they bring enduring beauty to the world's finest interiors.",
+    video: '/RUGS.mp4',
     image: 'https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=2000&q=80',
     ctaText: 'Explore Rugs →',
     link: '/shop?category=rugs'
@@ -40,6 +41,7 @@ const heroSlides = [
     title: 'Royal Pichwai & Miniature Paintings',
     subtitle: 'Timeless Art for Modern Collectors',
     description: "Hand-painted by renowned artists using natural pigments, gold detailing, and centuries-old techniques, each painting celebrates India's royal artistic traditions and transforms any space into a gallery of heritage.",
+    video: '/PAINTING.mp4',
     image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=2000&q=80',
     ctaText: 'Explore Paintings →',
     link: '/shop?category=paintings'
@@ -404,6 +406,18 @@ export default function HomePage() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.5 }}
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (target.src.endsWith('.jpg')) {
+                      target.src = target.src.replace('.jpg', '.png');
+                    } else if (target.src.endsWith('.png')) {
+                      target.src = target.src.replace('.png', '.jpeg');
+                    } else if (target.src.endsWith('.jpeg')) {
+                      target.src = target.src.replace('.jpeg', '.webp');
+                    } else {
+                      target.src = 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=80';
+                    }
+                  }}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </AnimatePresence>
@@ -431,7 +445,23 @@ export default function HomePage() {
                   }`}
                   aria-label={`View story ${story.number}`}
                 >
-                  <img src={story.coverImage} alt={story.title} className="w-full h-full object-cover" />
+                  <img
+                    src={story.coverImage}
+                    alt={story.title}
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (target.src.endsWith('.jpg')) {
+                        target.src = target.src.replace('.jpg', '.png');
+                      } else if (target.src.endsWith('.png')) {
+                        target.src = target.src.replace('.png', '.jpeg');
+                      } else if (target.src.endsWith('.jpeg')) {
+                        target.src = target.src.replace('.jpeg', '.webp');
+                      } else {
+                        target.src = 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=80';
+                      }
+                    }}
+                    className="w-full h-full object-cover"
+                  />
                   <div className="absolute inset-0 bg-black/35 hover:bg-transparent transition-colors" />
                   <div className="absolute bottom-1 right-2 text-[10px] font-bold text-white drop-shadow-md">
                     {story.number}

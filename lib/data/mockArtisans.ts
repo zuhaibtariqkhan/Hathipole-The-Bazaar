@@ -17,7 +17,7 @@ export const mockArtisanStories: ArtisanStory[] = [
     title: 'The Looms of Kashmir: Pashmina',
     subtitle: 'High-Altitude Changthangi Wool & Fine Hand Embroidery',
     region: 'Kashmir & Ladakh Heritage Guild',
-    coverImage: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=80',
+    coverImage: '/SHAWL.jpg',
     paragraphs: [
       'Long before the first rays of sunlight touch the Himalayan valleys, the sound of wooden looms begins to echo through small homes nestled among the mountains. Here, generations of artisans continue a tradition that has survived centuries, preserving one of the world’s finest textile legacies: authentic Pashmina.',
       'Every shawl begins with exceptionally fine wool gathered from the Changthangi goats that inhabit the high-altitude regions of Ladakh. The raw fibre is carefully cleaned, spun by hand, and transformed into delicate yarn using techniques passed from parents to children over countless generations.',
@@ -33,7 +33,7 @@ export const mockArtisanStories: ArtisanStory[] = [
     title: 'Threads of India: Handwoven Textiles',
     subtitle: 'Regional Weaves, Natural Dyes & Cultural Identity',
     region: 'Master Weavers Guild (Rajasthan, Gujarat, Bengal & South India)',
-    coverImage: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1200&q=80',
+    coverImage: '/TEXTILE.jpg',
     paragraphs: [
       'Across India, every region speaks its own language through textiles. From Rajasthan’s vibrant colours to Gujarat’s intricate weaves, from Bengal’s fine cotton traditions to South India’s elegant silks, every fabric carries generations of cultural identity.',
       'Our textile artisans begin with natural fibres and age-old weaving techniques that have remained largely unchanged for centuries. Wooden handlooms, traditional dyeing methods, and painstaking finishing processes create fabrics that possess a character impossible to replicate through mass production.',
@@ -50,7 +50,7 @@ export const mockArtisanStories: ArtisanStory[] = [
     title: 'The Soul of Pichwai: Miniature & Pichwai Paintings',
     subtitle: 'Natural Mineral Pigments, 24K Gold Leaf & Temple Heritage',
     region: 'Royal Art Studio (Udaipur & Nathdwara, Rajasthan)',
-    coverImage: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1200&q=80',
+    coverImage: '/MINI PAINTING.jpg',
     paragraphs: [
       'Inside quiet studios in Rajasthan, artists patiently prepare natural pigments, handmade brushes, and finely stretched canvases before beginning work on paintings that often take months to complete.',
       'Pichwai and miniature paintings are among India’s most celebrated artistic traditions. Every detail, from the expressive eyes of Shrinathji to the intricate lotus petals, peacocks, cows, and temple architecture, is painted entirely by hand using techniques preserved for generations.',
@@ -67,7 +67,7 @@ export const mockArtisanStories: ArtisanStory[] = [
     title: 'Carved by Hand: Indian Handicrafts',
     subtitle: 'Teakwood, Makrana Marble, Solid Brass & Pietra Dura Inlay',
     region: 'Imperial Handicraft Guilds',
-    coverImage: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80',
+    coverImage: '/HANDICRAFTS.jpg',
     paragraphs: [
       'Across villages, deserts, forests, and bustling artisan towns, master craftsmen transform ordinary natural materials into extraordinary works of art.',
       'Wood, marble, brass, stone, clay, leather, and natural fibres each demand different skills, different tools, and years of specialised experience. Every artisan develops an intimate understanding of their material, learning how it behaves, ages, and reveals its beauty through patient craftsmanship.',

@@ -121,6 +121,18 @@ export default function ArtisansPage() {
                 <img
                   src={story.coverImage}
                   alt={story.title}
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (target.src.endsWith('.jpg')) {
+                      target.src = target.src.replace('.jpg', '.png');
+                    } else if (target.src.endsWith('.png')) {
+                      target.src = target.src.replace('.png', '.jpeg');
+                    } else if (target.src.endsWith('.jpeg')) {
+                      target.src = target.src.replace('.jpeg', '.webp');
+                    } else {
+                      target.src = 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=80';
+                    }
+                  }}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1E1A18]/80 via-transparent to-transparent flex items-end p-6">
