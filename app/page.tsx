@@ -12,6 +12,7 @@ import RoyalCrestDivider from '@/components/ui/RoyalCrestDivider';
 import GlobalReviewsCarousel from '@/components/home/GlobalReviewsCarousel';
 import CollectionSlider from '@/components/home/CollectionSlider';
 import InstagramReelsSection from '@/components/home/InstagramReelsSection';
+import AsFeaturedInSection from '@/components/home/AsFeaturedInSection';
 import GoldSparkleEffect from '@/components/ui/GoldSparkleEffect';
 import {
   ArrowRight,
@@ -247,6 +248,9 @@ export default function HomePage() {
 
       {/* 2. Instagram Reels Curation Section */}
       <InstagramReelsSection />
+
+      {/* 3. Global Recognition - As Featured In Section */}
+      <AsFeaturedInSection />
 
       {/* Royal Crest Divider */}
       <div className="max-w-5xl mx-auto px-6">
