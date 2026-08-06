@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProductCard from '@/components/product/ProductCard';
 import ProductCardMobile from '@/components/product/ProductCardMobile';
@@ -11,6 +10,8 @@ import { mockProducts } from '@/lib/data/mockProducts';
 import { mockArtisans, mockArtisanStories } from '@/lib/data/mockArtisans';
 import RoyalCrestDivider from '@/components/ui/RoyalCrestDivider';
 import GlobalReviewsCarousel from '@/components/home/GlobalReviewsCarousel';
+import CollectionSlider from '@/components/home/CollectionSlider';
+import InstagramReelsSection from '@/components/home/InstagramReelsSection';
 import {
   ArrowRight,
   Quote
@@ -23,7 +24,6 @@ const heroSlides = [
     subtitle: 'The Finest Wool in the World',
     description: 'Handwoven from the rare Himalayan Pashmina, each shawl embodies exceptional softness, warmth, and timeless elegance. Crafted by master artisans using generations-old weaving techniques, every piece is a symbol of refined luxury.',
     video: '/P-SHAWLS.mp4',
-    image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=2000&q=80',
     ctaText: 'Explore Pashmina →',
     link: '/shop?category=pashminas'
   },
@@ -33,7 +33,6 @@ const heroSlides = [
     subtitle: 'Masterpieces Woven Knot by Knot',
     description: "Inspired by India's rich artistic heritage, our handcrafted rugs are created using premium wool and silk by skilled master weavers. Designed to become heirloom pieces, they bring enduring beauty to the world's finest interiors.",
     video: '/RUGS.mp4',
-    image: 'https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=2000&q=80',
     ctaText: 'Explore Rugs →',
     link: '/shop?category=rugs'
   },
@@ -43,7 +42,6 @@ const heroSlides = [
     subtitle: 'Timeless Art for Modern Collectors',
     description: "Hand-painted by renowned artists using natural pigments, gold detailing, and centuries-old techniques, each painting celebrates India's royal artistic traditions and transforms any space into a gallery of heritage.",
     video: '/PAINTING.mp4',
-    image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=2000&q=80',
     ctaText: 'Explore Paintings →',
     link: '/shop?category=paintings'
   }
@@ -60,41 +58,11 @@ const marqueeItems = [
   'ROYAL WEDDING SHERWANIS'
 ];
 
-const featuredCollections = [
-  {
-    title: 'Pure Silk Rugs',
-    tagline: 'Hand-Knotted 900 Knots Sq. In.',
-    region: 'Master Silk Guild',
-    image: 'https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80',
-    link: '/shop?category=rugs'
-  },
-  {
-    title: '24K Gold Pichwai Art',
-    tagline: 'Original Natural Mineral Pigments',
-    region: 'Master Art Studio',
-    image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80',
-    link: '/shop?category=paintings'
-  },
-  {
-    title: 'Pure Cashmere Pashmina',
-    tagline: 'Featherlight Sozni Needlework',
-    region: 'Heritage Cashmere Guild',
-    image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80',
-    link: '/shop?category=pashminas'
-  },
-  {
-    title: 'Makrana Marble Inlay',
-    tagline: 'Pietra Dura Semi-Precious Stones',
-    region: 'Imperial Marble Guild',
-    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80',
-    link: '/shop?category=handicrafts'
-  }
-];
-
 export default function HomePage() {
   const [heroIndex, setHeroIndex] = useState(0);
   const [activeTab, setActiveTab] = useState<'bestsellers' | 'new' | 'limited'>('bestsellers');
   const [activeStoryIndex, setActiveStoryIndex] = useState(0);
+  const [loadedVideos, setLoadedVideos] = useState<Record<number, boolean>>({});
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   // Imperatively control video playback based on active slide
@@ -133,37 +101,35 @@ export default function HomePage() {
     <div className="space-y-16 sm:space-y-24 md:space-y-32 pb-16 sm:pb-24">
       {/* 1. Full-Bleed Cinematic Hero Banner with Floating Gold Orbs */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#1E1A18]">
-        {/* Animated Background Media with Zero Poster Flash & Instant Preloaded Buffering */}
+        {/* Animated Background Media with Zero Flash & Preloaded Video Buffering */}
         <div className="absolute inset-0 overflow-hidden bg-[#1E1A18]">
           {heroSlides.map((slide, idx) => {
             const isActive = heroIndex === idx;
+            const isReady = loadedVideos[idx];
             return (
               <div
                 key={`hero-bg-${idx}`}
                 className={`absolute inset-0 transition-opacity duration-1000 ease-out ${
-                  isActive ? 'opacity-60 scale-100 z-10' : 'opacity-0 scale-105 z-0 pointer-events-none'
+                  isActive ? 'opacity-70 scale-100 z-10' : 'opacity-0 scale-105 z-0 pointer-events-none'
                 }`}
                 style={{ willChange: 'opacity, transform' }}
               >
-                {/* Instant Background Poster Image (0ms latency, zero black screen) */}
-                <img
-                  src={slide.image}
-                  alt={slide.title}
-                  className="absolute inset-0 w-full h-full object-cover transform-gpu"
-                />
-
-                {/* Optimized Video Layer */}
+                {/* Pure Video Layer - Zero Image Flashing */}
                 {slide.video && (
                   <video
                     ref={(el) => {
                       videoRefs.current[idx] = el;
                     }}
-                    poster={slide.image}
                     loop
                     muted
+                    autoPlay
                     playsInline
-                    preload={isActive ? 'auto' : 'none'}
-                    className="absolute inset-0 w-full h-full object-cover transform-gpu"
+                    preload="auto"
+                    onCanPlay={() => setLoadedVideos((prev) => ({ ...prev, [idx]: true }))}
+                    onPlaying={() => setLoadedVideos((prev) => ({ ...prev, [idx]: true }))}
+                    className={`absolute inset-0 w-full h-full object-cover transform-gpu transition-opacity duration-700 ${
+                      isReady ? 'opacity-100' : 'opacity-0'
+                    }`}
                   >
                     <source src={slide.video} type="video/mp4" />
                   </video>
@@ -276,6 +242,9 @@ export default function HomePage() {
 
 
 
+      {/* 2. Instagram Reels Curation Section */}
+      <InstagramReelsSection />
+
       {/* Royal Crest Divider */}
       <div className="max-w-5xl mx-auto px-6">
         <RoyalCrestDivider label="Royal Heritage" />
@@ -312,8 +281,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. Discover Authentic Craftsmanship */}
-      <section className="max-w-7xl mx-auto px-6 md:px-8 space-y-12">
+      {/* 5. Discover Authentic Craftsmanship - Collection Slider with Navigation Indicators */}
+      <section className="max-w-7xl mx-auto px-6 md:px-8 space-y-8">
         <div className="flex flex-col sm:flex-row items-center sm:items-end justify-between gap-4 border-b border-[#CDA45A]/20 pb-6 text-center sm:text-left">
           <div>
             <span className="font-cinzel text-xs tracking-[0.25em] text-[#CDA45A] uppercase block font-semibold">
@@ -331,40 +300,8 @@ export default function HomePage() {
           </Link>
         </div>
 
-        {/* Mobile View: Compact 2-column Product Grid (reduced size by ~30%) */}
-        <div className="grid grid-cols-2 gap-2.5 max-w-[92vw] sm:max-w-none mx-auto sm:hidden">
-          {mockProducts.slice(0, 6).map((product) => (
-            <ProductCardMobile key={`heritage-mobile-${product.id}`} product={product} />
-          ))}
-        </div>
-
-        {/* Desktop and Tablet View */}
-        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {featuredCollections.map((col) => (
-            <Link
-              key={col.title}
-              href={col.link}
-              className="group relative aspect-[3/4] rounded-3xl overflow-hidden shadow-luxury border border-[#CDA45A]/30 hover:border-[#CDA45A] transition-all duration-500 hover:-translate-y-2"
-            >
-              <img
-                src={col.image}
-                alt={col.title}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1E1A18]/90 via-[#1E1A18]/25 to-transparent p-6 flex flex-col justify-end text-[#FCFAF7]">
-                <span className="badge-gold-foil text-[10px] text-[#1E1A18] font-bold uppercase tracking-widest px-3 py-1 rounded-full w-fit mb-2">
-                  {col.region}
-                </span>
-                <h3 className="font-serif-luxury text-2xl font-bold group-hover:text-[#CDA45A] transition-colors mt-1">
-                  {col.title}
-                </h3>
-                <span className="text-xs text-gray-300 font-light mt-0.5">
-                  {col.tagline}
-                </span>
-              </div>
-            </Link>
-          ))}
-        </div>
+        {/* Collection Slider with Active Dots Indicator */}
+        <CollectionSlider />
       </section>
 
       {/* 6. Featured Masterpieces with Gliding Tab Indicator */}
