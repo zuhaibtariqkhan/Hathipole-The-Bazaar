@@ -177,15 +177,15 @@ export default function Header() {
       <div
         className={`transition-all duration-300 border-b ${
           isScrolled
-            ? 'bg-[#F7F0E7]/95 backdrop-blur-md border-[#CDA45A]/30 py-1 shadow-md'
-            : 'bg-[#F7F0E7] border-[#CDA45A]/20 py-1.5'
+            ? 'bg-[#F7F0E7]/95 backdrop-blur-md border-[#D4AF37]/30 py-1 shadow-md'
+            : 'bg-[#F7F0E7] border-[#D4AF37]/20 py-1.5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4 relative">
           {/* Mobile Menu Trigger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-[#1E1A18] hover:text-[#CDA45A] transition-colors z-20"
+            className="lg:hidden p-2 text-[#1E1A18] hover:text-[#D4AF37] transition-colors z-20"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -210,13 +210,13 @@ export default function Header() {
           {/* Compact AI Search Bar */}
           <div
             onClick={() => setSearchModalOpen(true)}
-            className="hidden md:flex items-center gap-2.5 bg-[#FCFAF7] border border-[#CDA45A]/30 hover:border-[#CDA45A] px-3.5 py-1.5 rounded-full cursor-pointer w-60 lg:w-80 transition-all shadow-sm group"
+            className="hidden md:flex items-center gap-2.5 bg-[#FCFAF7] border border-[#D4AF37]/30 hover:border-[#D4AF37] px-3.5 py-1.5 rounded-full cursor-pointer w-60 lg:w-80 transition-all shadow-sm group"
           >
-            <Search className="w-3.5 h-3.5 text-[#CDA45A]" />
+            <Search className="w-3.5 h-3.5 text-[#D4AF37]" />
             <span className="text-xs text-gray-500 flex-1 truncate font-light">
               Search silk rugs, 24K Pichwai art...
             </span>
-            <span className="flex items-center gap-1 bg-[#F7F0E7] text-[10px] text-[#CDA45A] font-semibold px-2 py-0.5 rounded-full border border-[#CDA45A]/20 group-hover:bg-[#CDA45A] group-hover:text-white transition-colors">
+            <span className="flex items-center gap-1 bg-[#F7F0E7] text-[10px] text-[#D4AF37] font-semibold px-2 py-0.5 rounded-full border border-[#D4AF37]/20 group-hover:bg-[#D4AF37] group-hover:text-white transition-colors">
               <Sparkles className="w-3 h-3 inline" /> AI
             </span>
           </div>
@@ -224,8 +224,8 @@ export default function Header() {
           {/* Action Controls & Currency Selector */}
           <div className="flex items-center gap-3 text-[#1E1A18] z-20">
             {/* Currency Selector Badge */}
-            <div className="hidden sm:flex items-center gap-1.5 bg-[#1E1A18] text-[#FCFAF7] px-3 py-1 rounded-full border border-[#CDA45A]/40 shadow-sm">
-              <Globe className="w-3.5 h-3.5 text-[#CDA45A]" />
+            <div className="hidden sm:flex items-center gap-1.5 bg-[#1E1A18] text-[#FCFAF7] px-3 py-1 rounded-full border border-[#D4AF37]/40 shadow-sm">
+              <Globe className="w-3.5 h-3.5 text-[#D4AF37]" />
               <select
                 value={currency}
                 onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
@@ -241,7 +241,7 @@ export default function Header() {
 
             <button
               onClick={() => setSearchModalOpen(true)}
-              className="md:hidden p-1.5 hover:text-[#CDA45A] transition-colors"
+              className="md:hidden p-1.5 hover:text-[#D4AF37] transition-colors"
               aria-label="Search"
             >
               <Search className="w-5 h-5" />
@@ -250,7 +250,7 @@ export default function Header() {
             {compareIds.length > 0 && (
               <button
                 onClick={() => setCompareModalOpen(true)}
-                className="hidden xl:flex items-center gap-1.5 text-xs font-semibold text-[#CDA45A] border border-[#CDA45A]/40 px-2.5 py-1 rounded-full hover:bg-[#CDA45A] hover:text-white transition-all shadow-sm"
+                className="hidden xl:flex items-center gap-1.5 text-xs font-semibold text-[#D4AF37] border border-[#D4AF37]/40 px-2.5 py-1 rounded-full hover:bg-[#D4AF37] hover:text-white transition-all shadow-sm"
               >
                 <SlidersHorizontal className="w-3.5 h-3.5" />
                 Compare ({compareIds.length})
@@ -259,12 +259,12 @@ export default function Header() {
 
             <Link
               href="/account?tab=wishlist"
-              className="relative p-1.5 hover:text-[#CDA45A] transition-colors"
+              className="relative p-1.5 hover:text-[#D4AF37] transition-colors"
               title="Wishlist"
             >
               <Heart className="w-5 h-5" />
               {wishlistIds.length > 0 && (
-                <span className="absolute top-0 right-0 w-4 h-4 bg-[#CDA45A] text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-md">
+                <span className="absolute top-0 right-0 w-4 h-4 bg-[#D4AF37] text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-md">
                   {wishlistIds.length}
                 </span>
               )}
@@ -272,7 +272,7 @@ export default function Header() {
 
             <Link
               href="/account"
-              className="p-1.5 hover:text-[#CDA45A] transition-colors hidden sm:block"
+              className="p-1.5 hover:text-[#D4AF37] transition-colors hidden sm:block"
               title="My Account"
             >
               <User className="w-5 h-5" />
@@ -280,24 +280,24 @@ export default function Header() {
 
             <button
               onClick={() => setCartDrawerOpen(true)}
-              className={`relative flex items-center gap-2 bg-[#1E1A18] text-[#FCFAF7] hover:bg-[#CDA45A] px-3.5 py-1.5 rounded-full transition-all shadow-md group ${
-                isCartPulsing ? 'animate-cart-pulse bg-[#CDA45A] shadow-[0_0_15px_#CDA45A]' : ''
+              className={`relative flex items-center gap-2 bg-[#1E1A18] text-[#FCFAF7] hover:bg-[#D4AF37] px-3.5 py-1.5 rounded-full transition-all shadow-md group ${
+                isCartPulsing ? 'animate-cart-pulse bg-[#D4AF37] shadow-[0_0_15px_#D4AF37]' : ''
               }`}
             >
-              <ShoppingBag className="w-4 h-4 text-[#CDA45A] group-hover:text-white transition-colors" />
+              <ShoppingBag className="w-4 h-4 text-[#D4AF37] group-hover:text-white transition-colors" />
               <span className="text-xs font-bold">{totalCartItems}</span>
             </button>
           </div>
         </div>
 
         {/* Compact Category Navigation Bar */}
-        <nav className="hidden lg:block border-t border-[#CDA45A]/15 mt-1.5 pt-1.5">
+        <nav className="hidden lg:block border-t border-[#D4AF37]/15 mt-1.5 pt-1.5">
           <div className="max-w-7xl mx-auto px-8 flex items-center justify-between gap-6 overflow-x-auto no-scrollbar">
             <Link
               href="/shop"
-              className="text-xs font-bold tracking-wider text-[#1E1A18] hover:text-[#CDA45A] uppercase py-1 transition-colors whitespace-nowrap flex items-center gap-1"
+              className="text-xs font-bold tracking-wider text-[#1E1A18] hover:text-[#D4AF37] uppercase py-1 transition-colors whitespace-nowrap flex items-center gap-1"
             >
-              <Compass className="w-3.5 h-3.5 text-[#CDA45A]" /> All Collections
+              <Compass className="w-3.5 h-3.5 text-[#D4AF37]" /> All Collections
             </Link>
 
             {megaMenuCategories.slice(0, 9).map((cat) => (
@@ -309,14 +309,14 @@ export default function Header() {
               >
                 <Link
                   href={`/shop?category=${cat.slug}`}
-                  className="text-xs font-medium tracking-wide text-[#3D3A36] hover:text-[#CDA45A] transition-colors whitespace-nowrap flex items-center gap-1"
+                  className="text-xs font-medium tracking-wide text-[#3D3A36] hover:text-[#D4AF37] transition-colors whitespace-nowrap flex items-center gap-1"
                 >
                   {cat.name}
-                  <ChevronDown className="w-3 h-3 text-[#CDA45A]/60 group-hover:rotate-180 transition-transform" />
+                  <ChevronDown className="w-3 h-3 text-[#D4AF37]/60 group-hover:rotate-180 transition-transform" />
                 </Link>
 
-                <div className="absolute left-0 top-full hidden group-hover:block w-72 bg-[#FCFAF7] border border-[#CDA45A]/30 rounded-xl shadow-2xl p-4 z-50 animate-fadeIn">
-                  <div className="flex items-center justify-between mb-3 border-b border-[#CDA45A]/20 pb-2">
+                <div className="absolute left-0 top-full hidden group-hover:block w-72 bg-[#FCFAF7] border border-[#D4AF37]/30 rounded-xl shadow-2xl p-4 z-50 animate-fadeIn">
+                  <div className="flex items-center justify-between mb-3 border-b border-[#D4AF37]/20 pb-2">
                     <span className="font-serif-luxury text-base font-semibold text-[#1E1A18]">
                       {cat.name}
                     </span>
@@ -330,7 +330,7 @@ export default function Header() {
                       <li key={sub}>
                         <Link
                           href={`/shop?category=${cat.slug}&subcategory=${encodeURIComponent(sub)}`}
-                          className="text-xs text-gray-700 hover:text-[#CDA45A] transition-colors flex items-center justify-between"
+                          className="text-xs text-gray-700 hover:text-[#D4AF37] transition-colors flex items-center justify-between"
                         >
                           <span>{sub}</span>
                           <span className="text-[10px] text-gray-400">→</span>
@@ -357,13 +357,13 @@ export default function Header() {
 
             <Link
               href="/artisans"
-              className="text-xs font-bold tracking-wider text-[#B56A45] hover:text-[#CDA45A] uppercase py-1 transition-colors whitespace-nowrap"
+              className="text-xs font-bold tracking-wider text-[#B56A45] hover:text-[#D4AF37] uppercase py-1 transition-colors whitespace-nowrap"
             >
               Artisan Stories
             </Link>
             <Link
               href="/bespoke"
-              className="text-xs font-bold tracking-wider text-[#CDA45A] hover:text-[#1E1A18] uppercase py-1 transition-colors whitespace-nowrap"
+              className="text-xs font-bold tracking-wider text-[#D4AF37] hover:text-[#1E1A18] uppercase py-1 transition-colors whitespace-nowrap"
             >
               Bespoke Consult
             </Link>
@@ -371,11 +371,11 @@ export default function Header() {
         </nav>
 
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#FCFAF7] border-b border-[#CDA45A]/30 px-6 py-4 space-y-4 animate-fadeIn">
+          <div className="lg:hidden bg-[#FCFAF7] border-b border-[#D4AF37]/30 px-6 py-4 space-y-4 animate-fadeIn">
             {/* Mobile Currency Switcher */}
             <div className="flex items-center justify-between bg-[#1E1A18] text-[#E6D2A8] px-4 py-2 rounded-xl">
               <span className="text-xs font-semibold flex items-center gap-1.5">
-                <Globe className="w-4 h-4 text-[#CDA45A]" /> Global Currency:
+                <Globe className="w-4 h-4 text-[#D4AF37]" /> Global Currency:
               </span>
               <select
                 value={currency}
@@ -393,7 +393,7 @@ export default function Header() {
             <Link
               href="/shop"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-semibold text-[#1E1A18] hover:text-[#CDA45A]"
+              className="block text-sm font-semibold text-[#1E1A18] hover:text-[#D4AF37]"
             >
               Explore All Collections
             </Link>
@@ -403,17 +403,17 @@ export default function Header() {
                   key={cat.slug}
                   href={`/shop?category=${cat.slug}`}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-xs text-gray-700 hover:text-[#CDA45A] p-2 bg-[#F7F0E7] rounded-lg"
+                  className="text-xs text-gray-700 hover:text-[#D4AF37] p-2 bg-[#F7F0E7] rounded-lg"
                 >
                   {cat.name}
                 </Link>
               ))}
             </div>
-            <div className="border-t border-[#CDA45A]/20 pt-4 flex justify-between text-xs font-bold uppercase tracking-wider">
+            <div className="border-t border-[#D4AF37]/20 pt-4 flex justify-between text-xs font-bold uppercase tracking-wider">
               <Link href="/artisans" onClick={() => setMobileMenuOpen(false)} className="text-[#B56A45]">
                 Artisan Stories
               </Link>
-              <Link href="/bespoke" onClick={() => setMobileMenuOpen(false)} className="text-[#CDA45A]">
+              <Link href="/bespoke" onClick={() => setMobileMenuOpen(false)} className="text-[#D4AF37]">
                 Bespoke Consult
               </Link>
               <Link href="/blog" onClick={() => setMobileMenuOpen(false)} className="text-[#3D3A36]">

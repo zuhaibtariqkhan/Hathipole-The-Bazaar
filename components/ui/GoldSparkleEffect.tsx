@@ -49,7 +49,7 @@ export default function GoldSparkleEffect({
       {particles.map((p) => (
         <span
           key={p.id}
-          className="absolute pointer-events-none text-[#CDA45A] animate-sparkle-particle z-30 drop-shadow-[0_0_8px_#CDA45A]"
+          className="absolute pointer-events-none text-[#D4AF37] animate-sparkle-particle z-30 drop-shadow-[0_0_8px_#D4AF37]"
           style={{
             left: `${p.x}px`,
             top: `${p.y}px`,

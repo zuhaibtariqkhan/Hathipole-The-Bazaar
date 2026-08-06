@@ -73,10 +73,10 @@ export default function SearchModal() {
         className="fixed inset-0 bg-[#1E1A18]/80 backdrop-blur-md transition-opacity"
       />
 
-      <div className="relative max-w-3xl mx-auto bg-[#FCFAF7] border border-[#CDA45A]/40 rounded-2xl shadow-2xl overflow-hidden z-10 animate-fadeIn">
+      <div className="relative max-w-3xl mx-auto bg-[#FCFAF7] border border-[#D4AF37]/40 rounded-2xl shadow-2xl overflow-hidden z-10 animate-fadeIn">
         {/* Search Input Bar */}
-        <div className="p-4 sm:p-6 border-b border-[#CDA45A]/20 bg-[#F7F0E7] flex items-center gap-3">
-          <Sparkles className="w-5 h-5 text-[#CDA45A] shrink-0" />
+        <div className="p-4 sm:p-6 border-b border-[#D4AF37]/20 bg-[#F7F0E7] flex items-center gap-3">
+          <Sparkles className="w-5 h-5 text-[#D4AF37] shrink-0" />
           <input
             type="text"
             value={query}
@@ -89,7 +89,7 @@ export default function SearchModal() {
           <button
             onClick={handleVoiceSearch}
             className={`p-2 rounded-full transition-colors ${
-              isListening ? 'bg-red-500 text-white animate-pulse' : 'text-gray-400 hover:text-[#CDA45A]'
+              isListening ? 'bg-red-500 text-white animate-pulse' : 'text-gray-400 hover:text-[#D4AF37]'
             }`}
             title="Voice Search"
           >
@@ -107,9 +107,9 @@ export default function SearchModal() {
         {/* Modal Body */}
         <div className="p-6 max-h-[70vh] overflow-y-auto space-y-6">
           {/* AI Helper Tip */}
-          <div className="bg-[#CDA45A]/10 border border-[#CDA45A]/30 rounded-xl p-3.5 flex items-center justify-between text-xs text-[#3D3A36]">
+          <div className="bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-xl p-3.5 flex items-center justify-between text-xs text-[#3D3A36]">
             <div className="flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-[#CDA45A]" />
+              <Sparkles className="w-4 h-4 text-[#D4AF37]" />
               <span>
                 <strong>AI Discovery Engine:</strong> Try natural prompts like &ldquo;Authentic Udaipur gifts for living room&rdquo;
               </span>
@@ -134,7 +134,7 @@ export default function SearchModal() {
                   {filteredProducts.map((product) => (
                     <div
                       key={product.id}
-                      className="flex gap-3 p-3 bg-white border border-[#CDA45A]/20 rounded-xl hover:border-[#CDA45A] transition-all group cursor-pointer"
+                      className="flex gap-3 p-3 bg-white border border-[#D4AF37]/20 rounded-xl hover:border-[#D4AF37] transition-all group cursor-pointer"
                       onClick={() => {
                         setSearchModalOpen(false);
                         setQuickViewProduct(product);
@@ -150,7 +150,7 @@ export default function SearchModal() {
                           <span className="text-[10px] text-[#B56A45] font-semibold uppercase">
                             {product.craftRegion}
                           </span>
-                          <h5 className="font-serif-luxury text-xs font-bold text-[#1E1A18] line-clamp-1 group-hover:text-[#CDA45A] transition-colors">
+                          <h5 className="font-serif-luxury text-xs font-bold text-[#1E1A18] line-clamp-1 group-hover:text-[#D4AF37] transition-colors">
                             {product.title}
                           </h5>
                           <span className="text-[10px] text-gray-500 block truncate">{product.categoryName}</span>
@@ -159,7 +159,7 @@ export default function SearchModal() {
                           <span className="font-serif-luxury text-xs font-bold text-[#1E1A18]">
                             {formatPrice(product.priceUSD, currency)}
                           </span>
-                          <span className="text-[10px] text-[#CDA45A] group-hover:underline">Quick View →</span>
+                          <span className="text-[10px] text-[#D4AF37] group-hover:underline">Quick View →</span>
                         </div>
                       </div>
                     </div>
@@ -172,14 +172,14 @@ export default function SearchModal() {
             <div className="space-y-6">
               <div>
                 <h4 className="font-serif-luxury text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 flex items-center gap-1.5">
-                  <TrendingUp className="w-3.5 h-3.5 text-[#CDA45A]" /> Popular Heritage Searches
+                  <TrendingUp className="w-3.5 h-3.5 text-[#D4AF37]" /> Popular Heritage Searches
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {popularKeywords.map((kw) => (
                     <button
                       key={kw}
                       onClick={() => setQuery(kw)}
-                      className="text-xs bg-white border border-[#CDA45A]/20 hover:border-[#CDA45A] hover:bg-[#F7F0E7] text-[#1E1A18] px-3 py-1.5 rounded-full transition-all"
+                      className="text-xs bg-white border border-[#D4AF37]/20 hover:border-[#D4AF37] hover:bg-[#F7F0E7] text-[#1E1A18] px-3 py-1.5 rounded-full transition-all"
                     >
                       {kw}
                     </button>
@@ -189,13 +189,13 @@ export default function SearchModal() {
 
               <div>
                 <h4 className="font-serif-luxury text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 flex items-center gap-1.5">
-                  <History className="w-3.5 h-3.5 text-[#CDA45A]" /> Featured Collections
+                  <History className="w-3.5 h-3.5 text-[#D4AF37]" /> Featured Collections
                 </h4>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   <Link
                     href="/shop?category=rugs"
                     onClick={() => setSearchModalOpen(false)}
-                    className="p-3 bg-white border border-[#CDA45A]/20 rounded-xl text-center hover:border-[#CDA45A] transition-all"
+                    className="p-3 bg-white border border-[#D4AF37]/20 rounded-xl text-center hover:border-[#D4AF37] transition-all"
                   >
                     <span className="block font-serif-luxury text-sm font-bold text-[#1E1A18]">Silk Rugs</span>
                     <span className="text-[10px] text-gray-500">Srinagar, Kashmir</span>
@@ -203,7 +203,7 @@ export default function SearchModal() {
                   <Link
                     href="/shop?category=paintings"
                     onClick={() => setSearchModalOpen(false)}
-                    className="p-3 bg-white border border-[#CDA45A]/20 rounded-xl text-center hover:border-[#CDA45A] transition-all"
+                    className="p-3 bg-white border border-[#D4AF37]/20 rounded-xl text-center hover:border-[#D4AF37] transition-all"
                   >
                     <span className="block font-serif-luxury text-sm font-bold text-[#1E1A18]">24K Pichwai</span>
                     <span className="text-[10px] text-gray-500">Udaipur, Rajasthan</span>
@@ -211,7 +211,7 @@ export default function SearchModal() {
                   <Link
                     href="/shop?category=pashminas"
                     onClick={() => setSearchModalOpen(false)}
-                    className="p-3 bg-white border border-[#CDA45A]/20 rounded-xl text-center hover:border-[#CDA45A] transition-all"
+                    className="p-3 bg-white border border-[#D4AF37]/20 rounded-xl text-center hover:border-[#D4AF37] transition-all"
                   >
                     <span className="block font-serif-luxury text-sm font-bold text-[#1E1A18]">Pure Cashmere</span>
                     <span className="text-[10px] text-gray-500">Ladakh & Kashmir</span>
@@ -219,7 +219,7 @@ export default function SearchModal() {
                   <Link
                     href="/shop?category=attar"
                     onClick={() => setSearchModalOpen(false)}
-                    className="p-3 bg-white border border-[#CDA45A]/20 rounded-xl text-center hover:border-[#CDA45A] transition-all"
+                    className="p-3 bg-white border border-[#D4AF37]/20 rounded-xl text-center hover:border-[#D4AF37] transition-all"
                   >
                     <span className="block font-serif-luxury text-sm font-bold text-[#1E1A18]">Amber Oud</span>
                     <span className="text-[10px] text-gray-500">Varanasi, UP</span>

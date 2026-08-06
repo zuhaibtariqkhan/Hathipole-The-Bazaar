@@ -3,7 +3,7 @@
 @layer base {
   :root {
     --bg-ivory: #F7F0E7;
-    --gold-heritage: #CDA45A;
+    --gold-heritage: #D4AF37;
     --gold-light: #E6D2A8;
     --royal-black: #1E1A18;
     --deep-charcoal: #3D3A36;
@@ -30,32 +30,32 @@
 
 /* Custom Luxury Gradients & Utilities */
 .bg-gold-gradient {
-  background: linear-gradient(135deg, #CDA45A 0%, #E6D2A8 50%, #B88E3E 100%);
+  background: linear-gradient(135deg, #D4AF37 0%, #E6D2A8 50%, #B88E3E 100%);
 }
 
 .text-gold-gradient {
-  background: linear-gradient(135deg, #CDA45A 0%, #F5E6C4 50%, #B88E3E 100%);
+  background: linear-gradient(135deg, #D4AF37 0%, #F5E6C4 50%, #B88E3E 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .badge-gold-foil {
-  background: linear-gradient(135deg, rgba(230, 210, 168, 0.25) 0%, rgba(205, 164, 90, 0.15) 50%, rgba(184, 142, 62, 0.3) 100%);
-  border: 1px solid rgba(205, 164, 90, 0.45);
-  box-shadow: 0 4px 15px rgba(205, 164, 90, 0.12);
+  background: linear-gradient(135deg, rgba(230, 210, 168, 0.25) 0%, rgba(212, 175, 55, 0.15) 50%, rgba(184, 142, 62, 0.3) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.12);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .badge-gold-foil:hover {
-  background: linear-gradient(135deg, #CDA45A 0%, #E6D2A8 100%);
+  background: linear-gradient(135deg, #D4AF37 0%, #E6D2A8 100%);
   color: #1E1A18;
   transform: scale(1.08) rotate(1deg);
-  box-shadow: 0 8px 25px rgba(205, 164, 90, 0.35);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35);
 }
 
 .luxury-card-interactive {
   background-color: #FCFAF7;
-  border: 1px solid rgba(205, 164, 90, 0.3);
+  border: 1px solid rgba(212, 175, 55, 0.3);
   border-radius: 1.5rem;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
   position: relative;
@@ -65,8 +65,8 @@
 
 @media (hover: hover) {
   .luxury-card-interactive:hover {
-    border-color: rgba(205, 164, 90, 0.85);
-    box-shadow: 0 18px 45px rgba(30, 26, 24, 0.12), 0 0 30px rgba(205, 164, 90, 0.25);
+    border-color: rgba(212, 175, 55, 0.85);
+    box-shadow: 0 18px 45px rgba(30, 26, 24, 0.12), 0 0 30px rgba(212, 175, 55, 0.25);
     transform: translateY(-5px);
   }
 }
@@ -76,7 +76,7 @@
 }
 
 .shadow-luxury-hover:hover {
-  box-shadow: 0 20px 50px rgba(205, 164, 90, 0.25);
+  box-shadow: 0 20px 50px rgba(212, 175, 55, 0.25);
   transform: translateY(-4px);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -85,19 +85,19 @@
 .glass-panel {
   background: rgba(252, 250, 247, 0.88);
   backdrop-filter: blur(14px);
-  border: 1px solid rgba(205, 164, 90, 0.25);
+  border: 1px solid rgba(212, 175, 55, 0.25);
 }
 
 .glass-panel-dark {
   background: rgba(30, 26, 24, 0.92);
   backdrop-filter: blur(18px);
-  border: 1px solid rgba(205, 164, 90, 0.3);
+  border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
 /* Button Shimmer Effect & Premium Golden Glow */
 .btn-gold,
 .btn-gold-glow {
-  background: linear-gradient(135deg, #CDA45A 0%, #D4AF37 50%, #B88E3E 100%);
+  background: linear-gradient(135deg, #D4AF37 0%, #D4AF37 50%, #B88E3E 100%);
   color: #1E1A18;
   font-weight: 600;
   border-radius: 12px;
@@ -135,22 +135,22 @@
 .btn-gold:hover,
 .btn-gold-glow:hover,
 .gold-glow-hover:hover {
-  box-shadow: 0 0 25px rgba(205, 164, 90, 0.55), 0 0 50px rgba(205, 164, 90, 0.25), 0 10px 25px rgba(30, 26, 24, 0.25);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.55), 0 0 50px rgba(212, 175, 55, 0.25), 0 10px 25px rgba(30, 26, 24, 0.25);
   transform: translateY(-2px) scale(1.03);
   filter: brightness(1.06);
 }
 
 .btn-outline-gold {
-  border: 1px solid #CDA45A;
+  border: 1px solid #D4AF37;
   color: #1E1A18;
   border-radius: 12px;
   transition: all 0.3s ease;
 }
 
 .btn-outline-gold:hover {
-  background-color: #CDA45A;
+  background-color: #D4AF37;
   color: #1E1A18;
-  box-shadow: 0 0 20px rgba(205, 164, 90, 0.45);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.45);
 }
 
 /* Floating Gold Orbs Animation */
@@ -202,12 +202,12 @@
 /* 1. Cinematic Badge Pulse Animation */
 @keyframes badgePulseGold {
   0%, 100% {
-    box-shadow: 0 0 10px rgba(205, 164, 90, 0.25), inset 0 0 5px rgba(205, 164, 90, 0.15);
-    border-color: rgba(205, 164, 90, 0.45);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.25), inset 0 0 5px rgba(212, 175, 55, 0.15);
+    border-color: rgba(212, 175, 55, 0.45);
   }
   50% {
-    box-shadow: 0 0 22px rgba(205, 164, 90, 0.7), 0 0 35px rgba(230, 210, 168, 0.35), inset 0 0 10px rgba(205, 164, 90, 0.3);
-    border-color: rgba(205, 164, 90, 0.95);
+    box-shadow: 0 0 22px rgba(212, 175, 55, 0.7), 0 0 35px rgba(230, 210, 168, 0.35), inset 0 0 10px rgba(212, 175, 55, 0.3);
+    border-color: rgba(212, 175, 55, 0.95);
   }
 }
 
@@ -219,15 +219,15 @@
 @keyframes cartBadgePulse {
   0% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(205, 164, 90, 0.8);
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.8);
   }
   50% {
     transform: scale(1.4);
-    box-shadow: 0 0 20px 6px rgba(205, 164, 90, 0.7);
+    box-shadow: 0 0 20px 6px rgba(212, 175, 55, 0.7);
   }
   100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(205, 164, 90, 0);
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
   }
 }
 
@@ -284,7 +284,7 @@
   background: #F7F0E7;
 }
 ::-webkit-scrollbar-thumb {
-  background: #CDA45A;
+  background: #D4AF37;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -307,7 +307,7 @@
   pointer-events: none;
   z-index: 15;
   opacity: 0.20;
-  background-image: radial-gradient(rgba(205, 164, 90, 0.15) 1px, transparent 0);
+  background-image: radial-gradient(rgba(212, 175, 55, 0.15) 1px, transparent 0);
   background-size: 6px 6px;
   will-change: opacity;
 }

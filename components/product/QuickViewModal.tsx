@@ -12,7 +12,9 @@ import {
   Star,
   Check,
   Award,
-  ArrowRight
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 
 export default function QuickViewModal() {
@@ -42,10 +44,10 @@ export default function QuickViewModal() {
         className="fixed inset-0 bg-[#1E1A18]/80 backdrop-blur-md transition-opacity"
       />
 
-      <div className="relative w-full max-w-4xl bg-[#FCFAF7] border border-[#CDA45A]/40 rounded-2xl shadow-2xl overflow-hidden z-10 animate-fadeIn my-auto">
+      <div className="relative w-full max-w-4xl bg-[#FCFAF7] border border-[#D4AF37]/40 rounded-2xl shadow-2xl overflow-hidden z-10 animate-fadeIn my-auto">
         <button
           onClick={() => setQuickViewProduct(null)}
-          className="absolute top-4 right-4 z-20 p-2 text-gray-400 hover:text-[#1E1A18] bg-white/80 rounded-full shadow"
+          className="absolute top-4 right-4 z-20 p-2 text-gray-400 hover:text-[#1E1A18] bg-white/80 rounded-full shadow cursor-pointer"
         >
           <X className="w-5 h-5" />
         </button>
@@ -53,12 +55,37 @@ export default function QuickViewModal() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 md:p-8">
           {/* Gallery Side */}
           <div className="space-y-4">
-            <div className="aspect-[4/5] rounded-xl overflow-hidden bg-gray-100 border border-[#CDA45A]/20 shadow-inner">
+            <div className="aspect-[4/5] rounded-xl overflow-hidden bg-gray-100 border border-[#D4AF37]/20 shadow-inner relative group">
               <img
                 src={quickViewProduct.images[selectedImgIndex] || quickViewProduct.images[0]}
                 alt={quickViewProduct.title}
                 className="w-full h-full object-cover"
               />
+
+              {quickViewProduct.images.length > 1 && (
+                <>
+                  <button
+                    onClick={() =>
+                      setSelectedImgIndex(
+                        (prev) => (prev - 1 + quickViewProduct.images.length) % quickViewProduct.images.length
+                      )
+                    }
+                    className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-[#1E1A18]/70 text-white hover:bg-[#D4AF37] hover:text-[#1E1A18] transition-all flex items-center justify-center shadow cursor-pointer"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={() =>
+                      setSelectedImgIndex((prev) => (prev + 1) % quickViewProduct.images.length)
+                    }
+                    className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-[#1E1A18]/70 text-white hover:bg-[#D4AF37] hover:text-[#1E1A18] transition-all flex items-center justify-center shadow cursor-pointer"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </>
+              )}
             </div>
             {quickViewProduct.images.length > 1 && (
               <div className="flex gap-2 overflow-x-auto pb-1">
@@ -67,7 +94,7 @@ export default function QuickViewModal() {
                     key={idx}
                     onClick={() => setSelectedImgIndex(idx)}
                     className={`w-16 h-16 rounded-lg overflow-hidden border-2 shrink-0 transition-all ${
-                      selectedImgIndex === idx ? 'border-[#CDA45A] scale-95' : 'border-transparent opacity-70'
+                      selectedImgIndex === idx ? 'border-[#D4AF37] scale-95' : 'border-transparent opacity-70'
                     }`}
                   >
                     <img src={img} alt="Thumbnail" className="w-full h-full object-cover" />
@@ -112,14 +139,14 @@ export default function QuickViewModal() {
               </p>
 
               {/* Artisan Highlight */}
-              <div className="bg-[#F7F0E7] border border-[#CDA45A]/30 rounded-xl p-3.5 flex items-center gap-3 mb-4">
+              <div className="bg-[#F7F0E7] border border-[#D4AF37]/30 rounded-xl p-3.5 flex items-center gap-3 mb-4">
                 <img
                   src={quickViewProduct.artisan.avatar}
                   alt={quickViewProduct.artisan.name}
-                  className="w-10 h-10 rounded-full object-cover border border-[#CDA45A]"
+                  className="w-10 h-10 rounded-full object-cover border border-[#D4AF37]"
                 />
                 <div>
-                  <span className="text-[10px] text-[#CDA45A] font-bold uppercase tracking-wider block">
+                  <span className="text-[10px] text-[#D4AF37] font-bold uppercase tracking-wider block">
                     Master Artisan Creation
                   </span>
                   <h6 className="font-serif-luxury text-xs font-bold text-[#1E1A18]">
@@ -137,7 +164,7 @@ export default function QuickViewModal() {
             </div>
 
             {/* Action Buttons */}
-            <div className="space-y-3 pt-4 border-t border-[#CDA45A]/20">
+            <div className="space-y-3 pt-4 border-t border-[#D4AF37]/20">
               <div className="flex gap-3">
                 <button
                   onClick={() => {
@@ -151,7 +178,7 @@ export default function QuickViewModal() {
                 <button
                   onClick={() => toggleWishlist(quickViewProduct.id)}
                   className={`p-3 rounded-xl border transition-colors ${
-                    isWishlisted ? 'bg-red-50 text-red-500 border-red-200' : 'border-[#CDA45A] text-gray-700 hover:bg-[#CDA45A] hover:text-white'
+                    isWishlisted ? 'bg-red-50 text-red-500 border-red-200' : 'border-[#D4AF37] text-gray-700 hover:bg-[#D4AF37] hover:text-white'
                   }`}
                 >
                   <Heart className={`w-5 h-5 ${isWishlisted ? 'fill-current' : ''}`} />
@@ -161,7 +188,7 @@ export default function QuickViewModal() {
               <Link
                 href={`/product/${quickViewProduct.id}`}
                 onClick={() => setQuickViewProduct(null)}
-                className="block text-center text-xs font-semibold text-[#CDA45A] hover:underline"
+                className="block text-center text-xs font-semibold text-[#D4AF37] hover:underline"
               >
                 View Full Specifications & Heritage Story →
               </Link>

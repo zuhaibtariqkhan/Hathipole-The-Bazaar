@@ -45,12 +45,12 @@ export default function ProductCard({ product }: ProductCardProps) {
         {/* Gold Foil Badges Overlay */}
         <div className="absolute top-3.5 left-3.5 flex flex-col gap-1.5 z-10">
           {product.isBestSeller && (
-            <span className="bg-[#1E1A18] text-[#E6D2A8] text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-[#CDA45A]/40 shadow-md">
+            <span className="bg-[#1E1A18] text-[#E6D2A8] text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-[#D4AF37]/40 shadow-md">
               Best Seller
             </span>
           )}
           {product.isNewArrival && (
-            <span className="bg-[#CDA45A] text-[#1E1A18] text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-md">
+            <span className="bg-[#D4AF37] text-[#1E1A18] text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-md">
               New Arrival
             </span>
           )}
@@ -69,7 +69,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             className={`w-9 h-9 rounded-full flex items-center justify-center backdrop-blur-md shadow-md transition-all duration-300 ${
               isWishlisted
                 ? 'bg-red-50 text-red-500 border border-red-200 scale-110 shadow-[0_0_15px_rgba(239,68,68,0.3)]'
-                : 'bg-white/90 text-[#1E1A18] hover:bg-[#CDA45A] hover:text-white hover:shadow-[0_0_20px_rgba(205,164,90,0.5)]'
+                : 'bg-white/90 text-[#1E1A18] hover:bg-[#D4AF37] hover:text-white hover:shadow-[0_0_20px_rgba(212,175,55,0.5)]'
             }`}
             title="Add to Wishlist"
           >
@@ -79,7 +79,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           {/* Quick View */}
           <button
             onClick={() => setQuickViewProduct(product)}
-            className="w-9 h-9 rounded-full bg-white/90 text-[#1E1A18] hover:bg-[#CDA45A] hover:text-white flex items-center justify-center backdrop-blur-md shadow-md transition-all duration-300 hover:shadow-[0_0_20px_rgba(205,164,90,0.5)]"
+            className="w-9 h-9 rounded-full bg-white/90 text-[#1E1A18] hover:bg-[#D4AF37] hover:text-white flex items-center justify-center backdrop-blur-md shadow-md transition-all duration-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.5)]"
             title="Quick View"
           >
             <Eye className="w-4 h-4" />
@@ -90,8 +90,8 @@ export default function ProductCard({ product }: ProductCardProps) {
             onClick={() => toggleCompare(product.id)}
             className={`w-9 h-9 rounded-full flex items-center justify-center backdrop-blur-md shadow-md transition-all duration-300 ${
               isCompared
-                ? 'bg-[#CDA45A] text-white scale-110 shadow-[0_0_15px_rgba(205,164,90,0.4)]'
-                : 'bg-white/90 text-[#1E1A18] hover:bg-[#CDA45A] hover:text-white hover:shadow-[0_0_20px_rgba(205,164,90,0.5)]'
+                ? 'bg-[#D4AF37] text-white scale-110 shadow-[0_0_15px_rgba(212,175,55,0.4)]'
+                : 'bg-white/90 text-[#1E1A18] hover:bg-[#D4AF37] hover:text-white hover:shadow-[0_0_20px_rgba(212,175,55,0.5)]'
             }`}
             title="Compare Specs"
           >
@@ -117,7 +117,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             <span className="text-[#B56A45] font-bold tracking-wider uppercase font-cinzel text-[10px]">
               {product.craftRegion}
             </span>
-            <div className="flex items-center gap-1 text-amber-500 font-semibold bg-[#CDA45A]/10 border border-[#CDA45A]/30 px-2 py-0.5 rounded-full">
+            <div className="flex items-center gap-1 text-amber-500 font-semibold bg-[#D4AF37]/10 border border-[#D4AF37]/30 px-2 py-0.5 rounded-full">
               <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
               <span className="text-xs text-[#1E1A18]">{product.rating}</span>
               <span className="text-[10px] text-gray-500">({product.reviewCount})</span>
@@ -125,7 +125,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           </div>
 
           <Link href={`/product/${product.id}`}>
-            <h4 className="font-serif-luxury text-lg font-bold text-[#1E1A18] group-hover:text-[#CDA45A] transition-colors line-clamp-1">
+            <h4 className="font-serif-luxury text-lg font-bold text-[#1E1A18] group-hover:text-[#D4AF37] transition-colors line-clamp-1">
               {product.title}
             </h4>
           </Link>
@@ -135,7 +135,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           </p>
         </div>
 
-        <div className="pt-3 border-t border-[#CDA45A]/20 flex items-center justify-between">
+        <div className="pt-3 border-t border-[#D4AF37]/20 flex items-center justify-between">
           <div className="flex items-baseline gap-2">
             <span className="font-serif-luxury text-xl font-bold text-[#1E1A18]">
               {formatPrice(product.priceUSD, currency)}

@@ -148,9 +148,9 @@ export default function HomePage() {
 
         {/* Floating Gold Orbs & Dust Animation */}
         <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
-          <div className="absolute top-1/4 left-1/5 w-72 h-72 rounded-full bg-[#CDA45A]/15 blur-3xl animate-float-dust-1" />
+          <div className="absolute top-1/4 left-1/5 w-72 h-72 rounded-full bg-[#D4AF37]/15 blur-3xl animate-float-dust-1" />
           <div className="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full bg-[#E6D2A8]/10 blur-3xl animate-float-dust-2" />
-          <div className="absolute top-1/3 right-1/6 w-60 h-60 rounded-full bg-[#CDA45A]/20 blur-3xl animate-float-dust-3" />
+          <div className="absolute top-1/3 right-1/6 w-60 h-60 rounded-full bg-[#D4AF37]/20 blur-3xl animate-float-dust-3" />
         </div>
 
         {/* Hero Content */}
@@ -210,7 +210,7 @@ export default function HomePage() {
             </GoldSparkleEffect>
             <Link
               href="/bespoke"
-              className="px-9 py-4 text-xs font-bold uppercase tracking-[0.2em] text-[#FCFAF7] border border-[#CDA45A]/50 hover:border-[#CDA45A] hover:bg-[#CDA45A] hover:text-[#1E1A18] rounded-xl transition-all shadow-lg"
+              className="px-9 py-4 text-xs font-bold uppercase tracking-[0.2em] text-[#FCFAF7] border border-[#D4AF37]/50 hover:border-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#1E1A18] rounded-xl transition-all shadow-lg"
             >
               Bespoke Consult
             </Link>
@@ -224,7 +224,7 @@ export default function HomePage() {
               key={idx}
               onClick={() => setHeroIndex(idx)}
               className={`h-1.5 transition-all duration-500 rounded-full ${
-                heroIndex === idx ? 'w-12 bg-[#CDA45A]' : 'w-4 bg-white/30 hover:bg-white/60'
+                heroIndex === idx ? 'w-12 bg-[#D4AF37]' : 'w-4 bg-white/30 hover:bg-white/60'
               }`}
             />
           ))}
@@ -232,12 +232,12 @@ export default function HomePage() {
       </section>
 
       {/* 2. Royal Craft Infinite Marquee Ticker */}
-      <section className="bg-[#1E1A18] border-y-2 border-[#CDA45A]/40 py-4 overflow-hidden relative shadow-lg">
+      <section className="bg-[#1E1A18] border-y-2 border-[#D4AF37]/40 py-4 overflow-hidden relative shadow-lg">
         <div className="animate-marquee whitespace-nowrap flex items-center gap-12 text-[#E6D2A8] font-cinzel text-xs tracking-[0.3em] uppercase">
           {[...marqueeItems, ...marqueeItems].map((item, idx) => (
             <span key={idx} className="flex items-center gap-8 font-semibold">
               <span>{item}</span>
-              <span className="text-[#CDA45A] text-sm">✦</span>
+              <span className="text-[#D4AF37] text-sm">✦</span>
             </span>
           ))}
         </div>
@@ -256,7 +256,7 @@ export default function HomePage() {
       {/* 4. Brand Story Editorial */}
       <section className="max-w-5xl mx-auto px-6 py-4">
         <div className="text-center space-y-8">
-          <span className="font-cinzel text-xs tracking-[0.3em] text-[#CDA45A] uppercase block font-semibold">
+          <span className="font-cinzel text-xs tracking-[0.3em] text-[#D4AF37] uppercase block font-semibold">
             The Philosophy of Hathipole
           </span>
 
@@ -276,7 +276,7 @@ export default function HomePage() {
           <div className="pt-4 text-center">
             <Link
               href="/artisans"
-              className="text-xs font-bold tracking-widest text-[#CDA45A] uppercase border-b-2 border-[#CDA45A] pb-1 hover:text-[#1E1A18] hover:border-[#1E1A18] transition-colors inline-block"
+              className="text-xs font-bold tracking-widest text-[#D4AF37] uppercase border-b-2 border-[#D4AF37] pb-1 hover:text-[#1E1A18] hover:border-[#1E1A18] transition-colors inline-block"
             >
               Explore Our Heritage Story →
             </Link>
@@ -286,9 +286,9 @@ export default function HomePage() {
 
       {/* 5. Discover Authentic Craftsmanship - Collection Slider with Navigation Indicators */}
       <section className="max-w-7xl mx-auto px-6 md:px-8 space-y-8">
-        <div className="flex flex-col sm:flex-row items-center sm:items-end justify-between gap-4 border-b border-[#CDA45A]/20 pb-6 text-center sm:text-left">
+        <div className="flex flex-col sm:flex-row items-center sm:items-end justify-between gap-4 border-b border-[#D4AF37]/20 pb-6 text-center sm:text-left">
           <div>
-            <span className="font-cinzel text-xs tracking-[0.25em] text-[#CDA45A] uppercase block font-semibold">
+            <span className="font-cinzel text-xs tracking-[0.25em] text-[#D4AF37] uppercase block font-semibold">
               Heritage Curation
             </span>
             <h2 className="font-serif-luxury text-2.5xl sm:text-4xl font-bold text-[#1E1A18]">
@@ -297,7 +297,7 @@ export default function HomePage() {
           </div>
           <Link
             href="/shop"
-            className="text-xs font-bold tracking-wider text-[#CDA45A] uppercase hover:underline"
+            className="text-xs font-bold tracking-wider text-[#D4AF37] uppercase hover:underline"
           >
             View All Categories →
           </Link>
@@ -309,9 +309,9 @@ export default function HomePage() {
 
       {/* 6. Featured Masterpieces with Gliding Tab Indicator */}
       <section className="max-w-7xl mx-auto px-6 md:px-8 space-y-12">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 border-b border-[#CDA45A]/20 pb-6 text-center sm:text-left">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 border-b border-[#D4AF37]/20 pb-6 text-center sm:text-left">
           <div>
-            <span className="font-cinzel text-xs tracking-[0.25em] text-[#CDA45A] uppercase block font-semibold">
+            <span className="font-cinzel text-xs tracking-[0.25em] text-[#D4AF37] uppercase block font-semibold">
               Handcrafted Treasures
             </span>
             <h2 className="font-serif-luxury text-3xl sm:text-4xl font-bold text-[#1E1A18]">
@@ -320,7 +320,7 @@ export default function HomePage() {
           </div>
 
           {/* Gliding Gold Tab Indicator */}
-          <div className="flex items-center gap-2 bg-[#FCFAF7] p-1.5 rounded-full border border-[#CDA45A]/40 shadow-md relative overflow-x-auto max-w-full no-scrollbar">
+          <div className="flex items-center gap-2 bg-[#FCFAF7] p-1.5 rounded-full border border-[#D4AF37]/40 shadow-md relative overflow-x-auto max-w-full no-scrollbar">
             {(['bestsellers', 'new', 'limited'] as const).map((tab) => (
               <button
                 key={tab}
@@ -332,7 +332,7 @@ export default function HomePage() {
                 {activeTab === tab && (
                   <motion.div
                     layoutId="activeTabPill"
-                    className="absolute inset-0 bg-[#CDA45A] rounded-full z-[-1] shadow-md"
+                    className="absolute inset-0 bg-[#D4AF37] rounded-full z-[-1] shadow-md"
                     transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                   />
                 )}
@@ -362,16 +362,16 @@ export default function HomePage() {
       </section>
 
       {/* 7. Master Artisan Spotlight Showcase */}
-      <section className="bg-[#1E1A18] text-[#FCFAF7] py-24 border-y-2 border-[#CDA45A]/40 relative overflow-hidden shadow-2xl">
+      <section className="bg-[#1E1A18] text-[#FCFAF7] py-24 border-y-2 border-[#D4AF37]/40 relative overflow-hidden shadow-2xl">
         <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-25">
-          <div className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full bg-[#CDA45A]/10 blur-3xl" />
+          <div className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full bg-[#D4AF37]/10 blur-3xl" />
           <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-[#E6D2A8]/10 blur-3xl" />
         </div>
 
         <div className="max-w-6xl mx-auto px-6 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           {/* Left Column: Gallery & Thumbnails */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="aspect-[4/5] rounded-3xl overflow-hidden border-2 border-[#CDA45A]/50 shadow-2xl relative group bg-black/40">
+            <div className="aspect-[4/5] rounded-3xl overflow-hidden border-2 border-[#D4AF37]/50 shadow-2xl relative group bg-black/40">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={activeStoryIndex}
@@ -391,7 +391,7 @@ export default function HomePage() {
               </AnimatePresence>
               <div className="absolute inset-0 bg-gradient-to-t from-[#1E1A18]/90 via-[#1E1A18]/30 to-transparent opacity-90 group-hover:opacity-75 transition-opacity" />
               <div className="absolute bottom-6 left-6 right-6 space-y-1">
-                <span className="text-[10px] font-bold text-[#E6D2A8] uppercase tracking-widest bg-[#1E1A18]/80 px-3.5 py-1 rounded-full border border-[#CDA45A]/40 inline-block">
+                <span className="text-[10px] font-bold text-[#E6D2A8] uppercase tracking-widest bg-[#1E1A18]/80 px-3.5 py-1 rounded-full border border-[#D4AF37]/40 inline-block">
                   Story {mockArtisanStories[activeStoryIndex].number} • {mockArtisanStories[activeStoryIndex].region}
                 </span>
                 <h4 className="font-serif-luxury text-xl font-bold text-white">
@@ -408,7 +408,7 @@ export default function HomePage() {
                   onClick={() => setActiveStoryIndex(idx)}
                   className={`relative aspect-[4/5] rounded-xl overflow-hidden border-2 transition-all duration-300 ${
                     activeStoryIndex === idx
-                      ? 'border-[#CDA45A] scale-105 shadow-lg'
+                      ? 'border-[#D4AF37] scale-105 shadow-lg'
                       : 'border-transparent opacity-50 hover:opacity-100 hover:scale-102'
                   }`}
                   aria-label={`View story ${story.number}`}
@@ -434,10 +434,10 @@ export default function HomePage() {
 
           {/* Right Column: Editorial Text details */}
           <div className="lg:col-span-7 space-y-6">
-            <Quote className="w-12 h-12 text-[#CDA45A]/50" />
+            <Quote className="w-12 h-12 text-[#D4AF37]/50" />
 
             <div className="space-y-3">
-              <span className="font-cinzel text-xs font-bold text-[#CDA45A] tracking-[0.25em] uppercase">
+              <span className="font-cinzel text-xs font-bold text-[#D4AF37] tracking-[0.25em] uppercase">
                 {mockArtisanStories[activeStoryIndex].region}
               </span>
               <h3 className="font-serif-luxury text-3xl sm:text-4xl font-normal text-[#E6D2A8] leading-tight">
@@ -448,7 +448,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <p className="text-sm sm:text-base text-gray-300 font-light leading-relaxed italic border-l-2 border-[#CDA45A] pl-4">
+            <p className="text-sm sm:text-base text-gray-300 font-light leading-relaxed italic border-l-2 border-[#D4AF37] pl-4">
               &ldquo;{mockArtisanStories[activeStoryIndex].closingQuote}&rdquo;
             </p>
 
@@ -456,8 +456,8 @@ export default function HomePage() {
               {mockArtisanStories[activeStoryIndex].paragraphs[0]}
             </p>
 
-            <div className="pt-4 border-t border-[#CDA45A]/20 flex flex-wrap items-center justify-between gap-4">
-              <span className="text-xs text-[#CDA45A] font-bold">
+            <div className="pt-4 border-t border-[#D4AF37]/20 flex flex-wrap items-center justify-between gap-4">
+              <span className="text-xs text-[#D4AF37] font-bold">
                 70+ Years Heritage • 350+ Artisan Families
               </span>
               <div className="flex items-center gap-3">
@@ -469,7 +469,7 @@ export default function HomePage() {
                 </Link>
                 <Link
                   href="/artisans"
-                  className="px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#FCFAF7] border border-[#CDA45A]/50 hover:bg-[#CDA45A] hover:text-[#1E1A18] rounded-xl transition-all shadow-sm"
+                  className="px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#FCFAF7] border border-[#D4AF37]/50 hover:bg-[#D4AF37] hover:text-[#1E1A18] rounded-xl transition-all shadow-sm"
                 >
                   All Stories
                 </Link>

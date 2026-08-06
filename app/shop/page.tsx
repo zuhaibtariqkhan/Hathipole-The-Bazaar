@@ -61,8 +61,8 @@ function ShopContent() {
   return (
     <div className="max-w-7xl mx-auto px-3 sm:px-6 md:px-8 py-6 sm:py-10 space-y-6 sm:space-y-8">
       {/* Page Title */}
-      <div className="border-b border-[#CDA45A]/20 pb-6 space-y-2">
-        <span className="font-cinzel text-xs tracking-[0.25em] text-[#CDA45A] uppercase block font-semibold">
+      <div className="border-b border-[#D4AF37]/20 pb-6 space-y-2">
+        <span className="font-cinzel text-xs tracking-[0.25em] text-[#D4AF37] uppercase block font-semibold">
           Curated Excellence
         </span>
         <h1 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-bold text-[#1E1A18]">
@@ -75,14 +75,14 @@ function ShopContent() {
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         {/* Sidebar Filters */}
-        <aside className="bg-[#FCFAF7] border border-[#CDA45A]/30 rounded-2xl p-6 h-fit space-y-6 shadow-luxury">
-          <div className="flex items-center justify-between border-b border-[#CDA45A]/20 pb-3">
+        <aside className="bg-[#FCFAF7] border border-[#D4AF37]/30 rounded-2xl p-6 h-fit space-y-6 shadow-luxury">
+          <div className="flex items-center justify-between border-b border-[#D4AF37]/20 pb-3">
             <h3 className="font-serif-luxury text-lg font-bold text-[#1E1A18] flex items-center gap-2">
-              <SlidersHorizontal className="w-4 h-4 text-[#CDA45A]" /> Filters
+              <SlidersHorizontal className="w-4 h-4 text-[#D4AF37]" /> Filters
             </h3>
             <button
               onClick={resetFilters}
-              className="text-xs text-[#CDA45A] hover:underline flex items-center gap-1"
+              className="text-xs text-[#D4AF37] hover:underline flex items-center gap-1"
             >
               <RotateCcw className="w-3 h-3" /> Reset
             </button>
@@ -98,7 +98,7 @@ function ShopContent() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Filter by keyword..."
-                className="w-full text-xs pl-9 pr-3 py-2 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#CDA45A]"
+                className="w-full text-xs pl-9 pr-3 py-2 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#D4AF37]"
               />
             </div>
           </div>
@@ -109,7 +109,7 @@ function ShopContent() {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="w-full text-xs p-2.5 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#CDA45A]"
+              className="w-full text-xs p-2.5 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#D4AF37]"
             >
               <option value="all">All 14 Categories</option>
               <option value="rugs">Fine Silk Rugs</option>
@@ -133,7 +133,7 @@ function ShopContent() {
           <div className="space-y-2">
             <div className="flex justify-between text-xs font-semibold">
               <span className="uppercase tracking-wider text-gray-700">Max Price</span>
-              <span className="text-[#CDA45A] font-serif-luxury font-bold">${maxPrice} USD</span>
+              <span className="text-[#D4AF37] font-serif-luxury font-bold">${maxPrice} USD</span>
             </div>
             <input
               type="range"
@@ -142,7 +142,7 @@ function ShopContent() {
               step={100}
               value={maxPrice}
               onChange={(e) => setMaxPrice(Number(e.target.value))}
-              className="w-full accent-[#CDA45A] cursor-pointer"
+              className="w-full accent-[#D4AF37] cursor-pointer"
             />
           </div>
 
@@ -152,7 +152,7 @@ function ShopContent() {
               type="checkbox"
               checked={inStockOnly}
               onChange={(e) => setInStockOnly(e.target.checked)}
-              className="w-4 h-4 accent-[#CDA45A] rounded"
+              className="w-4 h-4 accent-[#D4AF37] rounded"
             />
             <span>Show Ready-to-Ship Items Only</span>
           </label>
@@ -161,7 +161,7 @@ function ShopContent() {
         {/* Main Product Grid View */}
         <main className="lg:col-span-3 space-y-6">
           {/* Controls Bar */}
-          <div className="bg-[#FCFAF7] border border-[#CDA45A]/20 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+          <div className="bg-[#FCFAF7] border border-[#D4AF37]/20 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
             <span className="text-xs text-gray-600 font-medium">
               Showing <strong className="text-[#1E1A18] font-bold">{filteredProducts.length}</strong> authentic handcrafted creations
             </span>
@@ -173,7 +173,7 @@ function ShopContent() {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as any)}
-                  className="text-xs p-2 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#CDA45A]"
+                  className="text-xs p-2 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#D4AF37]"
                 >
                   <option value="featured">Featured Royal</option>
                   <option value="price-low">Price: Low to High</option>
@@ -188,7 +188,7 @@ function ShopContent() {
                 <button
                   onClick={() => setViewMode('grid')}
                   className={`p-1.5 rounded-lg transition-colors ${
-                    viewMode === 'grid' ? 'bg-[#CDA45A] text-white' : 'text-gray-500 hover:text-[#1E1A18]'
+                    viewMode === 'grid' ? 'bg-[#D4AF37] text-white' : 'text-gray-500 hover:text-[#1E1A18]'
                   }`}
                 >
                   <Grid className="w-4 h-4" />
@@ -196,7 +196,7 @@ function ShopContent() {
                 <button
                   onClick={() => setViewMode('list')}
                   className={`p-1.5 rounded-lg transition-colors ${
-                    viewMode === 'list' ? 'bg-[#CDA45A] text-white' : 'text-gray-500 hover:text-[#1E1A18]'
+                    viewMode === 'list' ? 'bg-[#D4AF37] text-white' : 'text-gray-500 hover:text-[#1E1A18]'
                   }`}
                 >
                   <List className="w-4 h-4" />
@@ -207,8 +207,8 @@ function ShopContent() {
 
           {/* Products Grid / List */}
           {filteredProducts.length === 0 ? (
-            <div className="bg-[#FCFAF7] border border-[#CDA45A]/20 rounded-2xl p-12 text-center space-y-3">
-              <Sparkles className="w-10 h-10 text-[#CDA45A] mx-auto" />
+            <div className="bg-[#FCFAF7] border border-[#D4AF37]/20 rounded-2xl p-12 text-center space-y-3">
+              <Sparkles className="w-10 h-10 text-[#D4AF37] mx-auto" />
               <h3 className="font-serif-luxury text-xl font-bold text-[#1E1A18]">
                 No creations match your active filters
               </h3>

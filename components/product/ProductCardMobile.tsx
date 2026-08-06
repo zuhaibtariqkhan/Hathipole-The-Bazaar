@@ -29,7 +29,7 @@ export default function ProductCardMobile({
 
   return (
     <div
-      className="group relative luxury-card-interactive flex flex-col h-full rounded-2xl overflow-hidden border border-[#CDA45A]/25 bg-white shadow-sm hover:shadow-md transition-all duration-300"
+      className="group relative luxury-card-interactive flex flex-col h-full rounded-2xl overflow-hidden border border-[#D4AF37]/25 bg-white shadow-sm hover:shadow-md transition-all duration-300"
       onTouchStart={() => setHovered(true)}
       onTouchEnd={() => setTimeout(() => setHovered(false), 1500)}
       onMouseEnter={() => setHovered(true)}
@@ -50,12 +50,12 @@ export default function ProductCardMobile({
         {/* Badge Overlay */}
         <div className="absolute top-2 left-2 flex flex-col gap-1 z-10 pointer-events-none">
           {product.isBestSeller && (
-            <span className="bg-[#1E1A18]/90 backdrop-blur-xs text-[#E6D2A8] text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border border-[#CDA45A]/40 shadow-xs">
+            <span className="bg-[#1E1A18]/90 backdrop-blur-xs text-[#E6D2A8] text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border border-[#D4AF37]/40 shadow-xs">
               Best Seller
             </span>
           )}
           {product.isNewArrival && !product.isBestSeller && (
-            <span className="bg-[#CDA45A] text-[#1E1A18] text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full shadow-xs">
+            <span className="bg-[#D4AF37] text-[#1E1A18] text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full shadow-xs">
               New
             </span>
           )}
@@ -78,7 +78,7 @@ export default function ProductCardMobile({
             className={`w-7 h-7 rounded-full flex items-center justify-center backdrop-blur-md shadow-sm transition-all active:scale-90 ${
               isWishlisted
                 ? 'bg-red-50 text-red-500 border border-red-200 scale-105'
-                : 'bg-white/90 text-[#1E1A18] hover:bg-[#CDA45A] hover:text-white'
+                : 'bg-white/90 text-[#1E1A18] hover:bg-[#D4AF37] hover:text-white'
             }`}
             title="Wishlist"
             aria-label="Add to wishlist"
@@ -93,7 +93,7 @@ export default function ProductCardMobile({
               e.stopPropagation();
               setQuickViewProduct(product);
             }}
-            className="w-7 h-7 rounded-full bg-white/90 text-[#1E1A18] hover:bg-[#CDA45A] hover:text-white flex items-center justify-center backdrop-blur-md shadow-sm transition-all active:scale-90"
+            className="w-7 h-7 rounded-full bg-white/90 text-[#1E1A18] hover:bg-[#D4AF37] hover:text-white flex items-center justify-center backdrop-blur-md shadow-sm transition-all active:scale-90"
             title="Quick View"
             aria-label="Quick view product"
           >
@@ -110,7 +110,7 @@ export default function ProductCardMobile({
             <span className="text-[#B56A45] font-bold tracking-wider uppercase font-cinzel text-[8px] truncate">
               {product.craftRegion}
             </span>
-            <div className="flex items-center gap-0.5 text-amber-500 font-semibold bg-[#CDA45A]/10 border border-[#CDA45A]/30 px-1 py-0.1 rounded-full shrink-0">
+            <div className="flex items-center gap-0.5 text-amber-500 font-semibold bg-[#D4AF37]/10 border border-[#D4AF37]/30 px-1 py-0.1 rounded-full shrink-0">
               <Star className="w-2 h-2 fill-amber-400 text-amber-400" />
               <span className="text-[9px] text-[#1E1A18] font-bold">{product.rating}</span>
             </div>
@@ -118,14 +118,14 @@ export default function ProductCardMobile({
 
           {/* Title */}
           <Link href={`/product/${product.id}`} className="block">
-            <h4 className="font-serif-luxury text-[11px] font-bold text-[#1E1A18] group-hover:text-[#CDA45A] transition-colors line-clamp-1 leading-tight">
+            <h4 className="font-serif-luxury text-[11px] font-bold text-[#1E1A18] group-hover:text-[#D4AF37] transition-colors line-clamp-1 leading-tight">
               {product.title}
             </h4>
           </Link>
         </div>
 
         {/* Pricing & Add to Cart Footer */}
-        <div className="pt-1.5 border-t border-[#CDA45A]/20 space-y-1.5">
+        <div className="pt-1.5 border-t border-[#D4AF37]/20 space-y-1.5">
           <div className="flex items-baseline justify-between gap-1">
             <div className="flex items-baseline gap-1 flex-wrap">
               <span className="font-serif-luxury text-xs font-bold text-[#1E1A18]">

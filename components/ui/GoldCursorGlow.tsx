@@ -13,7 +13,7 @@ export default function GoldCursorGlow() {
 
     const updatePosition = () => {
       if (glowRef.current) {
-        glowRef.current.style.background = `radial-gradient(450px circle at ${latestX}px ${latestY}px, rgba(205, 164, 90, 0.08), transparent 80%)`;
+        glowRef.current.style.background = `radial-gradient(450px circle at ${latestX}px ${latestY}px, rgba(212, 175, 55, 0.08), transparent 80%)`;
         glowRef.current.style.opacity = isVisible ? '1' : '0';
       }
       animationFrameId = null;

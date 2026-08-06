@@ -38,8 +38,8 @@ export default function CartPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-6 md:px-8 py-10 space-y-8">
-      <div className="border-b border-[#CDA45A]/20 pb-4">
-        <span className="font-cinzel text-xs tracking-[0.2em] text-[#CDA45A] uppercase block">
+      <div className="border-b border-[#D4AF37]/20 pb-4">
+        <span className="font-cinzel text-xs tracking-[0.2em] text-[#D4AF37] uppercase block">
           Client Shopping Bag
         </span>
         <h1 className="font-serif-luxury text-3xl sm:text-4xl font-bold text-[#1E1A18]">
@@ -48,8 +48,8 @@ export default function CartPage() {
       </div>
 
       {cart.length === 0 ? (
-        <div className="bg-[#FCFAF7] border border-[#CDA45A]/20 rounded-3xl p-16 text-center space-y-4 shadow-luxury max-w-xl mx-auto">
-          <ShoppingBag className="w-16 h-16 text-[#CDA45A] mx-auto" />
+        <div className="bg-[#FCFAF7] border border-[#D4AF37]/20 rounded-3xl p-16 text-center space-y-4 shadow-luxury max-w-xl mx-auto">
+          <ShoppingBag className="w-16 h-16 text-[#D4AF37] mx-auto" />
           <h2 className="font-serif-luxury text-2xl font-bold text-[#1E1A18]">
             Your shopping bag is currently empty
           </h2>
@@ -70,7 +70,7 @@ export default function CartPage() {
             {cart.map(({ product, quantity }) => (
               <div
                 key={product.id}
-                className="bg-[#FCFAF7] border border-[#CDA45A]/30 rounded-2xl p-4 sm:p-6 flex flex-col sm:flex-row gap-6 shadow-sm hover:border-[#CDA45A] transition-all"
+                className="bg-[#FCFAF7] border border-[#D4AF37]/30 rounded-2xl p-4 sm:p-6 flex flex-col sm:flex-row gap-6 shadow-sm hover:border-[#D4AF37] transition-all"
               >
                 <img
                   src={product.images[0]}
@@ -100,7 +100,7 @@ export default function CartPage() {
                     <p className="text-xs text-gray-500 line-clamp-1">{product.tagline}</p>
                   </div>
 
-                  <div className="flex items-center justify-between pt-2 border-t border-[#CDA45A]/15">
+                  <div className="flex items-center justify-between pt-2 border-t border-[#D4AF37]/15">
                     <div className="flex items-center border border-gray-300 rounded-xl bg-white">
                       <button
                         onClick={() => updateQuantity(product.id, quantity - 1)}
@@ -126,16 +126,16 @@ export default function CartPage() {
             ))}
 
             {/* Gift Wrapping Box */}
-            <div className="bg-[#F7F0E7] border border-[#CDA45A]/30 rounded-2xl p-6 space-y-3">
+            <div className="bg-[#F7F0E7] border border-[#D4AF37]/30 rounded-2xl p-6 space-y-3">
               <label className="flex items-center gap-3 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={giftWrap}
                   onChange={(e) => setGiftWrap(e.target.checked)}
-                  className="w-4 h-4 accent-[#CDA45A] rounded"
+                  className="w-4 h-4 accent-[#D4AF37] rounded"
                 />
                 <div className="flex items-center gap-2 text-sm font-bold text-[#1E1A18]">
-                  <Gift className="w-4 h-4 text-[#CDA45A]" />
+                  <Gift className="w-4 h-4 text-[#D4AF37]" />
                   <span>Add Royal Velvet Gift Packaging ({formatPrice(5, currency)})</span>
                 </div>
               </label>
@@ -146,15 +146,15 @@ export default function CartPage() {
                   onChange={(e) => setGiftMessage(e.target.value)}
                   placeholder="Enter custom gift inscription message for the recipient card..."
                   rows={3}
-                  className="w-full text-xs p-3 bg-white border border-[#CDA45A]/40 rounded-xl focus:outline-none focus:border-[#CDA45A]"
+                  className="w-full text-xs p-3 bg-white border border-[#D4AF37]/40 rounded-xl focus:outline-none focus:border-[#D4AF37]"
                 />
               )}
             </div>
           </div>
 
           {/* Order Summary Column */}
-          <div className="lg:col-span-4 bg-[#FCFAF7] border border-[#CDA45A]/30 rounded-2xl p-6 space-y-6 shadow-luxury sticky top-28">
-            <h3 className="font-serif-luxury text-xl font-bold text-[#1E1A18] border-b border-[#CDA45A]/20 pb-3">
+          <div className="lg:col-span-4 bg-[#FCFAF7] border border-[#D4AF37]/30 rounded-2xl p-6 space-y-6 shadow-luxury sticky top-28">
+            <h3 className="font-serif-luxury text-xl font-bold text-[#1E1A18] border-b border-[#D4AF37]/20 pb-3">
               Order Summary
             </h3>
 
@@ -172,7 +172,7 @@ export default function CartPage() {
               )}
 
               {giftWrap && (
-                <div className="flex justify-between text-[#CDA45A] font-semibold">
+                <div className="flex justify-between text-[#D4AF37] font-semibold">
                   <span>Royal Gift Wrapping</span>
                   <span>+{formatPrice(5, currency)}</span>
                 </div>
@@ -183,7 +183,7 @@ export default function CartPage() {
                 <span className="text-green-700 font-semibold">COMPLIMENTARY</span>
               </div>
 
-              <div className="flex justify-between pt-3 border-t border-[#CDA45A]/30 font-serif-luxury text-xl font-bold text-[#1E1A18]">
+              <div className="flex justify-between pt-3 border-t border-[#D4AF37]/30 font-serif-luxury text-xl font-bold text-[#1E1A18]">
                 <span>Total Amount</span>
                 <span>{formatPrice(finalTotalUSD, currency)}</span>
               </div>
@@ -198,11 +198,11 @@ export default function CartPage() {
 
             <div className="space-y-2 text-[11px] text-gray-500 text-center pt-2">
               <div className="flex items-center justify-center gap-1.5">
-                <ShieldCheck className="w-4 h-4 text-[#CDA45A]" />
+                <ShieldCheck className="w-4 h-4 text-[#D4AF37]" />
                 <span>Certified Authentic Origin & 256-Bit SSL Encrypted</span>
               </div>
               <div className="flex items-center justify-center gap-1.5">
-                <Truck className="w-4 h-4 text-[#CDA45A]" />
+                <Truck className="w-4 h-4 text-[#D4AF37]" />
                 <span>Insured Door-to-Door Air Courier</span>
               </div>
             </div>

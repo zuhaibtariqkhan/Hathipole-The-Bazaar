@@ -77,7 +77,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable} ${cinzel.variable}`}>
-      <body className="bg-[#F7F0E7] text-[#1E1A18] min-h-screen flex flex-col antialiased selection:bg-[#CDA45A] selection:text-white relative">
+      <body className="bg-[#F7F0E7] text-[#1E1A18] min-h-screen flex flex-col antialiased selection:bg-[#D4AF37] selection:text-white relative">
         <GoldCursorGlow />
         <Header />
         <main className="flex-1">{children}</main>

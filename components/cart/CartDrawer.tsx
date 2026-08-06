@@ -72,11 +72,11 @@ export default function CartDrawer() {
       />
 
       <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-[#FCFAF7] border-l border-[#CDA45A]/30 shadow-2xl flex flex-col">
+        <div className="w-screen max-w-md bg-[#FCFAF7] border-l border-[#D4AF37]/30 shadow-2xl flex flex-col">
           {/* Header */}
-          <div className="p-6 border-b border-[#CDA45A]/20 flex items-center justify-between bg-[#F7F0E7]">
+          <div className="p-6 border-b border-[#D4AF37]/20 flex items-center justify-between bg-[#F7F0E7]">
             <div className="flex items-center gap-2">
-              <ShoppingBag className="w-5 h-5 text-[#CDA45A]" />
+              <ShoppingBag className="w-5 h-5 text-[#D4AF37]" />
               <h3 className="font-serif-luxury text-xl font-bold text-[#1E1A18]">
                 Your Shopping Bag ({cart.reduce((a, b) => a + b.quantity, 0)})
               </h3>
@@ -93,7 +93,7 @@ export default function CartDrawer() {
           <div className="flex-1 overflow-y-auto p-6 space-y-6">
             {cart.length === 0 ? (
               <div className="text-center py-16 space-y-4">
-                <div className="w-16 h-16 rounded-full bg-[#CDA45A]/10 text-[#CDA45A] flex items-center justify-center mx-auto">
+                <div className="w-16 h-16 rounded-full bg-[#D4AF37]/10 text-[#D4AF37] flex items-center justify-center mx-auto">
                   <ShoppingBag className="w-8 h-8" />
                 </div>
                 <h4 className="font-serif-luxury text-lg font-semibold text-[#1E1A18]">
@@ -115,7 +115,7 @@ export default function CartDrawer() {
                   {cart.map(({ product, quantity, selectedVariant }) => (
                     <div
                       key={product.id}
-                      className="flex gap-4 p-3 bg-white border border-[#CDA45A]/20 rounded-xl shadow-sm hover:border-[#CDA45A]/50 transition-colors"
+                      className="flex gap-4 p-3 bg-white border border-[#D4AF37]/20 rounded-xl shadow-sm hover:border-[#D4AF37]/50 transition-colors"
                     >
                       <img
                         src={product.images[0]}
@@ -171,16 +171,16 @@ export default function CartDrawer() {
                 </div>
 
                 {/* Gift Wrap & Message Option */}
-                <div className="bg-[#F7F0E7] border border-[#CDA45A]/30 rounded-xl p-4 space-y-3">
+                <div className="bg-[#F7F0E7] border border-[#D4AF37]/30 rounded-xl p-4 space-y-3">
                   <label className="flex items-center gap-3 cursor-pointer">
                     <input
                       type="checkbox"
                       checked={giftWrap}
                       onChange={(e) => setGiftWrap(e.target.checked)}
-                      className="w-4 h-4 accent-[#CDA45A] rounded"
+                      className="w-4 h-4 accent-[#D4AF37] rounded"
                     />
                     <div className="flex items-center gap-1.5 text-xs font-semibold text-[#1E1A18]">
-                      <Gift className="w-4 h-4 text-[#CDA45A]" />
+                      <Gift className="w-4 h-4 text-[#D4AF37]" />
                       <span>Add Royal Gift Wrapping ({formatPrice(5, currency)})</span>
                     </div>
                   </label>
@@ -191,7 +191,7 @@ export default function CartDrawer() {
                       onChange={(e) => setGiftMessage(e.target.value)}
                       placeholder="Write your custom gift message for the recipient..."
                       rows={2}
-                      className="w-full text-xs p-2.5 bg-white border border-[#CDA45A]/30 rounded-lg focus:outline-none focus:border-[#CDA45A]"
+                      className="w-full text-xs p-2.5 bg-white border border-[#D4AF37]/30 rounded-lg focus:outline-none focus:border-[#D4AF37]"
                     />
                   )}
                 </div>
@@ -199,9 +199,9 @@ export default function CartDrawer() {
                 {/* Promo Coupon Code Input */}
                 <div className="space-y-2">
                   {appliedCoupon ? (
-                    <div className="flex items-center justify-between bg-[#CDA45A]/15 border border-[#CDA45A] p-2.5 rounded-xl text-xs">
+                    <div className="flex items-center justify-between bg-[#D4AF37]/15 border border-[#D4AF37] p-2.5 rounded-xl text-xs">
                       <div className="flex items-center gap-2 text-[#1E1A18] font-medium">
-                        <Tag className="w-3.5 h-3.5 text-[#CDA45A]" />
+                        <Tag className="w-3.5 h-3.5 text-[#D4AF37]" />
                         <span>Code Applied: <strong>{appliedCoupon.code}</strong> ({appliedCoupon.description})</span>
                       </div>
                       <button
@@ -218,11 +218,11 @@ export default function CartDrawer() {
                         value={couponInput}
                         onChange={(e) => setCouponInput(e.target.value)}
                         placeholder="Promo Code (e.g. ROYAL10)"
-                        className="flex-1 text-xs px-3 py-2 bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-[#CDA45A] uppercase"
+                        className="flex-1 text-xs px-3 py-2 bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-[#D4AF37] uppercase"
                       />
                       <button
                         type="submit"
-                        className="px-4 py-2 bg-[#1E1A18] text-[#FCFAF7] text-xs font-semibold rounded-lg hover:bg-[#CDA45A] transition-colors"
+                        className="px-4 py-2 bg-[#1E1A18] text-[#FCFAF7] text-xs font-semibold rounded-lg hover:bg-[#D4AF37] transition-colors"
                       >
                         Apply
                       </button>
@@ -240,7 +240,7 @@ export default function CartDrawer() {
 
           {/* Footer Summary & Checkout */}
           {cart.length > 0 && (
-            <div className="p-6 border-t border-[#CDA45A]/20 bg-[#F7F0E7] space-y-4">
+            <div className="p-6 border-t border-[#D4AF37]/20 bg-[#F7F0E7] space-y-4">
               <div className="space-y-1.5 text-xs text-gray-600">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
@@ -253,7 +253,7 @@ export default function CartDrawer() {
                   </div>
                 )}
                 {giftWrap && (
-                  <div className="flex justify-between text-[#CDA45A] font-medium">
+                  <div className="flex justify-between text-[#D4AF37] font-medium">
                     <span>Royal Gift Wrap</span>
                     <span>+{formatPrice(5, currency)}</span>
                   </div>
@@ -286,7 +286,7 @@ export default function CartDrawer() {
               </div>
 
               <div className="flex items-center justify-center gap-2 text-[10px] text-gray-500 pt-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#CDA45A]" />
+                <ShieldCheck className="w-3.5 h-3.5 text-[#D4AF37]" />
                 <span>Encrypted 256-Bit SSL Global Checkout</span>
               </div>
             </div>

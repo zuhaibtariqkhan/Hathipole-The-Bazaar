@@ -68,7 +68,7 @@ export default function GlobalReviewsCarousel({
     <section className="max-w-7xl mx-auto px-6 md:px-8 py-12 space-y-10">
       {/* Section Header */}
       <div className="text-center space-y-3 max-w-3xl mx-auto">
-        <span className="font-cinzel text-xs tracking-[0.3em] text-[#CDA45A] uppercase block font-semibold">
+        <span className="font-cinzel text-xs tracking-[0.3em] text-[#D4AF37] uppercase block font-semibold">
           Global Client Voice
         </span>
 
@@ -76,7 +76,7 @@ export default function GlobalReviewsCarousel({
           Trusted by Collectors & Craft Lovers Worldwide
         </h2>
 
-        <div className="w-16 h-0.5 bg-[#CDA45A] mx-auto" />
+        <div className="w-16 h-0.5 bg-[#D4AF37] mx-auto" />
 
         <p className="text-xs sm:text-sm text-gray-600 font-light leading-relaxed">
           Authentic reviews from customers who have brought India&apos;s finest handcrafted treasures into their homes.
@@ -85,10 +85,26 @@ export default function GlobalReviewsCarousel({
 
       {/* Carousel Container */}
       <div
-        className="relative px-2 sm:px-4"
+        className="relative px-2 sm:px-4 group/reviews"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
+        {/* Floating Side Navigation Buttons for Desktop */}
+        <button
+          onClick={handlePrev}
+          aria-label="Previous Review"
+          className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-[#FCFAF7] border-2 border-[#D4AF37] text-[#1E1A18] hover:bg-[#D4AF37] hover:text-white hover:scale-110 transition-all duration-300 shadow-2xl items-center justify-center cursor-pointer group/btn"
+        >
+          <ChevronLeft className="w-6 h-6 stroke-[2.5] text-[#1E1A18] group-hover/btn:text-white transition-colors" />
+        </button>
+        <button
+          onClick={handleNext}
+          aria-label="Next Review"
+          className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-[#FCFAF7] border-2 border-[#D4AF37] text-[#1E1A18] hover:bg-[#D4AF37] hover:text-white hover:scale-110 transition-all duration-300 shadow-2xl items-center justify-center cursor-pointer group/btn"
+        >
+          <ChevronRight className="w-6 h-6 stroke-[2.5] text-[#1E1A18] group-hover/btn:text-white transition-colors" />
+        </button>
+
         {/* Review Cards Grid Display */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <AnimatePresence mode="popLayout">
@@ -106,15 +122,15 @@ export default function GlobalReviewsCarousel({
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-1">
                       {[...Array(review.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-[#CDA45A] text-[#CDA45A]" />
+                        <Star key={i} className="w-4 h-4 fill-[#D4AF37] text-[#D4AF37]" />
                       ))}
                     </div>
-                    <Quote className="w-8 h-8 text-[#CDA45A]/30 group-hover:text-[#CDA45A]/60 transition-colors" />
+                    <Quote className="w-8 h-8 text-[#D4AF37]/30 group-hover:text-[#D4AF37]/60 transition-colors" />
                   </div>
 
                   {/* Purchased Category Tag */}
                   <div className="inline-flex items-center gap-1.5 badge-gold-foil px-3.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-[#1E1A18]">
-                    <ShieldCheck className="w-3.5 h-3.5 text-[#CDA45A]" /> Verified Purchase • {review.purchasedCategory}
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#D4AF37]" /> Verified Purchase • {review.purchasedCategory}
                   </div>
 
                   {/* Short Authentic Review */}
@@ -124,7 +140,7 @@ export default function GlobalReviewsCarousel({
                 </div>
 
                 {/* Reviewer Details Footer */}
-                <div className="pt-4 border-t border-[#CDA45A]/20 flex items-center justify-between">
+                <div className="pt-4 border-t border-[#D4AF37]/20 flex items-center justify-between">
                   <div>
                     <h4 className="font-serif-luxury text-lg font-bold text-[#1E1A18] flex items-center gap-2">
                       <span>{review.flag}</span> {review.customerName}
@@ -144,7 +160,7 @@ export default function GlobalReviewsCarousel({
         </div>
 
         {/* Manual Navigation Controls */}
-        <div className="flex items-center justify-between mt-8 pt-4 border-t border-[#CDA45A]/15">
+        <div className="flex items-center justify-between mt-8 pt-4 border-t border-[#D4AF37]/15">
           {/* Pagination Indicators / Dots */}
           <div className="flex items-center gap-2">
             {reviews.map((_, idx) => (
@@ -153,7 +169,7 @@ export default function GlobalReviewsCarousel({
                 onClick={() => setCurrentIndex(idx)}
                 aria-label={`Go to slide ${idx + 1}`}
                 className={`h-2 transition-all duration-300 rounded-full ${
-                  currentIndex === idx ? 'w-8 bg-[#CDA45A]' : 'w-2 bg-[#CDA45A]/30 hover:bg-[#CDA45A]/60'
+                  currentIndex === idx ? 'w-8 bg-[#D4AF37]' : 'w-2 bg-[#D4AF37]/30 hover:bg-[#D4AF37]/60'
                 }`}
               />
             ))}
@@ -164,14 +180,14 @@ export default function GlobalReviewsCarousel({
             <button
               onClick={handlePrev}
               aria-label="Previous Review"
-              className="w-10 h-10 rounded-full bg-[#FCFAF7] border border-[#CDA45A]/40 text-[#1E1A18] hover:bg-[#CDA45A] hover:text-white flex items-center justify-center transition-all shadow-md active:scale-95"
+              className="w-10 h-10 rounded-full bg-[#FCFAF7] border border-[#D4AF37]/40 text-[#1E1A18] hover:bg-[#D4AF37] hover:text-white flex items-center justify-center transition-all shadow-md active:scale-95"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={handleNext}
               aria-label="Next Review"
-              className="w-10 h-10 rounded-full bg-[#FCFAF7] border border-[#CDA45A]/40 text-[#1E1A18] hover:bg-[#CDA45A] hover:text-white flex items-center justify-center transition-all shadow-md active:scale-95"
+              className="w-10 h-10 rounded-full bg-[#FCFAF7] border border-[#D4AF37]/40 text-[#1E1A18] hover:bg-[#D4AF37] hover:text-white flex items-center justify-center transition-all shadow-md active:scale-95"
             >
               <ChevronRight className="w-5 h-5" />
             </button>

@@ -9,13 +9,13 @@ export default function BlogPage() {
     <div className="max-w-7xl mx-auto px-6 md:px-8 py-14 space-y-16">
       {/* Editorial Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <span className="font-cinzel text-xs tracking-[0.3em] text-[#CDA45A] uppercase block font-semibold">
+        <span className="font-cinzel text-xs tracking-[0.3em] text-[#D4AF37] uppercase block font-semibold">
           Stories of Living Heritage
         </span>
         <h1 className="font-serif-luxury text-4xl sm:text-6xl font-bold text-[#1E1A18] tracking-tight">
           The Heritage Journal
         </h1>
-        <div className="w-16 h-0.5 bg-[#CDA45A] mx-auto" />
+        <div className="w-16 h-0.5 bg-[#D4AF37] mx-auto" />
         <p className="text-sm md:text-base text-gray-600 leading-relaxed font-light">
           Deep dives into 400-year-old Pichwai techniques, pure Pashmina cashmere anatomy, and interior styling with Indian handicrafts.
         </p>
@@ -46,14 +46,14 @@ export default function BlogPage() {
               <div className="p-6 space-y-4">
                 <div className="flex items-center justify-between text-xs text-gray-500 font-medium">
                   <span className="flex items-center gap-1">
-                    <User className="w-3.5 h-3.5 text-[#CDA45A]" /> {blog.author}
+                    <User className="w-3.5 h-3.5 text-[#D4AF37]" /> {blog.author}
                   </span>
                   <span className="flex items-center gap-1">
-                    <Clock className="w-3.5 h-3.5 text-[#CDA45A]" /> {blog.readTime}
+                    <Clock className="w-3.5 h-3.5 text-[#D4AF37]" /> {blog.readTime}
                   </span>
                 </div>
 
-                <h3 className="font-serif-luxury text-2xl font-bold text-[#1E1A18] group-hover:text-[#CDA45A] transition-colors leading-snug">
+                <h3 className="font-serif-luxury text-2xl font-bold text-[#1E1A18] group-hover:text-[#D4AF37] transition-colors leading-snug">
                   {blog.title}
                 </h3>
 
@@ -63,8 +63,8 @@ export default function BlogPage() {
               </div>
             </div>
 
-            <div className="p-6 pt-0 border-t border-[#CDA45A]/15 mt-4">
-              <span className="text-xs font-bold text-[#CDA45A] uppercase tracking-wider flex items-center justify-between group-hover:text-[#1E1A18] transition-colors">
+            <div className="p-6 pt-0 border-t border-[#D4AF37]/15 mt-4">
+              <span className="text-xs font-bold text-[#D4AF37] uppercase tracking-wider flex items-center justify-between group-hover:text-[#1E1A18] transition-colors">
                 Read Full Story <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
             </div>

@@ -31,11 +31,11 @@ export default function OrderConfirmationPage({ params }: { params: Promise<{ id
   return (
     <div className="max-w-4xl mx-auto px-6 md:px-8 py-12 space-y-10">
       {/* Banner */}
-      <div className="bg-[#FCFAF7] border border-[#CDA45A]/40 rounded-3xl p-8 text-center space-y-4 shadow-luxury animate-fadeIn">
-        <div className="w-16 h-16 rounded-full bg-[#CDA45A]/20 text-[#CDA45A] flex items-center justify-center mx-auto border border-[#CDA45A]">
+      <div className="bg-[#FCFAF7] border border-[#D4AF37]/40 rounded-3xl p-8 text-center space-y-4 shadow-luxury animate-fadeIn">
+        <div className="w-16 h-16 rounded-full bg-[#D4AF37]/20 text-[#D4AF37] flex items-center justify-center mx-auto border border-[#D4AF37]">
           <CheckCircle2 className="w-10 h-10" />
         </div>
-        <span className="font-cinzel text-xs tracking-[0.25em] text-[#CDA45A] uppercase block">
+        <span className="font-cinzel text-xs tracking-[0.25em] text-[#D4AF37] uppercase block">
           Order Confirmed & Certified
         </span>
         <h1 className="font-serif-luxury text-3xl sm:text-4xl font-bold text-[#1E1A18]">
@@ -48,23 +48,23 @@ export default function OrderConfirmationPage({ params }: { params: Promise<{ id
         <div className="pt-2 flex justify-center gap-4">
           <button
             onClick={() => window.print()}
-            className="px-5 py-2.5 bg-white border border-[#CDA45A]/40 text-[#1E1A18] text-xs font-semibold rounded-xl flex items-center gap-2 hover:bg-[#F7F0E7]"
+            className="px-5 py-2.5 bg-white border border-[#D4AF37]/40 text-[#1E1A18] text-xs font-semibold rounded-xl flex items-center gap-2 hover:bg-[#F7F0E7]"
           >
-            <Printer className="w-4 h-4 text-[#CDA45A]" /> Print Order Receipt
+            <Printer className="w-4 h-4 text-[#D4AF37]" /> Print Order Receipt
           </button>
         </div>
       </div>
 
       {/* Live Order Status Tracker */}
-      <div className="bg-[#FCFAF7] border border-[#CDA45A]/30 rounded-3xl p-8 space-y-6 shadow-sm">
-        <div className="flex justify-between items-center border-b border-[#CDA45A]/20 pb-4">
+      <div className="bg-[#FCFAF7] border border-[#D4AF37]/30 rounded-3xl p-8 space-y-6 shadow-sm">
+        <div className="flex justify-between items-center border-b border-[#D4AF37]/20 pb-4">
           <div>
             <h3 className="font-serif-luxury text-lg font-bold text-[#1E1A18]">
               Real-Time Courier Tracking Status
             </h3>
             <span className="text-xs text-gray-500">Tracking Number: <strong>{order?.trackingNumber}</strong> ({order?.courier})</span>
           </div>
-          <span className="bg-[#CDA45A]/20 text-[#1E1A18] text-xs font-bold px-3 py-1 rounded-full border border-[#CDA45A]/40">
+          <span className="bg-[#D4AF37]/20 text-[#1E1A18] text-xs font-bold px-3 py-1 rounded-full border border-[#D4AF37]/40">
             {order?.status || 'Processing'}
           </span>
         </div>
@@ -76,7 +76,7 @@ export default function OrderConfirmationPage({ params }: { params: Promise<{ id
               <div
                 className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all ${
                   st.done
-                    ? 'bg-[#CDA45A] text-white shadow-md'
+                    ? 'bg-[#D4AF37] text-white shadow-md'
                     : 'bg-gray-200 text-gray-500 border border-gray-300'
                 }`}
               >
@@ -93,22 +93,22 @@ export default function OrderConfirmationPage({ params }: { params: Promise<{ id
       {/* Order Items & Shipping Address Details */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Shipping Address */}
-        <div className="bg-[#FCFAF7] border border-[#CDA45A]/30 rounded-2xl p-6 space-y-3">
+        <div className="bg-[#FCFAF7] border border-[#D4AF37]/30 rounded-2xl p-6 space-y-3">
           <h4 className="font-serif-luxury text-base font-bold text-[#1E1A18] flex items-center gap-2">
-            <Truck className="w-4 h-4 text-[#CDA45A]" /> Shipping Address
+            <Truck className="w-4 h-4 text-[#D4AF37]" /> Shipping Address
           </h4>
           <div className="text-xs text-gray-600 space-y-1">
             <p className="font-semibold text-[#1E1A18]">{order?.shippingAddress.fullName}</p>
             <p>{order?.shippingAddress.street}</p>
             <p>{order?.shippingAddress.city}, {order?.shippingAddress.state} {order?.shippingAddress.zipCode}</p>
-            <p className="font-medium text-[#CDA45A]">{order?.shippingAddress.country}</p>
+            <p className="font-medium text-[#D4AF37]">{order?.shippingAddress.country}</p>
           </div>
         </div>
 
         {/* Payment Summary */}
-        <div className="bg-[#FCFAF7] border border-[#CDA45A]/30 rounded-2xl p-6 space-y-3">
+        <div className="bg-[#FCFAF7] border border-[#D4AF37]/30 rounded-2xl p-6 space-y-3">
           <h4 className="font-serif-luxury text-base font-bold text-[#1E1A18] flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-[#CDA45A]" /> Payment Method
+            <ShieldCheck className="w-4 h-4 text-[#D4AF37]" /> Payment Method
           </h4>
           <div className="text-xs text-gray-600 space-y-1">
             <p className="font-semibold text-[#1E1A18]">{order?.paymentMethod}</p>

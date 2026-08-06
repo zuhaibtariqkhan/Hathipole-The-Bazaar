@@ -17,7 +17,7 @@ export default function ArtisansPage() {
           transition={{ duration: 0.6 }}
           className="space-y-3 max-w-3xl mx-auto"
         >
-          <span className="font-cinzel text-xs tracking-[0.3em] text-[#CDA45A] uppercase block font-semibold">
+          <span className="font-cinzel text-xs tracking-[0.3em] text-[#D4AF37] uppercase block font-semibold">
             Preserving India’s Heritage Artistry
           </span>
 
@@ -25,7 +25,7 @@ export default function ArtisansPage() {
             The Artisan Stories of Hathipole The Bazaar
           </h1>
 
-          <div className="w-20 h-0.5 bg-[#CDA45A] mx-auto" />
+          <div className="w-20 h-0.5 bg-[#D4AF37] mx-auto" />
 
           <p className="text-sm sm:text-base text-gray-700 font-light leading-relaxed">
             Honouring centuries of traditional craft, master lineages, and rural artisan communities across India through authentic storytelling and direct fair-trade collaboration.
@@ -39,8 +39,8 @@ export default function ArtisansPage() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6"
         >
-          <div className="bg-[#FCFAF7] border border-[#CDA45A]/30 rounded-2xl p-6 shadow-md flex items-center gap-4 text-left group hover:border-[#CDA45A] transition-all">
-            <div className="w-12 h-12 rounded-xl bg-[#CDA45A]/15 border border-[#CDA45A]/40 flex items-center justify-center text-[#CDA45A] shrink-0 group-hover:bg-[#CDA45A] group-hover:text-white transition-colors">
+          <div className="bg-[#FCFAF7] border border-[#D4AF37]/30 rounded-2xl p-6 shadow-md flex items-center gap-4 text-left group hover:border-[#D4AF37] transition-all">
+            <div className="w-12 h-12 rounded-xl bg-[#D4AF37]/15 border border-[#D4AF37]/40 flex items-center justify-center text-[#D4AF37] shrink-0 group-hover:bg-[#D4AF37] group-hover:text-white transition-colors">
               <Award className="w-6 h-6" />
             </div>
             <div>
@@ -49,8 +49,8 @@ export default function ArtisansPage() {
             </div>
           </div>
 
-          <div className="bg-[#FCFAF7] border border-[#CDA45A]/30 rounded-2xl p-6 shadow-md flex items-center gap-4 text-left group hover:border-[#CDA45A] transition-all">
-            <div className="w-12 h-12 rounded-xl bg-[#CDA45A]/15 border border-[#CDA45A]/40 flex items-center justify-center text-[#CDA45A] shrink-0 group-hover:bg-[#CDA45A] group-hover:text-white transition-colors">
+          <div className="bg-[#FCFAF7] border border-[#D4AF37]/30 rounded-2xl p-6 shadow-md flex items-center gap-4 text-left group hover:border-[#D4AF37] transition-all">
+            <div className="w-12 h-12 rounded-xl bg-[#D4AF37]/15 border border-[#D4AF37]/40 flex items-center justify-center text-[#D4AF37] shrink-0 group-hover:bg-[#D4AF37] group-hover:text-white transition-colors">
               <Users className="w-6 h-6" />
             </div>
             <div>
@@ -59,8 +59,8 @@ export default function ArtisansPage() {
             </div>
           </div>
 
-          <div className="bg-[#FCFAF7] border border-[#CDA45A]/30 rounded-2xl p-6 shadow-md flex items-center gap-4 text-left group hover:border-[#CDA45A] transition-all">
-            <div className="w-12 h-12 rounded-xl bg-[#CDA45A]/15 border border-[#CDA45A]/40 flex items-center justify-center text-[#CDA45A] shrink-0 group-hover:bg-[#CDA45A] group-hover:text-white transition-colors">
+          <div className="bg-[#FCFAF7] border border-[#D4AF37]/30 rounded-2xl p-6 shadow-md flex items-center gap-4 text-left group hover:border-[#D4AF37] transition-all">
+            <div className="w-12 h-12 rounded-xl bg-[#D4AF37]/15 border border-[#D4AF37]/40 flex items-center justify-center text-[#D4AF37] shrink-0 group-hover:bg-[#D4AF37] group-hover:text-white transition-colors">
               <MapPin className="w-6 h-6" />
             </div>
             <div>
@@ -80,17 +80,17 @@ export default function ArtisansPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="bg-[#FCFAF7] border border-[#CDA45A]/30 rounded-3xl p-8 sm:p-12 lg:p-16 shadow-xl space-y-10 relative overflow-hidden"
+            className="bg-[#FCFAF7] border border-[#D4AF37]/30 rounded-3xl p-8 sm:p-12 lg:p-16 shadow-xl space-y-10 relative overflow-hidden"
           >
             {/* Story Header */}
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#CDA45A]/20 pb-8">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#D4AF37]/20 pb-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <span className="font-cinzel text-xs font-bold text-[#CDA45A] tracking-[0.25em] uppercase bg-[#1E1A18] text-[#E6D2A8] px-3.5 py-1 rounded-full border border-[#CDA45A]/40">
+                  <span className="font-cinzel text-xs font-bold text-[#D4AF37] tracking-[0.25em] uppercase bg-[#1E1A18] text-[#E6D2A8] px-3.5 py-1 rounded-full border border-[#D4AF37]/40">
                     Story {story.number}
                   </span>
                   <span className="text-xs text-gray-500 font-semibold uppercase tracking-wider flex items-center gap-1">
-                    <MapPin className="w-3.5 h-3.5 text-[#CDA45A]" /> {story.region}
+                    <MapPin className="w-3.5 h-3.5 text-[#D4AF37]" /> {story.region}
                   </span>
                 </div>
 
@@ -115,7 +115,7 @@ export default function ArtisansPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               {/* Handcrafted Image */}
               <div
-                className={`lg:col-span-5 aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative border border-[#CDA45A]/40 group ${
+                className={`lg:col-span-5 aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative border border-[#D4AF37]/40 group ${
                   idx % 2 === 1 ? 'lg:order-2' : 'lg:order-1'
                 }`}
               >
@@ -133,7 +133,7 @@ export default function ArtisansPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1E1A18]/80 via-transparent to-transparent flex items-end p-6">
                   <div className="flex items-center gap-2 text-[#E6D2A8] text-xs font-semibold">
-                    <ShieldCheck className="w-4 h-4 text-[#CDA45A]" />
+                    <ShieldCheck className="w-4 h-4 text-[#D4AF37]" />
                     <span>Certified Authentic Heritage Creation</span>
                   </div>
                 </div>
@@ -152,7 +152,7 @@ export default function ArtisansPage() {
                     const restPara = para.slice(1);
                     return (
                       <p key={pIdx} className="text-gray-800 leading-relaxed">
-                        <span className="float-left text-5xl font-serif-luxury font-bold text-[#CDA45A] pr-3 pt-1 leading-none">
+                        <span className="float-left text-5xl font-serif-luxury font-bold text-[#D4AF37] pr-3 pt-1 leading-none">
                           {firstChar}
                         </span>
                         {restPara}
@@ -167,8 +167,8 @@ export default function ArtisansPage() {
                 })}
 
                 {/* Story Closing Highlight Quote */}
-                <div className="bg-[#F7F0E7] border-l-4 border-[#CDA45A] p-6 rounded-r-2xl shadow-sm space-y-2 mt-6">
-                  <Quote className="w-6 h-6 text-[#CDA45A]" />
+                <div className="bg-[#F7F0E7] border-l-4 border-[#D4AF37] p-6 rounded-r-2xl shadow-sm space-y-2 mt-6">
+                  <Quote className="w-6 h-6 text-[#D4AF37]" />
                   <p className="font-serif-luxury text-xl sm:text-2xl text-[#1E1A18] italic font-medium leading-snug">
                     &ldquo;{story.closingQuote}&rdquo;
                   </p>
@@ -181,8 +181,8 @@ export default function ArtisansPage() {
 
       {/* 4. Footer Trust Statement Callout */}
       <section className="max-w-5xl mx-auto px-6 pb-20 pt-8 text-center space-y-6">
-        <div className="bg-[#1E1A18] border border-[#CDA45A]/40 rounded-3xl p-10 md:p-14 text-[#FCFAF7] space-y-4 shadow-2xl relative overflow-hidden">
-          <Sparkles className="w-10 h-10 text-[#CDA45A] mx-auto animate-pulse" />
+        <div className="bg-[#1E1A18] border border-[#D4AF37]/40 rounded-3xl p-10 md:p-14 text-[#FCFAF7] space-y-4 shadow-2xl relative overflow-hidden">
+          <Sparkles className="w-10 h-10 text-[#D4AF37] mx-auto animate-pulse" />
           <h3 className="font-serif-luxury text-3xl sm:text-4xl font-bold text-[#E6D2A8]">
             Sustaining India’s Heritage Artistry Together
           </h3>

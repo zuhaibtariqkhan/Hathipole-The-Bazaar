@@ -125,7 +125,24 @@ export default function CollectionSlider({
   };
 
   return (
-    <div className="relative space-y-6">
+    <div className="relative space-y-6 group/slider">
+      {/* Desktop Side Overlay Navigator Buttons */}
+      <button
+        onClick={prevSlide}
+        aria-label="Previous collection"
+        className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-[#1E1A18]/90 backdrop-blur-md border-2 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#1E1A18] hover:scale-110 transition-all duration-300 shadow-2xl items-center justify-center cursor-pointer group/btn"
+      >
+        <ChevronLeft className="w-6 h-6 stroke-[2.5] text-[#D4AF37] group-hover/btn:text-[#1E1A18] transition-colors" />
+      </button>
+
+      <button
+        onClick={nextSlide}
+        aria-label="Next collection"
+        className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-[#1E1A18]/90 backdrop-blur-md border-2 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#1E1A18] hover:scale-110 transition-all duration-300 shadow-2xl items-center justify-center cursor-pointer group/btn"
+      >
+        <ChevronRight className="w-6 h-6 stroke-[2.5] text-[#D4AF37] group-hover/btn:text-[#1E1A18] transition-colors" />
+      </button>
+
       {/* Scrollable Track */}
       <div
         ref={containerRef}
@@ -144,8 +161,8 @@ export default function CollectionSlider({
               href={col.link}
               className={`group relative shrink-0 snap-start rounded-3xl overflow-hidden shadow-luxury border transition-all duration-500 w-[82vw] sm:w-[320px] md:w-[340px] lg:w-[360px] aspect-[3/4] ${
                 isActive
-                  ? 'border-[#CDA45A] shadow-2xl scale-[1.01]'
-                  : 'border-[#CDA45A]/20 hover:border-[#CDA45A]/70'
+                  ? 'border-[#D4AF37] shadow-2xl scale-[1.01]'
+                  : 'border-[#D4AF37]/20 hover:border-[#D4AF37]/70'
               }`}
             >
               <img
@@ -168,13 +185,13 @@ export default function CollectionSlider({
                   )}
                 </div>
 
-                <h3 className="font-serif-luxury text-2xl sm:text-3xl font-bold group-hover:text-[#CDA45A] transition-colors mt-1">
+                <h3 className="font-serif-luxury text-2xl sm:text-3xl font-bold group-hover:text-[#D4AF37] transition-colors mt-1">
                   {col.title}
                 </h3>
                 
                 <p className="text-xs sm:text-sm text-gray-300 font-light mt-1 flex items-center justify-between">
                   <span>{col.tagline}</span>
-                  <ArrowRight className="w-4 h-4 text-[#CDA45A] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                  <ArrowRight className="w-4 h-4 text-[#D4AF37] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                 </p>
               </div>
             </Link>
@@ -183,7 +200,7 @@ export default function CollectionSlider({
       </div>
 
       {/* Slider Navigation Indicators & Controls Bar */}
-      <div className="flex items-center justify-between pt-2 px-2 border-t border-[#CDA45A]/20">
+      <div className="flex items-center justify-between pt-2 px-2 border-t border-[#D4AF37]/20">
         {/* Navigation Indicator Dots */}
         <div className="flex items-center gap-2.5">
           {collections.map((col, idx) => {
@@ -195,8 +212,8 @@ export default function CollectionSlider({
                 aria-label={`Go to ${col.title} collection`}
                 className={`relative h-2 rounded-full transition-all duration-500 cursor-pointer ${
                   isActive
-                    ? 'w-10 bg-[#CDA45A] shadow-[0_0_12px_rgba(205,164,90,0.6)]'
-                    : 'w-2.5 bg-[#CDA45A]/30 hover:bg-[#CDA45A]/70'
+                    ? 'w-10 bg-[#D4AF37] shadow-[0_0_12px_rgba(212,175,55,0.6)]'
+                    : 'w-2.5 bg-[#D4AF37]/30 hover:bg-[#D4AF37]/70'
                 }`}
               />
             );
@@ -208,16 +225,16 @@ export default function CollectionSlider({
           <button
             onClick={prevSlide}
             aria-label="Previous collection"
-            className="w-10 h-10 rounded-full border border-[#CDA45A]/40 text-[#1E1A18] hover:bg-[#CDA45A] hover:text-[#1E1A18] flex items-center justify-center transition-all duration-300 shadow-sm active:scale-95 cursor-pointer"
+            className="w-10 h-10 rounded-full border border-[#D4AF37]/40 text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#1E1A18] flex items-center justify-center transition-all duration-300 shadow-sm active:scale-95 cursor-pointer group/bnt1"
           >
-            <ChevronLeft className="w-5 h-5 text-[#CDA45A] hover:text-[#1E1A18]" />
+            <ChevronLeft className="w-5 h-5 text-[#D4AF37] group-hover/bnt1:text-[#1E1A18] transition-colors" />
           </button>
           <button
             onClick={nextSlide}
             aria-label="Next collection"
-            className="w-10 h-10 rounded-full border border-[#CDA45A]/40 text-[#1E1A18] hover:bg-[#CDA45A] hover:text-[#1E1A18] flex items-center justify-center transition-all duration-300 shadow-sm active:scale-95 cursor-pointer"
+            className="w-10 h-10 rounded-full border border-[#D4AF37]/40 text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#1E1A18] flex items-center justify-center transition-all duration-300 shadow-sm active:scale-95 cursor-pointer group/bnt2"
           >
-            <ChevronRight className="w-5 h-5 text-[#CDA45A] hover:text-[#1E1A18]" />
+            <ChevronRight className="w-5 h-5 text-[#D4AF37] group-hover/bnt2:text-[#1E1A18] transition-colors" />
           </button>
         </div>
       </div>

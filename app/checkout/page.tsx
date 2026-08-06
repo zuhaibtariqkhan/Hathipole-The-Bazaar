@@ -64,9 +64,9 @@ export default function CheckoutPage() {
   return (
     <div className="max-w-7xl mx-auto px-6 md:px-8 py-10 space-y-8">
       {/* Checkout Header */}
-      <div className="border-b border-[#CDA45A]/20 pb-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="border-b border-[#D4AF37]/20 pb-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <span className="font-cinzel text-xs tracking-[0.2em] text-[#CDA45A] uppercase block">
+          <span className="font-cinzel text-xs tracking-[0.2em] text-[#D4AF37] uppercase block">
             Express Royal Checkout
           </span>
           <h1 className="font-serif-luxury text-3xl font-bold text-[#1E1A18]">
@@ -76,15 +76,15 @@ export default function CheckoutPage() {
 
         {/* Step Indicator */}
         <div className="flex items-center gap-2 text-xs font-semibold">
-          <span className={`px-3 py-1 rounded-full ${step === 1 ? 'bg-[#CDA45A] text-white' : 'bg-gray-200 text-gray-600'}`}>
+          <span className={`px-3 py-1 rounded-full ${step === 1 ? 'bg-[#D4AF37] text-white' : 'bg-gray-200 text-gray-600'}`}>
             1. Shipping Address
           </span>
           <span>→</span>
-          <span className={`px-3 py-1 rounded-full ${step === 2 ? 'bg-[#CDA45A] text-white' : 'bg-gray-200 text-gray-600'}`}>
+          <span className={`px-3 py-1 rounded-full ${step === 2 ? 'bg-[#D4AF37] text-white' : 'bg-gray-200 text-gray-600'}`}>
             2. Courier & Payment
           </span>
           <span>→</span>
-          <span className={`px-3 py-1 rounded-full ${step === 3 ? 'bg-[#CDA45A] text-white' : 'bg-gray-200 text-gray-600'}`}>
+          <span className={`px-3 py-1 rounded-full ${step === 3 ? 'bg-[#D4AF37] text-white' : 'bg-gray-200 text-gray-600'}`}>
             3. Review & Place
           </span>
         </div>
@@ -92,12 +92,12 @@ export default function CheckoutPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         {/* Step Form Column */}
-        <div className="lg:col-span-7 bg-[#FCFAF7] border border-[#CDA45A]/30 rounded-3xl p-6 sm:p-8 space-y-6 shadow-luxury">
+        <div className="lg:col-span-7 bg-[#FCFAF7] border border-[#D4AF37]/30 rounded-3xl p-6 sm:p-8 space-y-6 shadow-luxury">
           {/* STEP 1: Address */}
           {step === 1 && (
             <div className="space-y-4 animate-fadeIn">
-              <h3 className="font-serif-luxury text-xl font-bold text-[#1E1A18] flex items-center gap-2 border-b border-[#CDA45A]/20 pb-3">
-                <Truck className="w-5 h-5 text-[#CDA45A]" /> Shipping & Contact Information
+              <h3 className="font-serif-luxury text-xl font-bold text-[#1E1A18] flex items-center gap-2 border-b border-[#D4AF37]/20 pb-3">
+                <Truck className="w-5 h-5 text-[#D4AF37]" /> Shipping & Contact Information
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -108,7 +108,7 @@ export default function CheckoutPage() {
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     required
-                    className="w-full text-xs p-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#CDA45A]"
+                    className="w-full text-xs p-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#D4AF37]"
                   />
                 </div>
                 <div className="space-y-1">
@@ -118,7 +118,7 @@ export default function CheckoutPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="w-full text-xs p-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#CDA45A]"
+                    className="w-full text-xs p-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#D4AF37]"
                   />
                 </div>
               </div>
@@ -131,7 +131,7 @@ export default function CheckoutPage() {
                   onChange={(e) => setStreet(e.target.value)}
                   placeholder="House/Apt No., Street Name..."
                   required
-                  className="w-full text-xs p-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#CDA45A]"
+                  className="w-full text-xs p-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#D4AF37]"
                 />
               </div>
 
@@ -143,7 +143,7 @@ export default function CheckoutPage() {
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
                     required
-                    className="w-full text-xs p-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#CDA45A]"
+                    className="w-full text-xs p-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#D4AF37]"
                   />
                 </div>
                 <div className="space-y-1">
@@ -153,7 +153,7 @@ export default function CheckoutPage() {
                     value={state}
                     onChange={(e) => setState(e.target.value)}
                     required
-                    className="w-full text-xs p-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#CDA45A]"
+                    className="w-full text-xs p-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#D4AF37]"
                   />
                 </div>
                 <div className="space-y-1">
@@ -163,7 +163,7 @@ export default function CheckoutPage() {
                     value={zipCode}
                     onChange={(e) => setZipCode(e.target.value)}
                     required
-                    className="w-full text-xs p-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#CDA45A]"
+                    className="w-full text-xs p-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#D4AF37]"
                   />
                 </div>
               </div>
@@ -173,7 +173,7 @@ export default function CheckoutPage() {
                 <select
                   value={country}
                   onChange={(e) => setCountry(e.target.value)}
-                  className="w-full text-xs p-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#CDA45A]"
+                  className="w-full text-xs p-3 bg-white border border-gray-300 rounded-xl focus:outline-none focus:border-[#D4AF37]"
                 >
                   <option value="India">India</option>
                   <option value="United States">United States</option>
@@ -201,8 +201,8 @@ export default function CheckoutPage() {
           {/* STEP 2: Courier & Payment */}
           {step === 2 && (
             <div className="space-y-6 animate-fadeIn">
-              <h3 className="font-serif-luxury text-xl font-bold text-[#1E1A18] flex items-center gap-2 border-b border-[#CDA45A]/20 pb-3">
-                <CreditCard className="w-5 h-5 text-[#CDA45A]" /> Courier & Payment Gateway
+              <h3 className="font-serif-luxury text-xl font-bold text-[#1E1A18] flex items-center gap-2 border-b border-[#D4AF37]/20 pb-3">
+                <CreditCard className="w-5 h-5 text-[#D4AF37]" /> Courier & Payment Gateway
               </h3>
 
               {/* Courier Choice */}
@@ -218,7 +218,7 @@ export default function CheckoutPage() {
                       key={c.name}
                       onClick={() => setCourier(c.name as any)}
                       className={`p-3.5 border rounded-xl cursor-pointer transition-all ${
-                        courier === c.name ? 'border-[#CDA45A] bg-[#CDA45A]/10' : 'border-gray-200 bg-white'
+                        courier === c.name ? 'border-[#D4AF37] bg-[#D4AF37]/10' : 'border-gray-200 bg-white'
                       }`}
                     >
                       <span className="font-bold text-xs text-[#1E1A18] block">{c.name}</span>
@@ -241,7 +241,7 @@ export default function CheckoutPage() {
                     <label
                       key={pm}
                       className={`flex items-center gap-3 p-3.5 border rounded-xl cursor-pointer transition-all ${
-                        paymentMethod === pm ? 'border-[#CDA45A] bg-[#CDA45A]/10 font-semibold' : 'border-gray-200 bg-white'
+                        paymentMethod === pm ? 'border-[#D4AF37] bg-[#D4AF37]/10 font-semibold' : 'border-gray-200 bg-white'
                       }`}
                     >
                       <input
@@ -249,7 +249,7 @@ export default function CheckoutPage() {
                         name="payment"
                         checked={paymentMethod === pm}
                         onChange={() => setPaymentMethod(pm)}
-                        className="accent-[#CDA45A]"
+                        className="accent-[#D4AF37]"
                       />
                       <span className="text-xs text-[#1E1A18]">{pm}</span>
                     </label>
@@ -279,18 +279,18 @@ export default function CheckoutPage() {
           {/* STEP 3: Review & Place */}
           {step === 3 && (
             <form onSubmit={handleSubmitOrder} className="space-y-6 animate-fadeIn">
-              <h3 className="font-serif-luxury text-xl font-bold text-[#1E1A18] flex items-center gap-2 border-b border-[#CDA45A]/20 pb-3">
-                <CheckCircle2 className="w-5 h-5 text-[#CDA45A]" /> Final Review & Confirmation
+              <h3 className="font-serif-luxury text-xl font-bold text-[#1E1A18] flex items-center gap-2 border-b border-[#D4AF37]/20 pb-3">
+                <CheckCircle2 className="w-5 h-5 text-[#D4AF37]" /> Final Review & Confirmation
               </h3>
 
-              <div className="bg-[#F7F0E7] border border-[#CDA45A]/20 rounded-2xl p-4 space-y-2 text-xs">
+              <div className="bg-[#F7F0E7] border border-[#D4AF37]/20 rounded-2xl p-4 space-y-2 text-xs">
                 <div className="flex justify-between font-semibold">
                   <span>Shipping To:</span>
                   <span className="text-[#1E1A18]">{fullName}, {street}, {city}, {country}</span>
                 </div>
                 <div className="flex justify-between font-semibold">
                   <span>Courier:</span>
-                  <span className="text-[#CDA45A]">{courier}</span>
+                  <span className="text-[#D4AF37]">{courier}</span>
                 </div>
                 <div className="flex justify-between font-semibold">
                   <span>Payment Gateway:</span>
@@ -333,8 +333,8 @@ export default function CheckoutPage() {
         </div>
 
         {/* Order Summary Sidebar */}
-        <div className="lg:col-span-5 bg-[#FCFAF7] border border-[#CDA45A]/30 rounded-3xl p-6 space-y-4 shadow-luxury sticky top-28">
-          <h4 className="font-serif-luxury text-lg font-bold text-[#1E1A18] border-b border-[#CDA45A]/20 pb-3">
+        <div className="lg:col-span-5 bg-[#FCFAF7] border border-[#D4AF37]/30 rounded-3xl p-6 space-y-4 shadow-luxury sticky top-28">
+          <h4 className="font-serif-luxury text-lg font-bold text-[#1E1A18] border-b border-[#D4AF37]/20 pb-3">
             Summary ({cart.reduce((a, b) => a + b.quantity, 0)} Items)
           </h4>
 
@@ -350,12 +350,12 @@ export default function CheckoutPage() {
               </div>
             )}
             {giftWrap && (
-              <div className="flex justify-between text-[#CDA45A] font-semibold">
+              <div className="flex justify-between text-[#D4AF37] font-semibold">
                 <span>Royal Gift Wrap</span>
                 <span>+{formatPrice(5, currency)}</span>
               </div>
             )}
-            <div className="flex justify-between border-t border-[#CDA45A]/20 pt-3 font-serif-luxury text-xl font-bold text-[#1E1A18]">
+            <div className="flex justify-between border-t border-[#D4AF37]/20 pt-3 font-serif-luxury text-xl font-bold text-[#1E1A18]">
               <span>Grand Total</span>
               <span>{formatPrice(finalTotalUSD, currency)}</span>
             </div>

@@ -105,17 +105,41 @@ export default function MobileFeaturedCarousel({
 
   return (
     <div
-      className="relative space-y-4"
+      className="relative space-y-4 group/carousel"
       onTouchStart={handleInteractionStart}
       onTouchEnd={handleInteractionEnd}
       onMouseEnter={handleInteractionStart}
       onMouseLeave={handleInteractionEnd}
     >
+      {/* Desktop Side Navigation Overlay Buttons */}
+      <button
+        onClick={() => {
+          handleInteractionStart();
+          prevSlide();
+          handleInteractionEnd();
+        }}
+        className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-[#FCFAF7] border-2 border-[#D4AF37] text-[#1E1A18] hover:bg-[#D4AF37] hover:text-white hover:scale-110 transition-all shadow-xl items-center justify-center cursor-pointer group/btn"
+        aria-label="Previous product"
+      >
+        <ChevronLeft className="w-5 h-5 stroke-[2.5] text-[#1E1A18] group-hover/btn:text-white transition-colors" />
+      </button>
+      <button
+        onClick={() => {
+          handleInteractionStart();
+          nextSlide();
+          handleInteractionEnd();
+        }}
+        className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-[#FCFAF7] border-2 border-[#D4AF37] text-[#1E1A18] hover:bg-[#D4AF37] hover:text-white hover:scale-110 transition-all shadow-xl items-center justify-center cursor-pointer group/btn"
+        aria-label="Next product"
+      >
+        <ChevronRight className="w-5 h-5 stroke-[2.5] text-[#1E1A18] group-hover/btn:text-white transition-colors" />
+      </button>
+
       {/* Auto-sliding Scroll Track */}
       <div
         ref={containerRef}
         onScroll={handleScroll}
-        className="flex overflow-x-auto snap-x snap-mandatory gap-3.5 pb-3 pt-1 -mx-6 px-6 no-scrollbar touch-pan-x scroll-smooth"
+        className="flex overflow-x-auto snap-x snap-mandatory gap-3.5 sm:gap-5 pb-3 pt-1 -mx-6 px-6 no-scrollbar touch-pan-x scroll-smooth"
         style={{ WebkitOverflowScrolling: 'touch' }}
       >
         {carouselProducts.map((product, idx) => (
@@ -124,7 +148,7 @@ export default function MobileFeaturedCarousel({
             ref={(el) => {
               itemRefs.current[idx] = el;
             }}
-            className="w-[62vw] max-w-[210px] shrink-0 snap-start transition-all duration-300"
+            className="w-[62vw] max-w-[210px] sm:w-[240px] sm:max-w-none md:w-[260px] lg:w-[280px] shrink-0 snap-start transition-all duration-300"
           >
             <ProductCardMobile product={product} compactImageAspect="aspect-[4/4]" />
           </div>
@@ -146,8 +170,8 @@ export default function MobileFeaturedCarousel({
               aria-label={`Go to slide ${idx + 1}`}
               className={`h-1.5 rounded-full transition-all duration-500 shrink-0 ${
                 activeIndex === idx
-                  ? 'w-6 bg-[#CDA45A]'
-                  : 'w-1.5 bg-[#CDA45A]/30 hover:bg-[#CDA45A]/60'
+                  ? 'w-6 bg-[#D4AF37]'
+                  : 'w-1.5 bg-[#D4AF37]/30 hover:bg-[#D4AF37]/60'
               }`}
             />
           ))}
@@ -161,7 +185,7 @@ export default function MobileFeaturedCarousel({
               prevSlide();
               handleInteractionEnd();
             }}
-            className="w-8 h-8 rounded-full bg-white border border-[#CDA45A]/40 text-[#1E1A18] flex items-center justify-center shadow-xs active:scale-90 transition-transform"
+            className="w-8 h-8 rounded-full bg-white border border-[#D4AF37]/40 text-[#1E1A18] flex items-center justify-center shadow-xs active:scale-90 transition-transform"
             aria-label="Previous product"
           >
             <ChevronLeft className="w-4 h-4" />
@@ -172,7 +196,7 @@ export default function MobileFeaturedCarousel({
               nextSlide();
               handleInteractionEnd();
             }}
-            className="w-8 h-8 rounded-full bg-white border border-[#CDA45A]/40 text-[#1E1A18] flex items-center justify-center shadow-xs active:scale-90 transition-transform"
+            className="w-8 h-8 rounded-full bg-white border border-[#D4AF37]/40 text-[#1E1A18] flex items-center justify-center shadow-xs active:scale-90 transition-transform"
             aria-label="Next product"
           >
             <ChevronRight className="w-4 h-4" />

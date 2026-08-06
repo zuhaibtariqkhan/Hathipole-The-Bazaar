@@ -40,11 +40,11 @@ export default function CompareModal() {
         className="fixed inset-0 bg-[#1E1A18]/80 backdrop-blur-md transition-opacity"
       />
 
-      <div className="relative max-w-5xl mx-auto bg-[#FCFAF7] border border-[#CDA45A]/40 rounded-2xl shadow-2xl overflow-hidden z-10 animate-fadeIn my-auto">
+      <div className="relative max-w-5xl mx-auto bg-[#FCFAF7] border border-[#D4AF37]/40 rounded-2xl shadow-2xl overflow-hidden z-10 animate-fadeIn my-auto">
         {/* Header */}
-        <div className="p-6 border-b border-[#CDA45A]/20 bg-[#F7F0E7] flex items-center justify-between">
+        <div className="p-6 border-b border-[#D4AF37]/20 bg-[#F7F0E7] flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <SlidersHorizontal className="w-5 h-5 text-[#CDA45A]" />
+            <SlidersHorizontal className="w-5 h-5 text-[#D4AF37]" />
             <h3 className="font-serif-luxury text-xl font-bold text-[#1E1A18]">
               Handcrafted Product Comparison ({comparedProducts.length} items)
             </h3>
@@ -80,13 +80,13 @@ export default function CompareModal() {
             <table className="w-full text-left text-xs border-collapse">
               <thead>
                 <tr>
-                  <th className="p-3 bg-[#F7F0E7] border border-[#CDA45A]/20 w-44 font-serif-luxury text-sm text-[#1E1A18]">
+                  <th className="p-3 bg-[#F7F0E7] border border-[#D4AF37]/20 w-44 font-serif-luxury text-sm text-[#1E1A18]">
                     Specification
                   </th>
                   {comparedProducts.map((p) => (
                     <th
                       key={p.id}
-                      className="p-3 bg-white border border-[#CDA45A]/20 min-w-[200px] text-center"
+                      className="p-3 bg-white border border-[#D4AF37]/20 min-w-[200px] text-center"
                     >
                       <div className="relative group space-y-2">
                         <button
@@ -103,7 +103,7 @@ export default function CompareModal() {
                         <h5 className="font-serif-luxury text-sm font-bold text-[#1E1A18] line-clamp-1">
                           {p.title}
                         </h5>
-                        <span className="font-serif-luxury text-sm font-bold text-[#CDA45A] block">
+                        <span className="font-serif-luxury text-sm font-bold text-[#D4AF37] block">
                           {formatPrice(p.priceUSD, currency)}
                         </span>
                         <button
@@ -117,7 +117,7 @@ export default function CompareModal() {
                   ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#CDA45A]/20">
+              <tbody className="divide-y divide-[#D4AF37]/20">
                 <tr>
                   <td className="p-3 bg-[#F7F0E7] font-semibold text-[#1E1A18]">Craft Region</td>
                   {comparedProducts.map((p) => (
