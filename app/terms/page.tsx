@@ -466,7 +466,7 @@ export default function TermsPage() {
               <Sparkles className="w-5 h-5 text-[#CDA45A]" /> Our Promise
             </h3>
             <p className="leading-relaxed font-normal">
-              When you choose Hathipole The Bazaar, you are not simply purchasing a product—you are supporting generations of craftsmanship, preserving cultural heritage, and helping traditional artisans continue their life&apos;s work.
+              When you choose Hathipole The Bazaar, you are not simply purchasing a product; you are supporting generations of craftsmanship, preserving cultural heritage, and helping traditional artisans continue their life&apos;s work.
             </p>
             <p className="leading-relaxed font-semibold italic text-[#CDA45A] pt-1">
               Every creation is made with patience, skill, and pride, carrying the legacy of India&apos;s artistic traditions into homes around the world.

@@ -110,7 +110,7 @@ export default function AuthenticityPage() {
           Authentic Indian Craftsmanship. Guaranteed.
         </p>
         <p className="text-xs sm:text-sm text-gray-600 max-w-3xl mx-auto font-light leading-relaxed pt-2">
-          At <strong>Hathipole The Bazaar</strong>, authenticity is not a marketing claim—it is the foundation of everything we do. Every creation represents the skill, patience, and cultural heritage of India&apos;s master artisans.
+          At <strong>Hathipole The Bazaar</strong>, authenticity is not a marketing claim; it is the foundation of everything we do. Every creation represents the skill, patience, and cultural heritage of India&apos;s master artisans.
         </p>
       </div>
 
@@ -220,7 +220,7 @@ export default function AuthenticityPage() {
             ))}
           </div>
           <p className="italic text-gray-800 border-l-2 border-[#CDA45A] pl-3 py-1 bg-[#F5EFE6]/50 rounded-r-lg font-normal">
-            These are not imperfections—they are the distinctive marks of genuine handmade craftsmanship and make every piece one of a kind.
+            These are not imperfections; they are the distinctive marks of genuine handmade craftsmanship and make every piece one of a kind.
           </p>
         </section>
 
@@ -392,7 +392,7 @@ export default function AuthenticityPage() {
             <Sparkles className="w-5 h-5 text-[#CDA45A]" /> Our Commitment
           </h2>
           <p className="leading-relaxed font-light text-gray-200">
-            At Hathipole The Bazaar, authenticity is more than a promise—it is a responsibility. By choosing our collections, you are not only acquiring exceptional handcrafted products but also supporting the artisans, traditions, and communities that keep India&apos;s extraordinary cultural heritage alive.
+            At Hathipole The Bazaar, authenticity is more than a promise; it is a responsibility. By choosing our collections, you are not only acquiring exceptional handcrafted products but also supporting the artisans, traditions, and communities that keep India&apos;s extraordinary cultural heritage alive.
           </p>
           <div className="pt-2 border-t border-[#CDA45A]/30 space-y-1 font-serif-luxury text-[#E6D2A8] italic text-base">
             <p>Every purchase tells a story. Every creation carries a legacy. Every artisan preserves a tradition.</p>
