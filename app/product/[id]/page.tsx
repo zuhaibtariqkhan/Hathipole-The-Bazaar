@@ -45,7 +45,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
     setMagnifierPos({ x, y, bgX, bgY });
   };
 
-  const { currency, addToCart, toggleWishlist, wishlistIds, showToast } = useStore();
+  const { currency, addToCart, toggleWishlist, wishlistIds, showToast, setAuthenticityModalProduct } = useStore();
   const isWishlisted = wishlistIds.includes(product.id);
 
   // Bundle product
@@ -215,6 +215,29 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
               Story →
             </Link>
           </div>
+
+          {/* Digital Authenticity Certificate Banner Trigger */}
+          <button
+            onClick={() => setAuthenticityModalProduct(product)}
+            className="w-full bg-[#1E1A18] text-[#FCFAF7] border border-[#D4AF37] hover:border-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#1E1A18] rounded-2xl p-3.5 flex items-center justify-between transition-all duration-300 shadow-md group cursor-pointer"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-[#D4AF37]/20 border border-[#D4AF37] flex items-center justify-center text-[#D4AF37] group-hover:bg-[#1E1A18] group-hover:text-[#D4AF37] transition-colors">
+                <ShieldCheck className="w-4 h-4" />
+              </div>
+              <div className="text-left space-y-0.5">
+                <span className="text-xs font-bold uppercase tracking-wider block">
+                  Digital Certificate of Authenticity
+                </span>
+                <span className="text-[10px] text-gray-300 font-light block">
+                  24K Gold Foil Certified Origin & Master Artisan Signature
+                </span>
+              </div>
+            </div>
+            <span className="text-xs font-bold text-[#D4AF37] group-hover:text-[#1E1A18] flex items-center gap-1">
+              View Certificate ✦
+            </span>
+          </button>
 
           {/* Add to Cart Controls */}
           <div className="space-y-4 pt-2">

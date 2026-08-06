@@ -7,6 +7,7 @@ import CartDrawer from '@/components/cart/CartDrawer';
 import SearchModal from '@/components/modals/SearchModal';
 import QuickViewModal from '@/components/product/QuickViewModal';
 import CompareModal from '@/components/product/CompareModal';
+import AuthenticityCertificateModal from '@/components/modals/AuthenticityCertificateModal';
 import ToastNotification from '@/components/ui/ToastNotification';
 import GoldCursorGlow from '@/components/ui/GoldCursorGlow';
 
@@ -88,6 +89,7 @@ export default function RootLayout({
         <SearchModal />
         <QuickViewModal />
         <CompareModal />
+        <AuthenticityCertificateModal />
         <ToastNotification />
       </body>
     </html>

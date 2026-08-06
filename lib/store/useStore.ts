@@ -24,8 +24,16 @@ interface StoreState {
   setCartDrawerOpen: (open: boolean) => void;
   quickViewProduct: Product | null;
   setQuickViewProduct: (product: Product | null) => void;
+  authenticityModalProduct: Product | null;
+  setAuthenticityModalProduct: (product: Product | null) => void;
   compareModalOpen: boolean;
   setCompareModalOpen: (open: boolean) => void;
+
+  // Soundscape Audio
+  isAudioPlaying: boolean;
+  toggleAudio: () => void;
+  audioPreset: 'sitar' | 'flute' | 'chimes';
+  setAudioPreset: (preset: 'sitar' | 'flute' | 'chimes') => void;
 
   // Currency
   currency: CurrencyCode;
@@ -77,8 +85,16 @@ export const useStore = create<StoreState>()(
       setCartDrawerOpen: (open) => set({ cartDrawerOpen: open }),
       quickViewProduct: null,
       setQuickViewProduct: (product) => set({ quickViewProduct: product }),
+      authenticityModalProduct: null,
+      setAuthenticityModalProduct: (product) => set({ authenticityModalProduct: product }),
       compareModalOpen: false,
       setCompareModalOpen: (open) => set({ compareModalOpen: open }),
+
+      // Soundscape Audio
+      isAudioPlaying: false,
+      toggleAudio: () => set((state) => ({ isAudioPlaying: !state.isAudioPlaying })),
+      audioPreset: 'sitar',
+      setAudioPreset: (preset) => set({ audioPreset: preset }),
 
       // Currency
       currency: 'USD',
