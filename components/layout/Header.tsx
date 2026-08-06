@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useStore } from '@/lib/store/useStore';
 import { currencyList } from '@/lib/data/currencies';
 import { CategorySlug, CurrencyCode } from '@/lib/types';
-import AmbientSoundscapeToggle from '@/components/ui/AmbientSoundscapeToggle';
 import {
   Search,
   ShoppingBag,
@@ -247,9 +246,6 @@ export default function Header() {
             >
               <Search className="w-5 h-5" />
             </button>
-
-            {/* Ambient Heritage Soundscape Toggle */}
-            <AmbientSoundscapeToggle />
 
             {compareIds.length > 0 && (
               <button
