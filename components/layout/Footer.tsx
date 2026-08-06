@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useStore } from '@/lib/store/useStore';
+import { motion } from 'framer-motion';
 import {
   ShieldCheck,
   Truck,
@@ -14,6 +15,29 @@ import {
   Phone,
   CheckCircle2
 } from 'lucide-react';
+
+const valueProps = [
+  {
+    icon: ShieldCheck,
+    title: '100% Authentic Artisans',
+    description: 'Every creation is ethically hand-crafted by master craftsmen across traditional artisan guilds.'
+  },
+  {
+    icon: Truck,
+    title: 'Worldwide Express Shipping',
+    description: 'Insured door-to-door air courier via FedEx & DHL Express to over 120 target countries worldwide.'
+  },
+  {
+    icon: Sparkles,
+    title: 'Bespoke Crafting',
+    description: 'Custom size, color, and monogram requests for interior designers, architects, and luxury buyers.'
+  },
+  {
+    icon: Heart,
+    title: 'Fair Artisan Support',
+    description: 'Direct fair-trade wages supporting artisan families and preserving endangered heritage art forms.'
+  }
+];
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -29,56 +53,36 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#1E1A18] text-[#FCFAF7] border-t-2 border-[#CDA45A]/40 pt-10 pb-8">
-      {/* Value Proposition & Trust Badges Strip */}
+      {/* Value Proposition & Trust Badges Strip with Entrance & Hover Animations */}
       <div className="max-w-7xl mx-auto px-6 md:px-10 pb-8 border-b border-[#CDA45A]/25">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center md:text-left">
-          <div className="flex flex-col items-center md:items-start gap-3">
-            <div className="w-12 h-12 rounded-2xl bg-[#CDA45A]/15 border border-[#CDA45A]/50 flex items-center justify-center text-[#CDA45A] shadow-lg">
-              <ShieldCheck className="w-6 h-6" />
-            </div>
-            <h4 className="font-serif-luxury text-lg font-bold text-[#E6D2A8]">
-              100% Authentic Artisans
-            </h4>
-            <p className="text-xs text-gray-300 leading-relaxed font-light">
-              Every creation is ethically hand-crafted by master craftsmen across traditional artisan guilds.
-            </p>
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          {valueProps.map((item, idx) => {
+            const IconComponent = item.icon;
+            return (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.5, delay: idx * 0.12 }}
+                whileHover={{ y: -6, scale: 1.02 }}
+                className="group relative flex flex-col items-center md:items-start text-center md:text-left gap-3 p-5 rounded-2xl bg-[#241F1C]/50 border border-[#CDA45A]/20 hover:border-[#CDA45A] hover:bg-[#2A2421] transition-all duration-500 shadow-md hover:shadow-[0_12px_30px_rgba(205,164,90,0.18)] cursor-pointer"
+              >
+                {/* Icon Container with Floating Glow & Rotation on Hover */}
+                <div className="w-12 h-12 rounded-2xl bg-[#CDA45A]/15 border border-[#CDA45A]/50 flex items-center justify-center text-[#CDA45A] shadow-md group-hover:bg-[#CDA45A] group-hover:text-[#1E1A18] group-hover:rotate-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(205,164,90,0.5)] transition-all duration-500">
+                  <IconComponent className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
+                </div>
 
-          <div className="flex flex-col items-center md:items-start gap-3">
-            <div className="w-12 h-12 rounded-2xl bg-[#CDA45A]/15 border border-[#CDA45A]/50 flex items-center justify-center text-[#CDA45A] shadow-lg">
-              <Truck className="w-6 h-6" />
-            </div>
-            <h4 className="font-serif-luxury text-lg font-bold text-[#E6D2A8]">
-              Worldwide Express Shipping
-            </h4>
-            <p className="text-xs text-gray-300 leading-relaxed font-light">
-              Insured door-to-door air courier via FedEx & DHL Express to over 120 target countries worldwide.
-            </p>
-          </div>
+                <h4 className="font-serif-luxury text-lg font-bold text-[#E6D2A8] group-hover:text-white transition-colors">
+                  {item.title}
+                </h4>
 
-          <div className="flex flex-col items-center md:items-start gap-3">
-            <div className="w-12 h-12 rounded-2xl bg-[#CDA45A]/15 border border-[#CDA45A]/50 flex items-center justify-center text-[#CDA45A] shadow-lg">
-              <Sparkles className="w-6 h-6" />
-            </div>
-            <h4 className="font-serif-luxury text-lg font-bold text-[#E6D2A8]">
-              Bespoke Crafting
-            </h4>
-            <p className="text-xs text-gray-300 leading-relaxed font-light">
-              Custom size, color, and monogram requests for interior designers, architects, and luxury buyers.
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center md:items-start gap-3">
-            <div className="w-12 h-12 rounded-2xl bg-[#CDA45A]/15 border border-[#CDA45A]/50 flex items-center justify-center text-[#CDA45A] shadow-lg">
-              <Heart className="w-6 h-6" />
-            </div>
-            <h4 className="font-serif-luxury text-lg font-bold text-[#E6D2A8]">
-              Fair Artisan Support
-            </h4>
-            <p className="text-xs text-gray-300 leading-relaxed font-light">
-              Direct fair-trade wages supporting artisan families and preserving endangered heritage art forms.
-            </p>
-          </div>
+                <p className="text-xs text-gray-300 leading-relaxed font-light group-hover:text-gray-200 transition-colors">
+                  {item.description}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
 
