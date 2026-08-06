@@ -1,66 +1,479 @@
-import { ShieldCheck, Lock, Globe } from 'lucide-react';
+import {
+  ShieldCheck,
+  Lock,
+  Globe,
+  Cookie,
+  Database,
+  FileText,
+  Eye,
+  CheckCircle2,
+  Mail,
+  Server,
+  Scale,
+  RefreshCw,
+  UserCheck,
+  HelpCircle,
+  Sparkles,
+  ShoppingBag,
+  Share2,
+  BellRing,
+  Building2
+} from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata = {
   title: 'Privacy Policy | Hathipole The Bazaar',
-  description: 'Hathipole The Bazaar privacy policy, client data encryption, and confidentiality commitments.'
+  description: 'Learn how Hathipole The Bazaar collects, uses, protects, and handles your personal information with absolute confidentiality and security.'
 };
+
+const collectionsList = [
+  'Handmade Rugs',
+  'Pashmina',
+  'Textiles',
+  'Bandhani',
+  'Bespoke Collections',
+  'Handicrafts',
+  'Miniature & Pichwai Paintings',
+  'Jewellery',
+  'Attar & Natural Fragrances',
+  'Bags & Diaries',
+  'Indian Spices',
+  'Wedding Hampers',
+  'Designer Apparel',
+  'Return Gifts',
+  'Home Décor'
+];
 
 export default function PrivacyPage() {
   return (
-    <div className="max-w-5xl mx-auto px-6 md:px-8 py-14 space-y-10">
-      <div className="text-center space-y-4 border-b border-[#CDA45A]/20 pb-8">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-12 md:py-16 space-y-10">
+      {/* Header Banner */}
+      <div className="text-center space-y-4 border-b border-[#CDA45A]/30 pb-8">
         <span className="font-cinzel text-xs tracking-[0.25em] text-[#CDA45A] uppercase block font-semibold">
           Client Confidentiality & Data Assurance
         </span>
         <h1 className="font-serif-luxury text-4xl sm:text-5xl font-bold text-[#1E1A18]">
           Privacy Policy
         </h1>
-        <p className="text-xs text-gray-500 max-w-xl mx-auto font-light leading-relaxed">
-          Last Updated: August 2026. Your privacy and high-value transaction confidentiality are paramount at Hathipole The Bazaar.
-        </p>
+        <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-gray-500 font-light pt-2">
+          <span><strong>Effective Date:</strong> August 6, 2026</span>
+          <span className="text-[#CDA45A]">•</span>
+          <span><strong>Last Updated:</strong> August 6, 2026</span>
+        </div>
       </div>
 
-      <div className="bg-[#FCFAF7] border border-[#CDA45A]/30 rounded-3xl p-8 sm:p-12 space-y-8 shadow-luxury text-xs sm:text-sm text-gray-700 leading-relaxed font-light">
+      {/* Main Privacy Card */}
+      <div className="bg-[#FCFAF7] border border-[#CDA45A]/30 rounded-3xl p-6 sm:p-10 md:p-12 space-y-10 shadow-luxury text-xs sm:text-sm text-gray-700 leading-relaxed font-light">
+
+        {/* 1. Welcome */}
         <section className="space-y-3">
-          <h2 className="font-serif-luxury text-2xl font-bold text-[#1E1A18] flex items-center gap-2">
-            <Lock className="w-5 h-5 text-[#CDA45A]" /> 1. Commitment to Client Privacy
+          <h2 className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#1E1A18] flex items-center gap-2 border-b border-[#CDA45A]/15 pb-2">
+            <Sparkles className="w-5 h-5 text-[#CDA45A] shrink-0" /> Welcome
           </h2>
           <p>
-            Hathipole The Bazaar is committed to maintaining the trust and confidence of our global collectors and patrons. We do not sell, rent, or trade client email lists or personal transaction records to third parties for marketing purposes.
+            Welcome to <strong>Hathipole The Bazaar</strong> (&quot;Hathipole&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;).
+          </p>
+          <p>
+            Your privacy is important to us. This Privacy Policy explains how we collect, use, disclose, store, and protect your personal information when you visit our website, place an order, communicate with us, or otherwise interact with our services.
+          </p>
+          <p className="italic text-gray-600 border-l-2 border-[#CDA45A] pl-3 py-1 bg-[#F5EFE6]/50 rounded-r-lg">
+            By using our website, you agree to the practices described in this Privacy Policy.
           </p>
         </section>
 
-        <section className="space-y-3">
-          <h2 className="font-serif-luxury text-2xl font-bold text-[#1E1A18] flex items-center gap-2">
-            <ShieldCheck className="w-5 h-5 text-[#CDA45A]" /> 2. Data Collection & Usage
+        {/* 2. About Hathipole The Bazaar */}
+        <section className="space-y-4">
+          <h2 className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#1E1A18] flex items-center gap-2 border-b border-[#CDA45A]/15 pb-2">
+            <Building2 className="w-5 h-5 text-[#CDA45A] shrink-0" /> About Hathipole The Bazaar
           </h2>
           <p>
-            When you purchase handcrafted luxury creations, commission bespoke art, or subscribe to the Royal Crafts Society, we collect necessary personal details such as your name, shipping address, contact phone number, and billing information to complete delivery and issue authentic certificates of origin.
+            Hathipole The Bazaar is a luxury online marketplace based in <strong>Udaipur, Rajasthan, India</strong>, bringing authentic Indian craftsmanship to customers worldwide.
+          </p>
+          <div>
+            <p className="font-semibold text-[#1E1A18] mb-2">Our collections include:</p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-1">
+              {collectionsList.map((item) => (
+                <div key={item} className="flex items-center gap-2 bg-[#F7F0E7] border border-[#CDA45A]/20 px-3 py-2 rounded-xl text-xs text-gray-800">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#CDA45A] shrink-0" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 3. Information We Collect */}
+        <section className="space-y-4">
+          <h2 className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#1E1A18] flex items-center gap-2 border-b border-[#CDA45A]/15 pb-2">
+            <Database className="w-5 h-5 text-[#CDA45A] shrink-0" /> Information We Collect
+          </h2>
+          <p>
+            Depending on how you use our website, we may collect the following information.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+            {/* Personal Information */}
+            <div className="bg-[#F7F0E7]/60 border border-[#CDA45A]/20 rounded-2xl p-5 space-y-2">
+              <h3 className="font-serif-luxury font-bold text-[#1E1A18] text-base flex items-center gap-2">
+                <UserCheck className="w-4 h-4 text-[#CDA45A]" /> Personal Information
+              </h3>
+              <ul className="list-disc pl-5 space-y-1 text-gray-600">
+                <li>Full Name</li>
+                <li>Email Address</li>
+                <li>Phone Number</li>
+                <li>Billing Address</li>
+                <li>Shipping Address</li>
+                <li>Company Name (if applicable)</li>
+              </ul>
+            </div>
+
+            {/* Order Information */}
+            <div className="bg-[#F7F0E7]/60 border border-[#CDA45A]/20 rounded-2xl p-5 space-y-2">
+              <h3 className="font-serif-luxury font-bold text-[#1E1A18] text-base flex items-center gap-2">
+                <ShoppingBag className="w-4 h-4 text-[#CDA45A]" /> Order Information
+              </h3>
+              <ul className="list-disc pl-5 space-y-1 text-gray-600">
+                <li>Purchased Products</li>
+                <li>Order History</li>
+                <li>Delivery Preferences</li>
+                <li>Order Notes</li>
+                <li>Invoice Information</li>
+              </ul>
+            </div>
+
+            {/* Payment Information */}
+            <div className="bg-[#F7F0E7]/60 border border-[#CDA45A]/20 rounded-2xl p-5 space-y-2 md:col-span-2">
+              <h3 className="font-serif-luxury font-bold text-[#1E1A18] text-base flex items-center gap-2">
+                <Lock className="w-4 h-4 text-[#CDA45A]" /> Payment Information
+              </h3>
+              <p>
+                Payments are processed securely through trusted third-party payment providers.
+              </p>
+              <p className="font-semibold text-[#1E1A18]">
+                We <u>do not store</u> your complete credit card or debit card details on our servers.
+              </p>
+              <p className="pt-1 font-medium text-gray-700">Payment processors may collect:</p>
+              <ul className="list-disc pl-5 space-y-1 text-gray-600">
+                <li>Payment Tokens</li>
+                <li>Transaction IDs</li>
+                <li>Payment Status</li>
+              </ul>
+            </div>
+
+            {/* Automatically Collected Information */}
+            <div className="bg-[#F7F0E7]/60 border border-[#CDA45A]/20 rounded-2xl p-5 space-y-2 md:col-span-2">
+              <h3 className="font-serif-luxury font-bold text-[#1E1A18] text-base flex items-center gap-2">
+                <Eye className="w-4 h-4 text-[#CDA45A]" /> Automatically Collected Information
+              </h3>
+              <p>When you visit our website we may automatically collect:</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-1 text-gray-600">
+                <div className="flex items-center gap-1.5"><span className="text-[#CDA45A]">•</span> IP Address</div>
+                <div className="flex items-center gap-1.5"><span className="text-[#CDA45A]">•</span> Browser Type</div>
+                <div className="flex items-center gap-1.5"><span className="text-[#CDA45A]">•</span> Device Information</div>
+                <div className="flex items-center gap-1.5"><span className="text-[#CDA45A]">•</span> Operating System</div>
+                <div className="flex items-center gap-1.5"><span className="text-[#CDA45A]">•</span> Language Preferences</div>
+                <div className="flex items-center gap-1.5"><span className="text-[#CDA45A]">•</span> Time Zone</div>
+                <div className="flex items-center gap-1.5"><span className="text-[#CDA45A]">•</span> Referral URLs</div>
+                <div className="flex items-center gap-1.5"><span className="text-[#CDA45A]">•</span> Pages Viewed</div>
+                <div className="flex items-center gap-1.5"><span className="text-[#CDA45A]">•</span> Session Information</div>
+                <div className="flex items-center gap-1.5"><span className="text-[#CDA45A]">•</span> Shopping Activity</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 4. Cookies */}
+        <section className="space-y-3">
+          <h2 className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#1E1A18] flex items-center gap-2 border-b border-[#CDA45A]/15 pb-2">
+            <Cookie className="w-5 h-5 text-[#CDA45A] shrink-0" /> Cookies
+          </h2>
+          <p>Our website uses cookies and similar technologies to:</p>
+          <ul className="list-disc pl-6 space-y-1 text-gray-600">
+            <li>Keep your shopping cart active</li>
+            <li>Remember your preferences</li>
+            <li>Improve website performance</li>
+            <li>Understand visitor behavior</li>
+            <li>Enhance security</li>
+            <li>Personalize your shopping experience</li>
+          </ul>
+          <p className="text-gray-500 italic pt-1">
+            You may disable cookies in your browser settings, although certain features of the website may not function correctly.
+          </p>
+        </section>
+
+        {/* 5. How We Use Your Information */}
+        <section className="space-y-3">
+          <h2 className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#1E1A18] flex items-center gap-2 border-b border-[#CDA45A]/15 pb-2">
+            <FileText className="w-5 h-5 text-[#CDA45A] shrink-0" /> How We Use Your Information
+          </h2>
+          <p>We use your information to:</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-600">
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#CDA45A]" /> Process and fulfill orders</div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#CDA45A]" /> Deliver purchased products</div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#CDA45A]" /> Verify payments</div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#CDA45A]" /> Prevent fraud</div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#CDA45A]" /> Respond to customer inquiries</div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#CDA45A]" /> Improve website functionality</div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#CDA45A]" /> Personalize recommendations</div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#CDA45A]" /> Send order confirmations</div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#CDA45A]" /> Provide shipping updates</div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#CDA45A]" /> Manage returns and refunds</div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#CDA45A]" /> Improve customer experience</div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#CDA45A]" /> Comply with legal obligations</div>
+          </div>
+
+          <div className="pt-3 space-y-2">
+            <p className="font-semibold text-[#1E1A18]">With your consent, we may also send:</p>
+            <ul className="list-disc pl-6 space-y-1 text-gray-600">
+              <li>Product launches</li>
+              <li>Exclusive collections</li>
+              <li>Artisan stories</li>
+              <li>Promotional offers</li>
+              <li>Newsletters</li>
+            </ul>
+            <p className="text-gray-500 italic pt-1">
+              You may unsubscribe from marketing communications at any time.
+            </p>
+          </div>
+        </section>
+
+        {/* 6. Legal Basis for Processing (GDPR) */}
+        <section className="space-y-3">
+          <h2 className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#1E1A18] flex items-center gap-2 border-b border-[#CDA45A]/15 pb-2">
+            <Scale className="w-5 h-5 text-[#CDA45A] shrink-0" /> Legal Basis for Processing (GDPR)
+          </h2>
+          <p>
+            Where applicable, we process personal data based on one or more of the following lawful grounds:
           </p>
           <ul className="list-disc pl-6 space-y-1 text-gray-600">
-            <li>Processing worldwide air express shipments via FedEx and DHL Priority Express</li>
-            <li>Issuing hand-signed certificates of authenticity and artisan lineage proof</li>
-            <li>Providing live tracking status and senior craft concierge updates</li>
+            <li>Your consent</li>
+            <li>Performance of a contract</li>
+            <li>Compliance with legal obligations</li>
+            <li>Legitimate business interests</li>
+            <li>Protection against fraud and abuse</li>
           </ul>
         </section>
 
+        {/* 7. Sharing Your Information */}
         <section className="space-y-3">
-          <h2 className="font-serif-luxury text-2xl font-bold text-[#1E1A18] flex items-center gap-2">
-            <Globe className="w-5 h-5 text-[#CDA45A]" /> 3. 256-Bit SSL Encrypted Checkout
+          <h2 className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#1E1A18] flex items-center gap-2 border-b border-[#CDA45A]/15 pb-2">
+            <Share2 className="w-5 h-5 text-[#CDA45A] shrink-0" /> Sharing Your Information
           </h2>
+          <p className="font-bold text-[#1E1A18]">
+            We never sell your personal information.
+          </p>
           <p>
-            All online credit card, debit card, and banking transactions are encrypted using industry-standard 256-Bit SSL certificate security through global gateways including Stripe, PayPal, and Razorpay. Sensitive financial credentials are never stored on our servers.
+            We may share limited information with trusted service providers only when necessary to operate our business. These may include:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-600 pl-2">
+            <div className="flex items-center gap-2"><span className="text-[#CDA45A]">•</span> Payment Gateways</div>
+            <div className="flex items-center gap-2"><span className="text-[#CDA45A]">•</span> Shipping Partners</div>
+            <div className="flex items-center gap-2"><span className="text-[#CDA45A]">•</span> Courier Services</div>
+            <div className="flex items-center gap-2"><span className="text-[#CDA45A]">•</span> Email Service Providers</div>
+            <div className="flex items-center gap-2"><span className="text-[#CDA45A]">•</span> Website Hosting Providers</div>
+            <div className="flex items-center gap-2"><span className="text-[#CDA45A]">•</span> Analytics Providers</div>
+            <div className="flex items-center gap-2"><span className="text-[#CDA45A]">•</span> Customer Support Platforms</div>
+            <div className="flex items-center gap-2"><span className="text-[#CDA45A]">•</span> Government Authorities where required by law</div>
+          </div>
+          <p className="text-gray-600 pt-1">
+            Each service provider is expected to protect your information appropriately.
           </p>
         </section>
 
-        <div className="pt-6 border-t border-[#CDA45A]/20 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span className="text-xs text-gray-500">Have questions about your privacy data?</span>
-          <Link href="/bespoke" className="btn-gold px-6 py-2.5 text-xs uppercase font-bold tracking-wider">
-            Contact Senior Concierge
-          </Link>
+        {/* 8. International Transfers */}
+        <section className="space-y-3">
+          <h2 className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#1E1A18] flex items-center gap-2 border-b border-[#CDA45A]/15 pb-2">
+            <Globe className="w-5 h-5 text-[#CDA45A] shrink-0" /> International Transfers
+          </h2>
+          <p>
+            As we serve customers worldwide, your information may be processed in countries outside your country of residence.
+          </p>
+          <p>
+            Where required by law, we implement appropriate safeguards to protect your personal information during international data transfers.
+          </p>
+        </section>
+
+        {/* 9. Data Retention */}
+        <section className="space-y-3">
+          <h2 className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#1E1A18] flex items-center gap-2 border-b border-[#CDA45A]/15 pb-2">
+            <Server className="w-5 h-5 text-[#CDA45A] shrink-0" /> Data Retention
+          </h2>
+          <p>We retain personal information only for as long as necessary to:</p>
+          <ul className="list-disc pl-6 space-y-1 text-gray-600">
+            <li>Fulfill orders</li>
+            <li>Provide customer support</li>
+            <li>Maintain business records</li>
+            <li>Comply with tax and legal obligations</li>
+            <li>Resolve disputes</li>
+            <li>Enforce agreements</li>
+          </ul>
+          <p className="text-gray-600 pt-1">
+            When no longer required, personal information is securely deleted or anonymized.
+          </p>
+        </section>
+
+        {/* 10. Data Security */}
+        <section className="space-y-3">
+          <h2 className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#1E1A18] flex items-center gap-2 border-b border-[#CDA45A]/15 pb-2">
+            <ShieldCheck className="w-5 h-5 text-[#CDA45A] shrink-0" /> Data Security
+          </h2>
+          <p>We use commercially reasonable security measures including:</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-600">
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#CDA45A]" /> SSL Encryption</div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#CDA45A]" /> Secure Payment Processing</div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#CDA45A]" /> Firewall Protection</div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#CDA45A]" /> Access Controls</div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#CDA45A]" /> Regular Security Updates</div>
+            <div className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#CDA45A]" /> Secure Hosting Infrastructure</div>
+          </div>
+          <p className="text-gray-500 italic pt-1">
+            While no online system can guarantee absolute security, we continuously work to protect your information.
+          </p>
+        </section>
+
+        {/* 11. Your Privacy Rights */}
+        <section className="space-y-3">
+          <h2 className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#1E1A18] flex items-center gap-2 border-b border-[#CDA45A]/15 pb-2">
+            <UserCheck className="w-5 h-5 text-[#CDA45A] shrink-0" /> Your Privacy Rights
+          </h2>
+          <p>Depending on your location, you may have the right to:</p>
+          <ul className="list-disc pl-6 space-y-1 text-gray-600">
+            <li>Access your personal information</li>
+            <li>Correct inaccurate information</li>
+            <li>Delete your personal information</li>
+            <li>Restrict processing</li>
+            <li>Object to processing</li>
+            <li>Withdraw consent</li>
+            <li>Request data portability</li>
+            <li>Lodge a complaint with a relevant data protection authority</li>
+          </ul>
+          <p className="text-gray-600 pt-1">
+            Requests may be submitted using the contact information below.
+          </p>
+        </section>
+
+        {/* 12. Marketing Communications */}
+        <section className="space-y-3">
+          <h2 className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#1E1A18] flex items-center gap-2 border-b border-[#CDA45A]/15 pb-2">
+            <BellRing className="w-5 h-5 text-[#CDA45A] shrink-0" /> Marketing Communications
+          </h2>
+          <p>If you subscribe to our newsletter, we may occasionally send:</p>
+          <ul className="list-disc pl-6 space-y-1 text-gray-600">
+            <li>New collection announcements</li>
+            <li>Artisan stories</li>
+            <li>Limited edition releases</li>
+            <li>Festival offers</li>
+            <li>Exclusive member promotions</li>
+          </ul>
+          <p className="text-gray-600 pt-1">
+            You can unsubscribe at any time using the link included in our emails.
+          </p>
+        </section>
+
+        {/* 13. Third-Party Services */}
+        <section className="space-y-3">
+          <h2 className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#1E1A18] flex items-center gap-2 border-b border-[#CDA45A]/15 pb-2">
+            <Globe className="w-5 h-5 text-[#CDA45A] shrink-0" /> Third-Party Services
+          </h2>
+          <p>Our website may integrate with third-party services such as:</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-gray-600">
+            <div className="flex items-center gap-1.5"><span className="text-[#CDA45A]">•</span> Payment Providers</div>
+            <div className="flex items-center gap-1.5"><span className="text-[#CDA45A]">•</span> Shipping Companies</div>
+            <div className="flex items-center gap-1.5"><span className="text-[#CDA45A]">•</span> Google Analytics</div>
+            <div className="flex items-center gap-1.5"><span className="text-[#CDA45A]">•</span> Social Media Platforms</div>
+            <div className="flex items-center gap-1.5"><span className="text-[#CDA45A]">•</span> Instagram</div>
+            <div className="flex items-center gap-1.5"><span className="text-[#CDA45A]">•</span> Facebook</div>
+            <div className="flex items-center gap-1.5"><span className="text-[#CDA45A]">•</span> YouTube</div>
+          </div>
+          <p className="text-gray-500 italic pt-1">
+            These services maintain their own privacy policies, and we encourage you to review them separately.
+          </p>
+        </section>
+
+        {/* 14. Children's Privacy */}
+        <section className="space-y-3">
+          <h2 className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#1E1A18] flex items-center gap-2 border-b border-[#CDA45A]/15 pb-2">
+            <HelpCircle className="w-5 h-5 text-[#CDA45A] shrink-0" /> Children&apos;s Privacy
+          </h2>
+          <p>
+            Our website is not intended for children under the age of 13 (or the applicable minimum age in your jurisdiction).
+          </p>
+          <p>
+            We do not knowingly collect personal information from children.
+          </p>
+          <p>
+            If we become aware that such information has been collected, we will promptly delete it.
+          </p>
+        </section>
+
+        {/* 15. Changes to This Privacy Policy */}
+        <section className="space-y-3">
+          <h2 className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#1E1A18] flex items-center gap-2 border-b border-[#CDA45A]/15 pb-2">
+            <RefreshCw className="w-5 h-5 text-[#CDA45A] shrink-0" /> Changes to This Privacy Policy
+          </h2>
+          <p>We may update this Privacy Policy periodically to reflect:</p>
+          <ul className="list-disc pl-6 space-y-1 text-gray-600">
+            <li>Changes in applicable laws</li>
+            <li>New website features</li>
+            <li>Business operations</li>
+            <li>Security improvements</li>
+          </ul>
+          <p className="text-gray-600 pt-1">
+            The updated version will always display the latest &quot;Last Updated&quot; date.
+          </p>
+        </section>
+
+        {/* 16. Contact Us */}
+        <section className="space-y-4 bg-[#F7F0E7] border border-[#CDA45A]/40 rounded-2xl p-6 sm:p-8">
+          <h2 className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#1E1A18] flex items-center gap-2 border-b border-[#CDA45A]/20 pb-2">
+            <Mail className="w-5 h-5 text-[#CDA45A] shrink-0" /> Contact Us
+          </h2>
+          <p>
+            If you have any questions regarding this Privacy Policy or your personal information, please contact us.
+          </p>
+          <div className="space-y-2 text-xs sm:text-sm text-gray-800 font-normal">
+            <p className="font-bold text-base text-[#1E1A18]">Hathipole The Bazaar</p>
+            <p className="text-gray-600">Udaipur, Rajasthan, India</p>
+            <p className="flex items-center gap-2 pt-1">
+              <strong className="text-[#1E1A18]">Email:</strong>
+              <a href="mailto:privacy@hathipolethebazaar.com" className="text-[#CDA45A] hover:underline font-semibold">
+                privacy@hathipolethebazaar.com
+              </a>
+            </p>
+            <p className="flex items-center gap-2">
+              <strong className="text-[#1E1A18]">Website:</strong>
+              <a href="https://www.hathipolethebazaar.com" target="_blank" rel="noopener noreferrer" className="text-[#CDA45A] hover:underline font-semibold">
+                https://www.hathipolethebazaar.com
+              </a>
+            </p>
+          </div>
+        </section>
+
+        {/* 17. Consent */}
+        <section className="space-y-3 border-t border-[#CDA45A]/20 pt-6">
+          <h2 className="font-serif-luxury text-xl sm:text-2xl font-bold text-[#1E1A18] flex items-center gap-2">
+            <CheckCircle2 className="w-5 h-5 text-[#CDA45A] shrink-0" /> Consent
+          </h2>
+          <p className="font-medium text-gray-800">
+            By accessing or using Hathipole The Bazaar, you acknowledge that you have read, understood, and agreed to this Privacy Policy.
+          </p>
+        </section>
+
+        {/* Action Bar */}
+        <div className="pt-6 border-t border-[#CDA45A]/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <span className="text-xs text-gray-500">Have questions or specific data requests?</span>
+          <div className="flex flex-wrap items-center gap-3">
+            <Link href="/terms" className="px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#1E1A18] border border-[#CDA45A]/40 rounded-xl hover:bg-[#F7F0E7] transition-all">
+              Terms of Heritage Service
+            </Link>
+            <a href="mailto:privacy@hathipolethebazaar.com" className="btn-gold px-6 py-2.5 text-xs uppercase font-bold tracking-wider rounded-xl shadow-md">
+              Contact Privacy Team
+            </a>
+          </div>
         </div>
+
       </div>
     </div>
   );
 }
+
