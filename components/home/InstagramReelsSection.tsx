@@ -206,25 +206,25 @@ export default function InstagramReelsSection({
   };
 
   return (
-    <section className="bg-[#1E1A18] text-[#FCFAF7] py-16 sm:py-24 border-y border-[#CDA45A]/30 relative overflow-hidden">
+    <section className="bg-[#1E1A18] text-[#FCFAF7] py-12 sm:py-20 md:py-24 border-y border-[#CDA45A]/30 relative overflow-hidden">
       {/* Background Subtle Orbs */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-20">
         <div className="absolute top-1/3 left-1/10 w-96 h-96 rounded-full bg-[#CDA45A]/15 blur-3xl" />
         <div className="absolute bottom-1/4 right-1/10 w-96 h-96 rounded-full bg-[#E6D2A8]/15 blur-3xl" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-8 space-y-10 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 space-y-8 sm:space-y-10 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 text-center md:text-left border-b border-[#CDA45A]/20 pb-8">
-          <div className="space-y-3 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#CDA45A]/10 border border-[#CDA45A]/30">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 text-center md:text-left border-b border-[#CDA45A]/20 pb-6 sm:pb-8">
+          <div className="space-y-2 sm:space-y-3 max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#CDA45A]/10 border border-[#CDA45A]/30">
               <InstagramIcon className="w-3.5 h-3.5 text-[#CDA45A]" />
-              <span className="font-cinzel text-[11px] tracking-[0.25em] text-[#E6D2A8] uppercase font-bold">
+              <span className="font-cinzel text-[10px] sm:text-[11px] tracking-[0.2em] text-[#E6D2A8] uppercase font-bold">
                 Instagram Reels Curation
               </span>
             </div>
 
-            <h2 className="font-serif-luxury text-3xl sm:text-4xl md:text-5xl font-normal text-[#FCFAF7] tracking-tight leading-tight">
+            <h2 className="font-serif-luxury text-2.5xl sm:text-4xl md:text-5xl font-normal text-[#FCFAF7] tracking-tight leading-tight">
               Experience Hathipole in Motion
             </h2>
 
@@ -234,12 +234,12 @@ export default function InstagramReelsSection({
           </div>
 
           {/* Desktop Navigation & Instagram Link */}
-          <div className="flex items-center justify-center md:justify-end gap-4 shrink-0">
+          <div className="flex items-center justify-center md:justify-end gap-3 shrink-0">
             <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 rounded-xl border border-[#CDA45A]/50 text-xs font-bold tracking-wider uppercase text-[#E6D2A8] hover:bg-[#CDA45A] hover:text-[#1E1A18] transition-all flex items-center gap-2"
+              className="px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl border border-[#CDA45A]/50 text-[11px] sm:text-xs font-bold tracking-wider uppercase text-[#E6D2A8] hover:bg-[#CDA45A] hover:text-[#1E1A18] transition-all flex items-center gap-2"
             >
               <InstagramIcon className="w-4 h-4" /> Follow @Hathipole
             </a>
@@ -280,11 +280,11 @@ export default function InstagramReelsSection({
 
         {/* Loading Skeletons */}
         {isLoading ? (
-          <div className="flex gap-4 overflow-x-auto pb-4 no-scrollbar">
+          <div className="flex gap-3.5 sm:gap-4 overflow-x-auto pb-4 no-scrollbar">
             {Array.from({ length: 6 }).map((_, idx) => (
               <div
                 key={`skel-${idx}`}
-                className="w-[70vw] sm:w-[220px] md:w-[240px] aspect-[9/16] shrink-0 rounded-2xl bg-white/5 animate-pulse border border-white/10"
+                className="w-[48vw] min-w-[170px] max-w-[210px] sm:w-[210px] md:w-[230px] lg:w-[250px] aspect-[9/16] shrink-0 rounded-2xl bg-white/5 animate-pulse border border-white/10"
               />
             ))}
           </div>
@@ -300,7 +300,7 @@ export default function InstagramReelsSection({
             <div
               ref={containerRef}
               onScroll={handleScroll}
-              className="flex overflow-x-auto snap-x snap-mandatory gap-4 sm:gap-5 pb-6 pt-2 -mx-6 px-6 no-scrollbar touch-pan-x scroll-smooth"
+              className="flex overflow-x-auto snap-x snap-mandatory gap-3.5 sm:gap-5 pb-5 pt-1 -mx-4 px-4 sm:-mx-6 sm:px-6 no-scrollbar touch-pan-x scroll-smooth"
               style={{ WebkitOverflowScrolling: 'touch' }}
             >
               {reels.map((reel, idx) => {
@@ -312,9 +312,9 @@ export default function InstagramReelsSection({
                       itemRefs.current[idx] = el;
                     }}
                     onClick={() => setSelectedReel(reel)}
-                    className={`group relative shrink-0 snap-start rounded-2xl overflow-hidden aspect-[9/16] w-[68vw] sm:w-[210px] md:w-[230px] lg:w-[250px] shadow-xl border cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:scale-[1.03] ${
+                    className={`group relative shrink-0 snap-start rounded-2xl overflow-hidden aspect-[9/16] w-[48vw] min-w-[170px] max-w-[210px] sm:w-[210px] md:w-[230px] lg:w-[250px] shadow-xl border cursor-pointer transition-all duration-500 hover:-translate-y-1.5 hover:scale-[1.02] ${
                       isActive
-                        ? 'border-[#CDA45A] shadow-[0_10px_30px_rgba(205,164,90,0.25)]'
+                        ? 'border-[#CDA45A] shadow-[0_8px_25px_rgba(205,164,90,0.3)]'
                         : 'border-white/10 hover:border-[#CDA45A]/70'
                     }`}
                   >
@@ -327,32 +327,32 @@ export default function InstagramReelsSection({
                     />
 
                     {/* Dark Ambient & Glassmorphism Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-black/20 p-4 flex flex-col justify-between">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-black/20 p-3 sm:p-4 flex flex-col justify-between">
                       {/* Top Header Badge */}
-                      <div className="flex items-center justify-between gap-2">
+                      <div className="flex items-center justify-between gap-1.5">
                         {reel.artisanTag && (
-                          <span className="text-[10px] font-bold tracking-wider text-[#1E1A18] bg-[#E6D2A8] px-2.5 py-0.5 rounded-full uppercase shadow-sm">
+                          <span className="text-[9px] sm:text-[10px] font-bold tracking-wider text-[#1E1A18] bg-[#E6D2A8] px-2 py-0.5 rounded-full uppercase shadow-sm">
                             {reel.artisanTag}
                           </span>
                         )}
                         {reel.views && (
-                          <span className="text-[10px] font-medium text-white/90 bg-black/40 backdrop-blur-md px-2 py-0.5 rounded-full flex items-center gap-1 border border-white/10">
-                            <Eye className="w-3 h-3 text-[#CDA45A]" /> {reel.views}
+                          <span className="text-[9px] sm:text-[10px] font-medium text-white/90 bg-black/40 backdrop-blur-md px-1.5 py-0.5 rounded-full flex items-center gap-1 border border-white/10">
+                            <Eye className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-[#CDA45A]" /> {reel.views}
                           </span>
                         )}
                       </div>
 
                       {/* Center Floating Play Button */}
-                      <div className="self-center w-12 h-12 rounded-full bg-[#CDA45A]/90 backdrop-blur-md border border-white/40 text-[#1E1A18] flex items-center justify-center shadow-2xl group-hover:scale-115 group-hover:bg-[#CDA45A] transition-all duration-300">
-                        <Play className="w-5 h-5 fill-current ml-0.5" />
+                      <div className="self-center w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-[#CDA45A]/90 backdrop-blur-md border border-white/40 text-[#1E1A18] flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-[#CDA45A] transition-all duration-300">
+                        <Play className="w-4 h-4 sm:w-5 sm:h-5 fill-current ml-0.5" />
                       </div>
 
                       {/* Bottom Caption & Stats Preview */}
-                      <div className="space-y-1">
-                        <h4 className="font-serif-luxury text-sm sm:text-base font-bold text-white line-clamp-1 group-hover:text-[#E6D2A8] transition-colors">
+                      <div className="space-y-0.5 sm:space-y-1">
+                        <h4 className="font-serif-luxury text-xs sm:text-base font-bold text-white line-clamp-1 group-hover:text-[#E6D2A8] transition-colors">
                           {reel.title}
                         </h4>
-                        <p className="text-[11px] text-gray-300 font-light line-clamp-2 leading-relaxed">
+                        <p className="text-[10px] sm:text-[11px] text-gray-300 font-light line-clamp-2 leading-tight">
                           {reel.caption}
                         </p>
                       </div>
@@ -375,7 +375,7 @@ export default function InstagramReelsSection({
                   aria-label={`Go to reel ${idx + 1}`}
                   className={`h-1.5 rounded-full transition-all duration-500 cursor-pointer ${
                     activeIndex === idx
-                      ? 'w-8 bg-[#CDA45A] shadow-[0_0_10px_rgba(205,164,90,0.6)]'
+                      ? 'w-7 sm:w-8 bg-[#CDA45A] shadow-[0_0_10px_rgba(205,164,90,0.6)]'
                       : 'w-2 bg-white/20 hover:bg-white/50'
                   }`}
                 />
@@ -388,25 +388,25 @@ export default function InstagramReelsSection({
       {/* Interactive Reel Detail Modal */}
       <AnimatePresence>
         {selectedReel && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md">
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.3 }}
-              className="relative w-full max-w-4xl bg-[#1E1A18] border border-[#CDA45A]/40 rounded-3xl overflow-hidden shadow-2xl grid grid-cols-1 md:grid-cols-12 max-h-[90vh]"
+              className="relative w-full max-w-4xl bg-[#1E1A18] border border-[#CDA45A]/40 rounded-3xl overflow-hidden shadow-2xl grid grid-cols-1 md:grid-cols-12 max-h-[92vh]"
             >
               {/* Close Button */}
               <button
                 onClick={() => setSelectedReel(null)}
-                className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/60 text-white hover:bg-[#CDA45A] hover:text-[#1E1A18] flex items-center justify-center transition-colors cursor-pointer"
+                className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/60 text-white hover:bg-[#CDA45A] hover:text-[#1E1A18] flex items-center justify-center transition-colors cursor-pointer"
                 aria-label="Close modal"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
 
-              {/* Left Column: HD Video Player (9:16 aspect) */}
-              <div className="md:col-span-5 bg-black relative aspect-[9/16] flex items-center justify-center overflow-hidden">
+              {/* Left Column: HD Video Player */}
+              <div className="md:col-span-5 bg-black relative aspect-[9/12] max-h-[45vh] md:max-h-none md:aspect-[9/16] flex items-center justify-center overflow-hidden">
                 {selectedReel.videoUrl ? (
                   <video
                     src={selectedReel.videoUrl}
