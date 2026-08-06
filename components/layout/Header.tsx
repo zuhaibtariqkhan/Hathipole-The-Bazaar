@@ -143,6 +143,15 @@ export default function Header() {
   } = useStore();
 
   const totalCartItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+  const [isCartPulsing, setIsCartPulsing] = useState(false);
+
+  useEffect(() => {
+    if (totalCartItems > 0) {
+      setIsCartPulsing(true);
+      const timer = setTimeout(() => setIsCartPulsing(false), 700);
+      return () => clearTimeout(timer);
+    }
+  }, [totalCartItems]);
 
   useEffect(() => {
     let ticking = false;
@@ -271,7 +280,9 @@ export default function Header() {
 
             <button
               onClick={() => setCartDrawerOpen(true)}
-              className="relative flex items-center gap-2 bg-[#1E1A18] text-[#FCFAF7] hover:bg-[#CDA45A] px-3.5 py-1.5 rounded-full transition-all shadow-md group"
+              className={`relative flex items-center gap-2 bg-[#1E1A18] text-[#FCFAF7] hover:bg-[#CDA45A] px-3.5 py-1.5 rounded-full transition-all shadow-md group ${
+                isCartPulsing ? 'animate-cart-pulse bg-[#CDA45A] shadow-[0_0_15px_#CDA45A]' : ''
+              }`}
             >
               <ShoppingBag className="w-4 h-4 text-[#CDA45A] group-hover:text-white transition-colors" />
               <span className="text-xs font-bold">{totalCartItems}</span>

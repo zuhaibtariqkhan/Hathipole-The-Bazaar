@@ -12,6 +12,7 @@ import RoyalCrestDivider from '@/components/ui/RoyalCrestDivider';
 import GlobalReviewsCarousel from '@/components/home/GlobalReviewsCarousel';
 import CollectionSlider from '@/components/home/CollectionSlider';
 import InstagramReelsSection from '@/components/home/InstagramReelsSection';
+import GoldSparkleEffect from '@/components/ui/GoldSparkleEffect';
 import {
   ArrowRight,
   Quote
@@ -158,7 +159,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="badge-gold-foil font-cinzel text-xs tracking-[0.3em] text-[#1E1A18] font-bold uppercase inline-block px-5 py-1.5 rounded-full"
+            className="badge-gold-foil animate-badge-pulse font-cinzel text-xs tracking-[0.3em] text-[#1E1A18] font-bold uppercase inline-block px-5 py-1.5 rounded-full"
           >
             {heroSlides[heroIndex].tag}
           </motion.span>
@@ -199,12 +200,14 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-5 pt-4"
           >
-            <Link
-              href={heroSlides[heroIndex].link}
-              className="btn-gold px-9 py-4 text-xs font-bold uppercase tracking-[0.2em] flex items-center gap-2 shadow-2xl"
-            >
-              {heroSlides[heroIndex].ctaText}
-            </Link>
+            <GoldSparkleEffect>
+              <Link
+                href={heroSlides[heroIndex].link}
+                className="btn-gold px-9 py-4 text-xs font-bold uppercase tracking-[0.2em] flex items-center gap-2 shadow-2xl"
+              >
+                {heroSlides[heroIndex].ctaText}
+              </Link>
+            </GoldSparkleEffect>
             <Link
               href="/bespoke"
               className="px-9 py-4 text-xs font-bold uppercase tracking-[0.2em] text-[#FCFAF7] border border-[#CDA45A]/50 hover:border-[#CDA45A] hover:bg-[#CDA45A] hover:text-[#1E1A18] rounded-xl transition-all shadow-lg"
