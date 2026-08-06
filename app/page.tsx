@@ -13,6 +13,7 @@ import GlobalReviewsCarousel from '@/components/home/GlobalReviewsCarousel';
 import CollectionSlider from '@/components/home/CollectionSlider';
 import InstagramReelsSection from '@/components/home/InstagramReelsSection';
 import AsFeaturedInSection from '@/components/home/AsFeaturedInSection';
+import CraftsMapSection from '@/components/home/CraftsMapSection';
 import GoldSparkleEffect from '@/components/ui/GoldSparkleEffect';
 import {
   ArrowRight,
@@ -365,7 +366,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. Master Artisan Spotlight Showcase */}
+      {/* 7. The Art of India - Interactive Crafts Across India Map Section */}
+      <CraftsMapSection />
+
+      {/* 8. Master Artisan Spotlight Showcase */}
       <section className="bg-[#1E1A18] text-[#FCFAF7] py-24 border-y-2 border-[#D4AF37]/40 relative overflow-hidden shadow-2xl">
         <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-25">
           <div className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full bg-[#D4AF37]/10 blur-3xl" />
