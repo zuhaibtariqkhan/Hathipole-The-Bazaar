@@ -3,6 +3,7 @@
 import { useState, useMemo, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import ProductCard from '@/components/product/ProductCard';
+import ShopMobileProductCard from '@/components/product/ShopMobileProductCard';
 import { mockProducts } from '@/lib/data/mockProducts';
 import { CategorySlug, CraftRegion } from '@/lib/types';
 import {
@@ -58,7 +59,7 @@ function ShopContent() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-6 md:px-8 py-10 space-y-8">
+    <div className="max-w-7xl mx-auto px-3 sm:px-6 md:px-8 py-6 sm:py-10 space-y-6 sm:space-y-8">
       {/* Page Title */}
       <div className="border-b border-[#CDA45A]/20 pb-6 space-y-2">
         <span className="font-cinzel text-xs tracking-[0.25em] text-[#CDA45A] uppercase block font-semibold">
@@ -222,11 +223,21 @@ function ShopContent() {
               </button>
             </div>
           ) : (
-            <div className={viewMode === 'grid' ? 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6' : 'space-y-4'}>
-              {filteredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
+            <>
+              {/* Mobile View: Compact 3-Column Product Grid */}
+              <div className="grid grid-cols-3 gap-2 sm:hidden">
+                {filteredProducts.map((product) => (
+                  <ShopMobileProductCard key={`mob-shop-${product.id}`} product={product} />
+                ))}
+              </div>
+
+              {/* Desktop and Tablet View (Unchanged) */}
+              <div className={`hidden sm:grid ${viewMode === 'grid' ? 'sm:grid-cols-2 lg:grid-cols-3 gap-6' : 'space-y-4'}`}>
+                {filteredProducts.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </div>
+            </>
           )}
         </main>
       </div>
