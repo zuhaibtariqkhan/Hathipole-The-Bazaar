@@ -249,9 +249,6 @@ export default function HomePage() {
       {/* 2. Instagram Reels Curation Section */}
       <InstagramReelsSection />
 
-      {/* 3. Global Recognition - As Featured In Section */}
-      <AsFeaturedInSection />
-
       {/* Royal Crest Divider */}
       <div className="max-w-5xl mx-auto px-6">
         <RoyalCrestDivider label="Royal Heritage" />
@@ -288,7 +285,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. Discover Authentic Craftsmanship - Collection Slider with Navigation Indicators */}
+      {/* 5. Discover Authentic Craftsmanship - Collection Slider */}
       <section className="max-w-7xl mx-auto px-6 md:px-8 space-y-8">
         <div className="flex flex-col sm:flex-row items-center sm:items-end justify-between gap-4 border-b border-[#D4AF37]/20 pb-6 text-center sm:text-left">
           <div>
@@ -310,6 +307,9 @@ export default function HomePage() {
         {/* Collection Slider with Active Dots Indicator */}
         <CollectionSlider />
       </section>
+
+      {/* Minimal Luxury As Featured In Brand Strip Divider */}
+      <AsFeaturedInSection />
 
       {/* 6. Featured Masterpieces with Gliding Tab Indicator */}
       <section className="max-w-7xl mx-auto px-6 md:px-8 space-y-12">
